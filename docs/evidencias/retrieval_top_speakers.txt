@@ -1,0 +1,48 @@
+
+Pregunta: Qué es TOP SPEAKERS
+
+================================================================================
+#1 | score=0.8061
+Título: TOP SPEAKERS: cultura, liderazgo y bienestar empresarial
+Sección: TOP SPEAKERS
+País: co
+Fuente: 
+
+TOP SPEAKERS es el frente de cultura, liderazgo y bienestar dentro de la empresa. Reúne conferencistas, autores, líderes, artistas, comediantes, deportistas y expertos para llevar a las empresas experiencias que fortalecen liderazgo consciente, inspiran propósito, reducen desconexión emocional, combaten la renuncia silenciosa, mejoran clima organizacional, elevan motivación y conectan bienestar con productividad. La idea central es que cuando las personas se sienten vistas, valoradas e inspiradas, la empresa lo siente en sus resultados.
+
+================================================================================
+#2 | score=0.3144
+Título: Alcance seguro para respuestas del chatbot
+Sección: Guardrails de contenido
+País: latam
+Fuente: 
+
+El chatbot debe responder únicamente con información pública y aprobada sobre la organización, historia, impacto, programas, noticias, equipo, formas de apoyo y contacto. No debe afirmar que puede inscribir personas, aprobar estudiantes, entregar recursos, prestar dinero, cobrar pagos, acceder al aula privada, consultar datos internos, gestionar cursos, revelar información administrativa ni reemplazar el contacto oficial. Si no tiene evidencia suficiente en el corpus, debe decir que no cuenta con información suficiente y sugerir contactar a Colombia Comparte.
+
+================================================================================
+#3 | score=0.2872
+Título: NODUS: liderazgo con mentalidad emprendedora
+Sección: NODUS
+País: co
+Fuente: 
+
+NODUS es el frente de liderazgo con mentalidad emprendedora. En entornos exigentes no basta con liderar; se necesita criterio, lectura del entorno y capacidad de decisión. NODUS desarrolla líderes que entienden el negocio, alinean equipos y construyen resultados sostenibles. El objetivo no es formar líderes solamente operativos, sino líderes capaces de estructurar productividad, detectar oportunidades, decidir con claridad bajo presión, movilizar equipos y crear valor más allá del indicador.
+
+================================================================================
+#4 | score=0.2758
+Título: Acciones y proyectos recientes
+Sección: Noticias / acciones
+País: co
+Fuente: 
+
+Entre las acciones recientes que puede mencionar el chatbot están la expansión a Latinoamérica, el acompañamiento en Ecuador con Ecuasal en procesos de transición familiar a través del emprendimiento, la formación en mentalidad emprendedora en jóvenes de colegios como el Gimnasio José Joaquín Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas. El LinkedIn público de Colombia Comparte también reporta trabajo con estudiantes de grado 9 del Gimnasio José Joaquín Casas, quienes presentaron pitches con ideas innovadoras y fortalecieron mentalidad emprendedora y trabajo en equipo.
+
+================================================================================
+#5 | score=0.2595
+Título: Empresas comprometidas con su gente: NODUS, EDIFICA y TOP SPEAKERS
+Sección: Empresas
+País: co
+Fuente: 
+
+Para empresas comprometidas con su gente, Colombia Comparte plantea tres frentes de transformación. NODUS desarrolla liderazgo con pensamiento emprendedor: líderes que toman decisiones con criterio, leen el entorno y alinean equipos. EDIFICA funciona como entorno productivo que sostiene, acompañando familiares de colaboradores, outplacement, prepensionados o comunidades que requieren reactivación productiva. TOP SPEAKERS moviliza cultura mediante conferencistas, experiencias y espacios que conectan con las personas y activan conversaciones necesarias para fortalecer compromiso, bienestar, liderazgo y productividad humana.
+

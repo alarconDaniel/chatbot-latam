@@ -205,3 +205,30 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Proyecto chatbot-latam - archivos locales y pesados
+
+# Mirror bruto de HTTrack. No subir.
+knowledge_base/raw/mirror/
+
+# Corpus bruto inicial de HTTrack. Se conserva local, no se sube.
+knowledge_base/processed/corpus_from_httrack.jsonl
+
+# Índice vectorial básico de prueba. El índice oficial es FAISS.
+knowledge_base/processed/vector_index/
+
+# Logs locales
+logs/
+*.log
+
+# Caches locales
+.cache/
+.pytest_cache/
+__pycache__/
+
+# Entorno virtual
+.venv/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db

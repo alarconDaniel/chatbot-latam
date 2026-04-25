@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-04-24",
+  "sources": [
+    {
+      "id": "httrack_lac_home",
+      "type": "httrack_mirror",
+      "reliability": "alta",
+      "title": "Latinoamérica Comparte — Inspirando Propósito (mirror HTTrack)",
+      "url": "https://latinoamericacomparte.com/",
+      "local_path": "/home/labewbew/Documentos/chatbot-latam/knowledge_base/raw/mirror/latinoamericacomparte/latinoamericacomparte.com/index.html",
+      "use": "Se usó como confirmación de la portada pública y se eliminaron duplicados/404."
+    },
+    {
+      "id": "httrack_edifica_public_courses",
+      "type": "httrack_mirror",
+      "reliability": "media-alta",
+      "title": "EDIFICA aula virtual pública (mirror HTTrack)",
+      "url": "https://www.latinoamericacomparte.com/aulavirtual/",
+      "local_path": "/home/labewbew/Documentos/chatbot-latam/knowledge_base/raw/mirror/latinoamericacomparte/www.latinoamericacomparte.com/aulavirtual/index.html",
+      "use": "Se usó solo para cursos/listado público visible sin login; se excluyeron textos de sesión/login."
+    },
+    {
+      "id": "docx_colombia_comparte",
+      "type": "documento_entregado_por_equipo",
+      "reliability": "alta_para_contenido_editorial",
+      "title": "Pagina Colombia Comparte..docx",
+      "url": null,
+      "local_path": "/mnt/data/Pagina Colombia Comparte..docx",
+      "use": "Base editorial principal para la nueva página de Colombia Comparte: EDIFICA, Top Speakers, NODUS, historia, impacto y acciones."
+    },
+    {
+      "id": "official_lac_home",
+      "type": "sitio_oficial",
+      "reliability": "alta",
+      "title": "Latinoamérica Comparte — Inspirando Propósito",
+      "url": "https://www.latinoamericacomparte.com/",
+      "local_path": null,
+      "use": "Fuente oficial para propósito regional, quiénes somos, equipo, aliados, noticias, apoyo y contacto."
+    },
+    {
+      "id": "official_edifica_lineamientos_pdf",
+      "type": "pdf_oficial_publico",
+      "reliability": "alta",
+      "title": "Políticas y lineamientos EDIFICA Colombia Comparte 2025",
+      "url": "https://aula.colombiacomparte.com/wp-content/uploads/2025/02/POLITICAS-Y-LINEAMIENTOS-EDIFICA-COLOMBIA-COMPARTE-2025.pdf",
+      "local_path": null,
+      "use": "Fuente oficial para propósito de EDIFICA, admisión, certificación, convivencia y reglas generales del programa."
+    },
+    {
+      "id": "official_aula_mentores",
+      "type": "sitio_oficial_publico",
+      "reliability": "alta",
+      "title": "Mentores – Aula Fundación Colombia Comparte",
+      "url": "https://aula.colombiacomparte.com/mentores/",
+      "local_path": null,
+      "use": "Fuente oficial para nombres, roles y orientación pública de mentores/coaches."
+    },
+    {
+      "id": "linkedin_colombia_comparte",
+      "type": "red_social_oficial",
+      "reliability": "media-alta",
+      "title": "Colombia Comparte | LinkedIn",
+      "url": "https://co.linkedin.com/company/fundaci%C3%B3n-colombia-comparte",
+      "local_path": null,
+      "use": "Fuente pública para actividad reciente, equipo, contacto, NODUS y proyectos educativos; se usó con cautela por ser red social."
+    },
+    {
+      "id": "portafolio_2023",
+      "type": "medio_periodistico",
+      "reliability": "media-alta",
+      "title": "Familias vergonzantes: el emprendimiento es la salida",
+      "url": "https://www.portafolio.co/emprendimiento/fundacion-colombia-comparte-orienta-a-las-personas-para-emprender-y-salir-de-crisis-589442",
+      "local_path": null,
+      "use": "Fuente externa para corroborar historia de fundadores, nacimiento en 2015, enfoque ocupacional y estructura de EDIFICA."
+    },
+    {
+      "id": "fondos_en_accion",
+      "type": "directorio_donacion_tercero",
+      "reliability": "media",
+      "title": "Fundación Colombia Comparte | Fondos en Acción",
+      "url": "https://fondosenaccion.com/fundacion-colombia-comparte/",
+      "local_path": null,
+      "use": "Fuente externa para corroborar misión, objetivos, programa EDIFICA y públicos beneficiarios."
+    },
+    {
+      "id": "youtube_colombia_comparte",
+      "type": "canal_video_publico",
+      "reliability": "media",
+      "title": "Canal YouTube @colombiacomparte",
+      "url": "https://www.youtube.com/@colombiacomparte",
+      "local_path": null,
+      "use": "Solo como enlace de casos reales/acciones; no se extrajeron afirmaciones concretas porque el contenido debe revisarse video por video."
+    }
+  ],
+  "excluded": [
+    {
+      "source": "HTTrack corpus_from_httrack.jsonl",
+      "reason": "Se descartaron 9 registros 404 Not Found, un índice local de HTTrack y duplicados exactos de la portada."
+    },
+    {
+      "source": "Notas públicas sobre EDIFICA Regresa y Brilla / deportados",
+      "reason": "No se incorporaron al corpus principal porque el DOCX editorial solicita explícitamente eliminar el tema de deportados. Se consideran contenido conflictivo o no alineado con la versión actual de la página."
+    },
+    {
+      "source": "Formularios de donación externos",
+      "reason": "No se extrajeron campos de formularios ni datos de usuarios. Solo se conservaron descripciones generales y enlaces de apoyo."
+    },
+    {
+      "source": "Rutas de aula con login, cursos internos, usuarios o contenido restringido",
+      "reason": "Se excluyeron por seguridad y por alcance público del chatbot. Solo se usó información visible sin iniciar sesión."
+    },
+    {
+      "source": "Fundación Comparte / CPUV Colombia",
+      "reason": "Se excluyó porque corresponde a otra organización con nombre similar y misión distinta."
+    }
+  ],
+  "total_records": 22
+}

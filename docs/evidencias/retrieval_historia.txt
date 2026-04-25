@@ -1,0 +1,48 @@
+
+Pregunta: Cuál es la historia de Colombia Comparte
+
+================================================================================
+#1 | score=0.7626
+Título: Historia de Colombia Comparte
+Sección: Nuestra historia
+País: co
+Fuente: 
+
+Colombia Comparte nació de una historia real de pérdida, fe y reconstrucción. Sus cofundadores, Carolina Ruiz Herrera y Eduardo Del Castillo, vivieron una crisis económica profunda y descubrieron que cuando una persona vuelve a sentirse productiva, vuelve a vivir. Guiados por la fe y el deseo de servir, crearon una organización para acompañar a familias que enfrentan pobreza oculta o pobreza vergonzante. La historia pública reportada por Portafolio señala que la fundación nació en 2015 con un enfoque ocupacional y no asistencialista, buscando que las personas sean productivas y tengan oportunidades de trabajo.
+
+================================================================================
+#2 | score=0.6883
+Título: Latinoamérica Comparte: propósito regional
+Sección: Quiénes somos
+País: latam
+Fuente: 
+
+Latinoamérica Comparte es una red que une personas, empresas y comunidades para construir una región más humana, productiva y consciente. El movimiento nació en Colombia a partir de una historia real de pérdida, fe y propósito, y evolucionó hacia una red continental enfocada en bienestar, cultura organizacional y emprendimiento con propósito. En cada país acompaña a personas, familias y empresas a reencontrar su propósito productivo y construir un futuro sostenible.
+
+================================================================================
+#3 | score=0.6871
+Título: Mensajes principales para la portada de Colombia Comparte
+Sección: Banners / Home
+País: co
+Fuente: 
+
+La nueva portada de Colombia Comparte debe presentar tres mensajes principales: primero, el emprendimiento como motor de vida, con el mensaje de crear oportunidades reales para que personas y familias vuelvan a ser productivas mediante EDIFICA; segundo, el bienestar dentro y fuera de la empresa, explicando que Colombia Comparte acompaña organizaciones fortaleciendo cultura, liderazgo y productividad humana; tercero, los 10 años transformando vidas, destacando una década reconstruyendo propósito, productividad y esperanza, con más de 1.200 familias en Colombia que han vuelto a levantarse gracias a un propósito que transforma desde el ser.
+
+================================================================================
+#4 | score=0.6845
+Título: Cómo apoyar a Colombia Comparte
+Sección: Donaciones / apoyo
+País: co
+Fuente: 
+
+Las personas y empresas pueden apoyar a Colombia Comparte vinculándose como empresas aliadas, donando o contactando a la organización mediante sus canales oficiales. En el portal regional se informa una cuenta de ahorros Bancolombia a nombre de Fundación Colombia Comparte y el NIT 901.213.196-8. Fondos en Acción presenta a Colombia Comparte como una fundación que apoya a quienes enfrentan pobreza oculta, empodera emprendedores y fortalece familias de empleados. El chatbot debe dirigir a enlaces oficiales de apoyo y evitar procesar pagos o datos bancarios dentro de la conversación.
+
+================================================================================
+#5 | score=0.6512
+Título: Quiénes somos: comunidad de propósito, empatía y servicio
+Sección: Sobre nosotros
+País: co
+Fuente: 
+
+Colombia Comparte se define como una comunidad de mentores, coaches, conferencistas y aliados que creen en el poder del propósito, la empatía y el servicio. Cada miembro del equipo aporta conocimiento y tiempo para acompañar a emprendedores, familias y empresas en procesos de transformación. Su orientación pública combina emprendimiento con propósito, bienestar empresarial, cultura organizacional, liderazgo humano y productividad sostenible.
+
