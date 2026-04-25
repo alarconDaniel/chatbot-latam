@@ -12,13 +12,13 @@ https://huggingface.co/
 
 Inicia sesión o crea una cuenta.
 
-```md
-![Login Hugging Face 1](img/hf-login1.svg)
-```
 
-```md
+![Login Hugging Face 1](img/hf-login1.svg)
+
+
+
 ![Login Hugging Face 2](img/hf-login2.svg)
-```
+
 
 ## 2. Ir a Access Tokens
 
@@ -33,17 +33,17 @@ También puedes entrar directamente a:
 https://huggingface.co/settings/tokens
 ```
 
-```md
+
 ![Access Tokens](img/hf-access-tokens.svg)
-```
+
 
 ## 3. Crear un token nuevo
 
 Haz clic en `Create new token`.
 
-```md
+
 ![Access Tokens 2](img/create-token.svg)
-```
+
 
 Recomendación para este proyecto:
 
@@ -57,19 +57,16 @@ El nombre puede ser:
 chatbot-latam
 ```
 
-```md
+
 ![Access Tokens 3](img/create-token2.svg)
-```
+
 
 Copia el token generado.
 
 Importante: no subas el token al repositorio y no lo pegues en archivos `.md`, `.env` ni capturas públicas.
 
-Aquí puedes agregar una imagen de creación del token:
-
-```md
 ![Access Tokens 4](img/create-token3.svg)
-```
+
 
 ## 4. Activar el entorno virtual
 
@@ -112,9 +109,9 @@ n
 
 Para este proyecto basta con que quede autenticado para descargar modelos.
 
-```md
+
 ![wsl-auth](img/wsl-auth.svg)
-```
+
 
 ## 7. Verificar sesión
 
