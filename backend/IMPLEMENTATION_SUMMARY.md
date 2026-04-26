@@ -38,14 +38,18 @@ Logging      → Sistema de logs con rotación
 ## 🎯 ENDPOINTS IMPLEMENTADOS
 
 ### 1. GET `/api/chat/health`
+
 **Healthcheck básico**
+
 ```bash
 curl http://localhost:8000/api/chat/health
 # Respuesta: {"status": "ok"}
 ```
 
 ### 2. POST `/api/chat/ask`
+
 **Realizar pregunta con RAG**
+
 ```bash
 curl -X POST http://localhost:8000/api/chat/ask \
   -H "Content-Type: application/json" \
@@ -67,6 +71,7 @@ curl -X POST http://localhost:8000/api/chat/ask \
 ```
 
 ### 3. POST `/api/chat/reindex`
+
 **Reconstruir índice (no implementado - solo local/admin)**
 
 ---
@@ -206,12 +211,12 @@ Archivo: backend/logs/chatbot.log
 
 ### Niveles
 
-| Nivel | Cuándo | Ejemplo |
-|-------|--------|---------|
-| DEBUG | Desarrollo | "Encoding query: '...'" |
-| INFO | Producción | "Retrieved 4 chunks" |
-| WARNING | Anomalías | "Injection attempt detected" |
-| ERROR | Fallos | "API timeout after 30s" |
+| Nivel   | Cuándo     | Ejemplo                      |
+| ------- | ---------- | ---------------------------- |
+| DEBUG   | Desarrollo | "Encoding query: '...'"      |
+| INFO    | Producción | "Retrieved 4 chunks"         |
+| WARNING | Anomalías  | "Injection attempt detected" |
+| ERROR   | Fallos     | "API timeout after 30s"      |
 
 ---
 
@@ -219,12 +224,12 @@ Archivo: backend/logs/chatbot.log
 
 ### Puntuación Inicial vs Final
 
-| Aspecto | Antes | Después | Mejora |
-|---------|-------|---------|--------|
-| SOLID | 5.5/10 | 7/10 | +27% |
-| Clean Code | 6.5/10 | 8/10 | +23% |
-| Mantenibilidad | 6/10 | 8.5/10 | +42% |
-| **General** | **6.4/10** | **7.8/10** | **+22%** |
+| Aspecto        | Antes      | Después    | Mejora   |
+| -------------- | ---------- | ---------- | -------- |
+| SOLID          | 5.5/10     | 7/10       | +27%     |
+| Clean Code     | 6.5/10     | 8/10       | +23%     |
+| Mantenibilidad | 6/10       | 8.5/10     | +42%     |
+| **General**    | **6.4/10** | **7.8/10** | **+22%** |
 
 ### Cambios Principales
 
@@ -314,12 +319,11 @@ gunicorn app.main:app -w 4 \
 
 ## 📚 DOCUMENTACIÓN
 
-| Archivo | Propósito |
-|---------|-----------|
+| Archivo          | Propósito             |
+| ---------------- | --------------------- |
 | BACKEND_SETUP.md | Setup + Testing guide |
-| CODE_QUALITY.md | Estándares de código |
-| requirements.txt | Dependencias exactas |
-| .env.example | Variables requeridas |
+| requirements.txt | Dependencias exactas  |
+| .env.example     | Variables requeridas  |
 
 ---
 
@@ -353,23 +357,25 @@ gunicorn app.main:app -w 4 \
 ### Widget React (Silva)
 
 Endpoint: `POST http://localhost:8000/api/chat/ask`
+
 ```javascript
-fetch('http://localhost:8000/api/chat/ask', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+fetch("http://localhost:8000/api/chat/ask", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
     message: userInput,
-    country: 'latam',
-    sessionId: generateUUID()
-  })
+    country: "latam",
+    sessionId: generateUUID(),
+  }),
 })
-  .then(r => r.json())
-  .then(data => renderAnswer(data.answer, data.sources))
+  .then((r) => r.json())
+  .then((data) => renderAnswer(data.answer, data.sources));
 ```
 
 ### Knowledge Base (Daniel)
 
 Integración automática:
+
 - FAISS index: `../knowledge_base/processed/faiss_index/`
 - Chunks JSONL: `../knowledge_base/processed/rag_chunks.jsonl`
 - Embedding model: `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
@@ -379,18 +385,22 @@ Integración automática:
 ## 📞 TROUBLESHOOTING
 
 ### "FAISS index not found"
+
 ✅ Verifica: `ls ../knowledge_base/processed/faiss_index/`
 ✅ Revisa: `.env` tiene paths correctos
 
 ### "GROQ_API_KEY not set"
+
 ✅ Copia `.env.example` a `.env`
 ✅ Agrega tu clave real de https://console.groq.com
 
 ### Servidor lento en primer request
+
 ✅ Normal: Descarga modelo embeddings (470MB)
 ✅ Después es rápido (cached)
 
 ### Ver logs en DEBUG
+
 ✅ Edita `.env`: `LOG_LEVEL_STR=DEBUG`
 ✅ Reinicia servidor
 
@@ -417,16 +427,16 @@ Integración automática:
 
 ## 📊 ESTADÍSTICAS DEL PROYECTO
 
-| Métrica | Valor |
-|---------|-------|
-| Líneas de código | ~800 |
-| Número de módulos | 9 |
-| Funciones públicas | 15+ |
-| Endpoints | 3 |
-| Tests | 0 (TODO) |
-| Cobertura | N/A (TODO) |
-| Requisitos | 12 libraries |
-| Tiempo de setup | <10 min |
+| Métrica             | Valor               |
+| ------------------- | ------------------- |
+| Líneas de código    | ~800                |
+| Número de módulos   | 9                   |
+| Funciones públicas  | 15+                 |
+| Endpoints           | 3                   |
+| Tests               | 0 (TODO)            |
+| Cobertura           | N/A (TODO)          |
+| Requisitos          | 12 libraries        |
+| Tiempo de setup     | <10 min             |
 | Tiempo de respuesta | 1-2s (includes LLM) |
 
 ---
