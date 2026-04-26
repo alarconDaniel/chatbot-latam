@@ -3,3 +3,9 @@ faiss-cpu
 sentence-transformers
 beautifulsoup4
 lxml
+fastapi
+uvicorn[standard]
+groq
+pydantic-settings
+python-dotenv
+chromadb
