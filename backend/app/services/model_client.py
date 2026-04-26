@@ -24,14 +24,14 @@ class ModelClient:
     """Groq API client."""
 
     def __init__(self):
-        logger.debug(f"🔗 Initializing Groq client with model: {settings.groq_model}")
+        logger.debug(f"Initializing Groq client with model: {settings.groq_model}")
         self.client = Groq(api_key=settings.groq_api_key)
-        logger.info(f"✅ Groq client ready - model: {settings.groq_model}")
+        logger.info(f"Groq client ready - model: {settings.groq_model}")
 
     def generate(self, prompt: str) -> str:
         """Call Groq API and return response."""
         try:
-            logger.debug(f"📡 Calling Groq API - prompt length: {len(prompt)} chars")
+            logger.debug(f"Calling Groq API - prompt length: {len(prompt)} chars")
             response = self.client.chat.completions.create(
                 model=settings.groq_model,
                 messages=[
@@ -41,10 +41,10 @@ class ModelClient:
                 max_tokens=500,
             )
             result = response.choices[0].message.content
-            logger.info(f"✅ Groq response received - length: {len(result)} chars")
+            logger.info(f"Groq response received - length: {len(result)} chars")
             return result
         except Exception as e:
-            logger.error(f"❌ Groq API error: {str(e)}", exc_info=True)
+            logger.error(f"Groq API error: {str(e)}", exc_info=True)
             raise RuntimeError(f"Error calling Groq API: {str(e)}")
 
 

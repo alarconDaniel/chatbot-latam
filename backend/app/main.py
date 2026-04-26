@@ -29,14 +29,14 @@ app.include_router(router)
 @app.on_event("startup")
 async def startup_event():
     """Log application startup."""
-    logger.info(f"🚀 Chatbot API starting - Log Level: {settings.log_level_str}")
-    logger.info(f"📋 Config - Top-K: {settings.top_k}, Max Message: {settings.max_message_length}")
+    logger.info(f"Chatbot API starting - Log Level: {settings.log_level_str}")
+    logger.info(f"Config - Top-K: {settings.top_k}, Max Message: {settings.max_message_length}")
 
 
 @app.on_event("shutdown")
 async def shutdown_event():
     """Log application shutdown."""
-    logger.info("🛑 Chatbot API shutting down")
+    logger.info("Chatbot API shutting down")
 
 
 if __name__ == "__main__":

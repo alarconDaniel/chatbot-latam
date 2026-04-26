@@ -16,105 +16,99 @@ class RAGService:
         self.model_client = get_model_client()
 
     def ask(self, request: AskRequest) -> AskResponse:
-        """
-        Main RAG pipeline:
-        1. Sanitize input
-        2. Retrieve chunks
-        3. Build prompt
-        4. Generate answer
-        5. Filter output
-        """
-        logger.debug(f"📥 New request - session: {request.sessionId}, country: {request.country}")
+        """Main RAG pipeline: sanitize → retrieve → generate → filter → response."""
+        try:
+            cleaned_message = self._validate_input(request.message)
+            chunks = self._retrieve_context(cleaned_message, request.country)
+            answer = self._generate_answer(chunks, cleaned_message)
+            return self._build_success_response(answer, chunks)
+        except ValueError as e:
+            logger.warning(f"Validation error - session: {request.sessionId}: {str(e)}")
+            return self._error_response(str(e), safe_mode=False)
+        except Exception as e:
+            logger.error(f"RAG pipeline error - session: {request.sessionId}: {str(e)}", exc_info=True)
+            return self._error_response("Ocurrió un error procesando tu pregunta. Por favor, intenta de nuevo.", safe_mode=False)
 
-        # Step 1: Sanitize input
-        cleaned_message, is_injection = sanitize_input(request.message)
+    def _validate_input(self, message: str) -> str:
+        """Check for injections and return cleaned message."""
+        logger.debug(f"Validating input: '{message[:50]}...'")
+        cleaned_message, is_injection = sanitize_input(message)
 
         if is_injection:
-            logger.warning(f"🚨 Injection attempt detected - session: {request.sessionId}")
-            return AskResponse(
-                answer="No puedo procesar esa solicitud. Por favor, hazme una pregunta sobre los portales de Latinoamérica Comparte.",
-                sources=[],
-                suggestedLinks=[],
-                safeMode=True,
-            )
+            logger.warning("Injection attempt detected")
+            raise ValueError("Injection pattern detected")
 
-        try:
-            logger.debug(f"🔍 Retrieving chunks for: '{cleaned_message[:50]}...'")
+        return cleaned_message
 
-            # Step 2: Retrieve chunks
-            chunks = self.retriever.retrieve(
-                query=cleaned_message, country=request.country
-            )
+    def _retrieve_context(self, query: str, country: str) -> List[Dict[str, Any]]:
+        """Retrieve relevant chunks from FAISS index."""
+        logger.debug(f"Retrieving chunks for: '{query[:50]}...' (country: {country})")
+        chunks = self.retriever.retrieve(query=query, country=country)
 
-            logger.info(f"✅ Retrieved {len(chunks)} chunks - session: {request.sessionId}")
+        if not chunks:
+            logger.warning(f"No relevant chunks found for query")
+            raise ValueError("No relevant chunks found")
 
-            if not chunks:
-                logger.warning(f"⚠️ No relevant chunks found - session: {request.sessionId}")
-                return AskResponse(
-                    answer="No cuento con información suficiente sobre eso. Te invito a contactarnos directamente en nuestro portal.",
-                    sources=[],
-                    suggestedLinks=[],
-                    safeMode=False,
-                )
+        logger.info(f"Retrieved {len(chunks)} chunks")
+        return chunks
 
-            logger.debug(f"📚 Context built with {len(chunks)} chunks")
+    def _generate_answer(self, chunks: List[Dict[str, Any]], query: str) -> str:
+        """Build prompt and generate answer from LLM."""
+        logger.debug(f"Building context from {len(chunks)} chunks")
 
-            # Step 3: Build context
-            context_parts = []
-            for chunk in chunks:
-                context_parts.append(f"- {chunk.get('title', '')}\n{chunk.get('text', '')}")
+        context_parts = [f"- {c.get('title', '')}\n{c.get('text', '')}" for c in chunks]
+        context = "\n\n".join(context_parts)
+        full_prompt = SYSTEM_PROMPT.format(context=context)
+        full_prompt += f"\n\nPregunta del usuario: {query}"
 
-            context = "\n\n".join(context_parts)
-            full_prompt = SYSTEM_PROMPT.format(context=context)
+        logger.debug(f"Calling LLM with prompt: {len(full_prompt)} chars")
+        answer = self.model_client.generate(full_prompt)
 
-            # Add user message
-            full_prompt += f"\n\nPregunta del usuario: {cleaned_message}"
+        logger.info(f"Generated answer: {len(answer)} chars")
+        return answer
 
-            logger.debug(f"🤖 Calling Groq API...")
+    def _build_success_response(self, answer: str, chunks: List[Dict[str, Any]]) -> AskResponse:
+        """Construct successful response with sources and links."""
+        filtered_answer = filter_output(answer)
+        sources = self._extract_sources(chunks)
+        links = self._collect_suggested_links(chunks)
 
-            # Step 4: Generate answer
-            answer = self.model_client.generate(full_prompt)
+        logger.info(f"Response ready - sources: {len(sources)}, links: {len(links)}")
 
-            logger.debug(f"✨ Answer generated - length: {len(answer)} chars")
+        return AskResponse(
+            answer=filtered_answer,
+            sources=sources,
+            suggestedLinks=links,
+            safeMode=False,
+        )
 
-            # Step 5: Filter output
-            answer = filter_output(answer)
+    def _extract_sources(self, chunks: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+        """Extract metadata from chunks for response."""
+        return [
+            {
+                "chunk_id": chunk.get("chunk_id"),
+                "title": chunk.get("title"),
+                "section": chunk.get("section"),
+                "country": chunk.get("country"),
+            }
+            for chunk in chunks
+        ]
 
-            # Prepare sources (chunk metadata)
-            sources = [
-                {
-                    "chunk_id": chunk.get("chunk_id"),
-                    "title": chunk.get("title"),
-                    "section": chunk.get("section"),
-                    "country": chunk.get("country"),
-                }
-                for chunk in chunks
-            ]
+    def _collect_suggested_links(self, chunks: List[Dict[str, Any]]) -> List[str]:
+        """Deduplicate suggested links from all chunks."""
+        return list({
+            link for chunk in chunks
+            for link in chunk.get("suggested_links", [])
+        })
 
-            # Collect unique suggested links
-            suggested_links = []
-            for chunk in chunks:
-                for link in chunk.get("suggested_links", []):
-                    if link not in suggested_links:
-                        suggested_links.append(link)
-
-            logger.info(f"✅ RAG pipeline complete - session: {request.sessionId}, sources: {len(sources)}, links: {len(suggested_links)}")
-
-            return AskResponse(
-                answer=answer,
-                sources=sources,
-                suggestedLinks=suggested_links,
-                safeMode=False,
-            )
-
-        except Exception as e:
-            logger.error(f"❌ Error in RAG pipeline - session: {request.sessionId}: {str(e)}", exc_info=True)
-            return AskResponse(
-                answer="Ocurrió un error procesando tu pregunta. Por favor, intenta de nuevo.",
-                sources=[],
-                suggestedLinks=[],
-                safeMode=False,
-            )
+    def _error_response(self, message: str, safe_mode: bool = True) -> AskResponse:
+        """Build error response."""
+        return AskResponse(
+            answer=message if not safe_mode else "No puedo procesar esa solicitud. Por favor, hazme una pregunta sobre los portales de Latinoamérica Comparte.",
+            sources=[],
+            suggestedLinks=[],
+            safeMode=safe_mode,
+        )
 
 
 # Singleton instance
@@ -127,3 +121,4 @@ def get_rag_service() -> RAGService:
     if _rag_service is None:
         _rag_service = RAGService()
     return _rag_service
+
