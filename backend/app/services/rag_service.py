@@ -24,10 +24,13 @@ class RAGService:
         4. Generate answer
         5. Filter output
         """
+        logger.debug(f"📥 New request - session: {request.sessionId}, country: {request.country}")
+
         # Step 1: Sanitize input
         cleaned_message, is_injection = sanitize_input(request.message)
 
         if is_injection:
+            logger.warning(f"🚨 Injection attempt detected - session: {request.sessionId}")
             return AskResponse(
                 answer="No puedo procesar esa solicitud. Por favor, hazme una pregunta sobre los portales de Latinoamérica Comparte.",
                 sources=[],
@@ -36,18 +39,25 @@ class RAGService:
             )
 
         try:
+            logger.debug(f"🔍 Retrieving chunks for: '{cleaned_message[:50]}...'")
+
             # Step 2: Retrieve chunks
             chunks = self.retriever.retrieve(
                 query=cleaned_message, country=request.country
             )
 
+            logger.info(f"✅ Retrieved {len(chunks)} chunks - session: {request.sessionId}")
+
             if not chunks:
+                logger.warning(f"⚠️ No relevant chunks found - session: {request.sessionId}")
                 return AskResponse(
                     answer="No cuento con información suficiente sobre eso. Te invito a contactarnos directamente en nuestro portal.",
                     sources=[],
                     suggestedLinks=[],
                     safeMode=False,
                 )
+
+            logger.debug(f"📚 Context built with {len(chunks)} chunks")
 
             # Step 3: Build context
             context_parts = []
@@ -60,8 +70,12 @@ class RAGService:
             # Add user message
             full_prompt += f"\n\nPregunta del usuario: {cleaned_message}"
 
+            logger.debug(f"🤖 Calling Groq API...")
+
             # Step 4: Generate answer
             answer = self.model_client.generate(full_prompt)
+
+            logger.debug(f"✨ Answer generated - length: {len(answer)} chars")
 
             # Step 5: Filter output
             answer = filter_output(answer)
@@ -84,6 +98,8 @@ class RAGService:
                     if link not in suggested_links:
                         suggested_links.append(link)
 
+            logger.info(f"✅ RAG pipeline complete - session: {request.sessionId}, sources: {len(sources)}, links: {len(suggested_links)}")
+
             return AskResponse(
                 answer=answer,
                 sources=sources,
@@ -92,7 +108,7 @@ class RAGService:
             )
 
         except Exception as e:
-            logger.error(f"Error in RAG pipeline: {str(e)}")
+            logger.error(f"❌ Error in RAG pipeline - session: {request.sessionId}: {str(e)}", exc_info=True)
             return AskResponse(
                 answer="Ocurrió un error procesando tu pregunta. Por favor, intenta de nuevo.",
                 sources=[],
