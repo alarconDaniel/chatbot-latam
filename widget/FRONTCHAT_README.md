@@ -1,272 +1,406 @@
-# 🚀 Cómo correr el chatbot localmente
+# 🚀 Guía rápida para correr el chatbot localmente
 
-Esta guía explica cómo levantar el proyecto en local usando:
+Esta guía explica cómo levantar el chatbot en tu computador usando **WSL**, **FastAPI** y **React/Vite**.
 
-- **WSL / Ubuntu**
-- **Backend FastAPI**
-- **Frontend React / Vite**
-- **Python**
-- **Node.js + npm**
+El proyecto tiene dos partes principales:
 
-El proyecto tiene dos partes:
-
-| Parte | Carpeta | Puerto | URL |
+| Parte | Carpeta | Puerto | Para qué sirve |
 |---|---|---:|---|
-| Backend | `backend/` | `8000` | `http://127.0.0.1:8000` |
-| Frontend | `widget/` | `3000` | `http://localhost:3000` |
+| Backend | `backend/` | `8000` | API que responde las preguntas |
+| Frontend | `widget/` | `3000` | Interfaz visual del chatbot |
 
 ---
 
-## ✅ Requisitos previos
+## 🧩 Antes de empezar
 
-Antes de empezar, asegúrate de tener instalado:
+Asegúrate de tener instalado:
 
 - WSL / Ubuntu
 - Python 3
 - Node.js y npm
 - Git
-- VS Code, recomendado
-- Archivo `.env` configurado dentro de `backend/`
+- VS Code
+- El archivo `.env` configurado dentro de `backend/`
 
 ---
 
-# 1. Abrir WSL
+## 📁 1. Ubícate en el proyecto
 
-Desde Windows abre **PowerShell**, **Windows Terminal** o **Ubuntu**.
+Abre **WSL / Ubuntu**.
 
-Si estás en PowerShell, entra a WSL con:
+Si estás en PowerShell o Windows Terminal, puedes entrar a WSL con:
 
 ```bash
 wsl
+````
 
 Luego entra a la carpeta donde tengas clonado el proyecto:
 
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam
+```
 
-Ejemplos de rutas posibles:
+Por ejemplo:
 
+```bash
 cd ~/chatbot-latam
+```
 
 o:
 
+```bash
 cd /mnt/c/Users/TU_USUARIO/Documents/GitHub/chatbot-latam
+```
 
-Cada persona tendrá una ruta distinta. Lo importante es entrar a la carpeta raíz del proyecto, donde están backend/, widget/, docs/, etc.
+La carpeta correcta es la que contiene estas carpetas:
 
-2. Correr el backend
+```txt
+backend/
+widget/
+docs/
+knowledge_base/
+scripts/
+```
 
-Abre una terminal y entra a la carpeta backend:
+---
 
+# 🟦 Parte 1: correr el backend
+
+El backend es la API que procesa las preguntas y devuelve respuestas.
+
+## 2. Abrir una terminal para el backend
+
+Desde la raíz del proyecto, entra a la carpeta `backend`:
+
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam/backend
+```
 
-Activa el entorno virtual:
+Activa el entorno virtual de Python:
 
+```bash
 source ../.venv/bin/activate
+```
 
-Deberías ver algo como esto al inicio de la terminal:
+Cuando funcione, deberías ver algo como esto al inicio de la terminal:
 
+```txt
 (.venv)
+```
 
-Carga las variables del archivo .env:
+Carga las variables del archivo `.env`:
 
+```bash
 set -a
 source .env
 set +a
+```
 
-Inicia el backend:
+Ahora inicia el backend:
 
+```bash
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --log-level debug
+```
 
 Si todo está bien, verás algo parecido a:
 
+```txt
 Uvicorn running on http://127.0.0.1:8000
 Application startup complete.
+```
 
-Deja esta terminal abierta. El backend debe quedarse corriendo mientras usas el chatbot.
+Deja esta terminal abierta.
 
-Probar que el backend funciona
+---
+
+## 3. Verificar que el backend funciona
 
 Abre en el navegador:
 
+```txt
 http://127.0.0.1:8000/api/chat/health
+```
 
-Respuesta esperada:
+La respuesta esperada es:
 
+```json
 {"status":"ok"}
+```
 
-También puedes abrir la documentación del backend:
+También puedes abrir la documentación automática del backend:
 
+```txt
 http://127.0.0.1:8000/docs
+```
 
-Si abres http://127.0.0.1:8000/ y sale 404 Not Found, es normal. El backend no tiene página principal, solo API.
+> Nota: si abres `http://127.0.0.1:8000/` y aparece `404 Not Found`, no pasa nada. El backend no tiene página principal; solo expone endpoints de API.
 
-3. Correr el frontend
+---
 
-Abre otra terminal diferente. No cierres la terminal del backend.
+# 🟩 Parte 2: correr el frontend
 
-Entra a la carpeta widget:
+El frontend es la interfaz visual del chatbot.
 
+## 4. Abrir otra terminal para el frontend
+
+Abre una segunda terminal.
+No cierres la terminal del backend.
+
+Desde la raíz del proyecto, entra a la carpeta `widget`:
+
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam/widget
+```
 
-Instala las dependencias:
+Instala las dependencias del frontend:
 
+```bash
 npm install
+```
 
 Luego inicia el frontend:
 
+```bash
 npm run dev
+```
 
-Si todo está bien, verás algo como:
+Si todo está bien, verás algo parecido a:
 
+```txt
 VITE ready
 Local: http://localhost:3000/
+```
 
 Abre en el navegador:
 
+```txt
 http://localhost:3000
+```
 
-Deja esta terminal abierta también. El frontend debe quedarse corriendo mientras usas el chatbot.
+Deja esta terminal abierta también.
 
-4. Probar el chatbot
+---
 
-Con ambas terminales abiertas:
+# 💬 Parte 3: probar el chatbot
 
-Terminal	Qué debe estar corriendo
-Terminal 1	Backend en http://127.0.0.1:8000
-Terminal 2	Frontend en http://localhost:3000
+Con las dos terminales abiertas:
 
-Ahora abre:
+| Terminal   | Debe estar corriendo                |
+| ---------- | ----------------------------------- |
+| Terminal 1 | Backend en `http://127.0.0.1:8000`  |
+| Terminal 2 | Frontend en `http://localhost:3000` |
 
+Abre el frontend:
+
+```txt
 http://localhost:3000
+```
 
-Escribe una pregunta en el chat, por ejemplo:
+Escribe una pregunta como:
 
+```txt
 Hola
+```
 
 o:
 
+```txt
 ¿Quién es Latinoamérica Comparte?
+```
 
-La primera respuesta puede tardar un poco más porque el backend puede cargar modelos, weights, batches o recursos internos del sistema RAG.
+La primera respuesta puede tardar un poco porque el backend puede cargar modelos, weights, batches o recursos internos del sistema RAG.
 
-Después de esa primera carga, debería responder más rápido.
+Después de esa primera carga, las respuestas deberían ser más rápidas.
 
-⚡ Resumen rápido
-Terminal 1 — Backend
+---
+
+# ⚡ Comandos rápidos
+
+## Backend
+
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam/backend
 source ../.venv/bin/activate
 set -a
 source .env
 set +a
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --log-level debug
+```
 
 Verificar backend:
 
+```txt
 http://127.0.0.1:8000/api/chat/health
-Terminal 2 — Frontend
+```
+
+---
+
+## Frontend
+
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam/widget
 npm install
 npm run dev
+```
 
 Abrir chatbot:
 
+```txt
 http://localhost:3000
-🛠️ Problemas comunes
-1. El entorno virtual no existe
+```
 
-Si aparece este error:
+---
 
+# 🛠️ Problemas comunes
+
+## El entorno virtual no existe
+
+Si aparece algo como:
+
+```txt
 ../.venv/bin/activate: No such file or directory
+```
 
 crea el entorno virtual desde la raíz del proyecto:
 
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r backend/requirements.txt
+```
 
 Luego vuelve a correr el backend.
 
-2. Falta el archivo .env
+---
 
-Si no existe backend/.env, créalo desde el ejemplo:
+## Falta el archivo `.env`
 
+Si no existe `backend/.env`, créalo desde el ejemplo:
+
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam/backend
 cp .env.example .env
+```
 
-Luego abre .env y configura las variables necesarias.
+Luego edita `.env` y configura las variables necesarias.
 
 La más importante es:
 
+```env
 GROQ_API_KEY=tu_api_key
+```
 
-También revisa que ALLOWED_ORIGINS permita el frontend local:
+También revisa que el frontend local esté permitido:
 
+```env
 ALLOWED_ORIGINS='["http://localhost:3000"]'
-3. Error con saltos de línea en .env
+```
 
-Si el backend falla leyendo variables como LOG_TO_CONSOLE=false, puede ser porque el .env tiene formato Windows.
+---
+
+## Error con saltos de línea en `.env`
+
+Si el backend falla leyendo variables como:
+
+```txt
+LOG_TO_CONSOLE=false
+```
+
+puede ser porque el `.env` tiene formato Windows.
 
 Corrígelo con:
 
+```bash
 cd /ruta/a/tu/proyecto/chatbot-latam/backend
 sed -i 's/\r$//' .env
-4. El frontend no instala dependencias
+```
 
-Si npm install falla, revisa tu versión de Node:
+---
 
+## El frontend no instala dependencias
+
+Si falla `npm install`, revisa la versión de Node:
+
+```bash
 node -v
+```
 
 Si estás usando Node 18 y Vite falla por versión, instala versiones compatibles:
 
+```bash
 npm uninstall vite @vitejs/plugin-react
 npm install vite@5 @vitejs/plugin-react@4
+```
 
-Luego vuelve a correr:
+Luego corre de nuevo:
 
+```bash
 npm run dev
-5. El chatbot no responde
+```
 
-Primero verifica que el backend esté activo:
+---
 
+## El chatbot no responde
+
+Primero verifica que el backend esté vivo:
+
+```txt
 http://127.0.0.1:8000/api/chat/health
+```
 
 Si no responde:
 
-Revisa que la terminal del backend siga abierta.
-Reinicia el backend.
-Revisa que .env esté configurado correctamente.
+1. Revisa que la terminal del backend siga abierta.
+2. Reinicia el backend.
+3. Revisa que `.env` esté configurado.
+4. Revisa que no haya errores en la terminal del backend.
 
-También confirma que el frontend esté llamando a:
+El frontend debe llamar a este endpoint:
 
+```txt
 http://127.0.0.1:8000/api/chat/ask
-6. La página sale en blanco
+```
+
+---
+
+## La página aparece en blanco
 
 Abre la consola del navegador:
 
+```txt
 F12 → Console
+```
 
 Revisa si hay errores en rojo.
 
 Causas comunes:
 
-Falta widget/index.html
-Falta widget/src/main.jsx
-Falta widget/src/App.jsx
-Falta widget/src/services/chatApi.js
-Error importando ChatWidget.jsx
-📌 Notas importantes
-El backend corre en el puerto 8000.
-El frontend corre en el puerto 3000.
-Ambos deben estar corriendo al mismo tiempo.
-No cierres las terminales mientras uses el chatbot.
-La primera respuesta puede tardar porque se cargan recursos del modelo y del índice RAG.
-El chatbot visual está en:
-widget/src/components/ChatWidget.jsx
-La conexión con el backend está en:
-widget/src/services/chatApi.js
-✅ Flujo final
-Usuario escribe en el frontend
+* Falta `widget/index.html`
+* Falta `widget/src/main.jsx`
+* Falta `widget/src/App.jsx`
+* Falta `widget/src/services/chatApi.js`
+* Error importando `ChatWidget.jsx`
+
+---
+
+# 📌 Archivos importantes
+
+| Archivo                                | Para qué sirve                       |
+| -------------------------------------- | ------------------------------------ |
+| `backend/.env`                         | Variables de entorno del backend     |
+| `backend/app/main.py`                  | Punto de entrada de FastAPI          |
+| `widget/src/components/ChatWidget.jsx` | Interfaz visual del chatbot          |
+| `widget/src/services/chatApi.js`       | Conexión del frontend con el backend |
+| `widget/src/App.jsx`                   | Renderiza el widget en la app React  |
+| `widget/index.html`                    | Entrada HTML de Vite                 |
+
+---
+
+# ✅ Flujo general
+
+```txt
+Usuario escribe en el chatbot
         ↓
 React ChatWidget
         ↓
@@ -279,3 +413,18 @@ Backend FastAPI
 Respuesta del chatbot
         ↓
 Frontend muestra la respuesta
+```
+
+---
+
+# 🧠 Recordatorio final
+
+Para usar el chatbot siempre necesitas:
+
+1. Backend corriendo en `http://127.0.0.1:8000`
+2. Frontend corriendo en `http://localhost:3000`
+3. Archivo `.env` configurado
+4. No cerrar las terminales mientras pruebas el chatbot
+
+```
+```
