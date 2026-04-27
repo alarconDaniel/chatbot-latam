@@ -1,0 +1,100 @@
+Widget de chatbot en React (frontend) - Guía completa
+=====================================================
+
+1) Explicación general
+----------------------
+Se creó un widget funcional en React con:
+- UI de chat.
+- Lista de mensajes.
+- Input del usuario.
+- Botón de envío.
+- Indicador de estado "escribiendo...".
+
+Además, el componente maneja exactamente estos estados internos:
+- messages[]
+- loading
+- input
+
+Archivos incluidos:
+- widget/src/components/ChatWidget.jsx
+- widget/src/services/chatApi.js
+
+
+2) Código completo
+------------------
+El código está listo para copiar y usar directamente desde los archivos:
+- ChatWidget: widget/src/components/ChatWidget.jsx
+- API client: widget/src/services/chatApi.js
+
+
+3) Explicación del código
+-------------------------
+A. Componente ChatWidget
+- Usa useState para manejar:
+  - messages: historial del chat (usuario/bot).
+  - loading: bandera para mostrar "escribiendo..." y bloquear envíos duplicados.
+  - input: texto actual del input.
+- Usa useMemo para crear un sessionId estable (si no lo pasas por props).
+- Flujo al enviar mensaje:
+  1. Valida input (trim y no loading).
+  2. Agrega mensaje del usuario a messages.
+  3. Limpia input y activa loading.
+  4. Llama al backend usando askChatbot(...).
+  5. Agrega respuesta del bot.
+  6. Si falla, agrega mensaje de error como mensaje del bot.
+  7. Desactiva loading.
+- También permite enviar presionando Enter.
+
+B. Servicio chatApi
+- askChatbot(...) hace POST a:
+  {apiBaseUrl}/api/chat/ask
+- Envía body JSON con:
+  - message
+  - country
+  - sessionId
+- Maneja errores HTTP y devuelve JSON de la respuesta.
+
+
+4) Cómo probarlo (paso a paso)
+------------------------------
+Paso 1: Asegura backend corriendo
+- Endpoint esperado: POST /api/chat/ask
+- Ejemplo de base URL: http://localhost:8000
+
+Paso 2: Importa y renderiza el componente en tu app React
+Ejemplo mínimo:
+
+import ChatWidget from "./components/ChatWidget";
+
+export default function App() {
+  return (
+    <div style={{ padding: 24 }}>
+      <ChatWidget
+        apiBaseUrl="http://localhost:8000"
+        country="latam"
+      />
+    </div>
+  );
+}
+
+Paso 3: Ejecuta frontend
+- npm install
+- npm run dev   (o npm start, según tu setup)
+
+Paso 4: Prueba el chat
+- Escribe un mensaje y da clic en "Enviar" o Enter.
+- Debes ver:
+  - Mensaje del usuario en pantalla.
+  - Estado "escribiendo...".
+  - Respuesta del bot cuando el backend responda.
+
+
+5) Lo único que necesito confirmar del backend
+----------------------------------------------
+Para dejarlo 100% plug-and-play en tu entorno final, confírmame:
+1. URL final del backend (dev/prod).
+2. Si siempre usarás el endpoint /api/chat/ask.
+3. Valor correcto de country (ej. "latam", "cl", "pe", etc.).
+4. Si el backend requiere headers extra (por ejemplo Authorization).
+
+Con eso, te lo dejo ajustado a tu entorno exacto en una siguiente iteración.
