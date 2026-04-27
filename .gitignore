@@ -232,3 +232,11 @@ __pycache__/
 # Archivos temporales del sistema
 .DS_Store
 Thumbs.db
+
+# Node / React
+node_modules/
+widget/node_modules/
+dist/
+widget/dist/
+.env
+backend/.env
