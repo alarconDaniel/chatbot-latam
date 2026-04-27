@@ -1,18 +1,18 @@
-const DEFAULT_API_BASE_URL = "http://localhost:8000";
+const DEFAULT_API_BASE_URL = "http://127.0.0.1:8000";
 
 /**
  * Envía un mensaje al backend del chatbot.
  *
  * @param {Object} params
- * @param {string} params.message - Mensaje del usuario.
- * @param {string} params.country - País que usa el backend para filtrar contexto.
- * @param {string} params.sessionId - Identificador de sesión de chat.
- * @param {string} [params.apiBaseUrl] - URL base del backend.
+ * @param {string} params.message
+ * @param {string} params.country
+ * @param {string} params.sessionId
+ * @param {string} [params.apiBaseUrl]
  * @returns {Promise<{answer:string,sources:Array,suggestedLinks:Array,safeMode:boolean}>}
  */
 export async function askChatbot({
   message,
-  country,
+  country = "latam",
   sessionId,
   apiBaseUrl = DEFAULT_API_BASE_URL,
 }) {
@@ -28,16 +28,22 @@ export async function askChatbot({
     }),
   });
 
+  const data = await response.json().catch(() => null);
+
   if (!response.ok) {
     const fallbackMessage = "Error al consultar el chatbot.";
 
-    try {
-      const errorPayload = await response.json();
-      throw new Error(errorPayload?.detail || fallbackMessage);
-    } catch {
-      throw new Error(fallbackMessage);
+    if (Array.isArray(data?.detail)) {
+      const readableError = data.detail
+        .map((item) => item.msg)
+        .filter(Boolean)
+        .join(" ");
+
+      throw new Error(readableError || fallbackMessage);
     }
+
+    throw new Error(data?.detail || fallbackMessage);
   }
 
-  return response.json();
+  return data;
 }
