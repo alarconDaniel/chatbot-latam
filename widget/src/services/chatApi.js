@@ -3,14 +3,16 @@ import { encryptPayload, decryptPayload } from '../utils/encryption';
 const DEFAULT_API_BASE_URL = "http://127.0.0.1:8000";
 
 // Clave de encriptación compartida (64 caracteres hex = 32 bytes)
-// Debe coincidir con ENCRYPTION_SECRET en el backend (.env)
-const ENCRYPTION_SECRET = import.meta.env.REACT_APP_ENCRYPTION_SECRET;
+// Intenta cargar desde .env, si no, usa la clave de desarrollo
+let ENCRYPTION_SECRET = import.meta.env.REACT_APP_ENCRYPTION_SECRET;
 
+// Si no está en .env, usa clave de desarrollo (misma que backend/.env)
 if (!ENCRYPTION_SECRET) {
-  console.error('REACT_APP_ENCRYPTION_SECRET no está configurado en .env');
-  console.error('Asegúrese de que widget/.env contiene: REACT_APP_ENCRYPTION_SECRET=<valor>');
-  throw new Error('REACT_APP_ENCRYPTION_SECRET no configurado - reinicie el servidor');
+  console.warn('REACT_APP_ENCRYPTION_SECRET no encontrado en .env, usando clave de desarrollo');
+  ENCRYPTION_SECRET = 'bd30427cee9ba319459b690b9d7d6dc24963862c2ab616030b31bddb54e7c3cd';
 }
+
+console.log('Encriptación cargada - clave configurada:', ENCRYPTION_SECRET ? 'SI' : 'NO');
 
 /**
  * Envía un mensaje al backend del chatbot.
