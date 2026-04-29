@@ -63,10 +63,6 @@ python -c "from app.utils.encryption import encrypt_payload, decrypt_payload; pr
 
 Agregar a `widget/.env`:
 
-```ini
-REACT_APP_ENCRYPTION_SECRET=bd30427cee9ba319459b690b9d7d6dc24963862c2ab616030b31bddb54e7c3cd
-```
-
 **Validar:**
 
 ```bash
@@ -80,7 +76,10 @@ npm run build  # Debe compilar sin errores
 
 ```javascript
 // widget/src/services/chatApi.js
-import { encryptPayload, decryptPayload } from "../utils/encryption";
+import { encryptPayload, decryptPayload } from '../utils/encryption';
+
+// Acceso a variables de entorno en Vite
+const ENCRYPTION_SECRET = import.meta.env.REACT_APP_ENCRYPTION_SECRET;
 
 const plaintext = { message, country, sessionId };
 const encrypted = await encryptPayload(plaintext, ENCRYPTION_SECRET);
@@ -130,6 +129,12 @@ plaintext = decrypt_payload(encrypted_data, settings.encryption_secret)
 
 ## Troubleshooting
 
+### Error: "ReferenceError: process is not defined"
+
+**Causa**: Usando `process.env` en lugar de `import.meta.env` en Vite
+
+**Solución**: Use `import.meta.env.REACT_APP_ENCRYPTION_SECRET` en el frontend
+
 ### Error: "Fallo en desencriptación"
 
 **Causa**: Clave incorrecta o datos corruptos
@@ -137,7 +142,9 @@ plaintext = decrypt_payload(encrypted_data, settings.encryption_secret)
 ```bash
 # Verificar que ambos lados usan la misma clave
 echo $ENCRYPTION_SECRET  # Backend
-cat .env | grep REACT_APP_ENCRYPTION_SECRET  # Frontend
+cat widget/.env | grep REACT_APP_ENCRYPTION_SECRET  # Frontend
+
+# Deben ser IDÉNTICAS (64 caracteres hex)
 ```
 
 ### Error: "Clave de encriptación inválida"
