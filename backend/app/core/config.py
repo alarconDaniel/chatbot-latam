@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     allowed_origins: List[str] = ["http://localhost:3000"]
     log_level_str: str = "INFO"
     log_to_console: bool = False
+    encryption_secret: str = ""  # 64 hex chars (32 bytes) - must be set in .env
 
     @property
     def log_level(self) -> int:
@@ -34,3 +35,4 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+

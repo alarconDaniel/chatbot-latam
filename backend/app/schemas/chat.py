@@ -19,6 +19,25 @@ class AskResponse(BaseModel):
     safeMode: bool
 
 
+class EncryptedPayload(BaseModel):
+    """Encrypted payload structure."""
+
+    iv: str  # base64 encoded IV
+    ciphertext: str  # base64 encoded ciphertext
+
+
+class EncryptedRequest(BaseModel):
+    """Encrypted request payload."""
+
+    encrypted: EncryptedPayload
+
+
+class EncryptedResponse(BaseModel):
+    """Encrypted response payload."""
+
+    encrypted: EncryptedPayload
+
+
 class HealthResponse(BaseModel):
     """Health check response."""
 
