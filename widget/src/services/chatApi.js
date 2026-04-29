@@ -4,8 +4,13 @@ const DEFAULT_API_BASE_URL = "http://127.0.0.1:8000";
 
 // Clave de encriptación compartida (64 caracteres hex = 32 bytes)
 // Debe coincidir con ENCRYPTION_SECRET en el backend (.env)
-const ENCRYPTION_SECRET = import.meta.env.REACT_APP_ENCRYPTION_SECRET ||
-  "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef";
+const ENCRYPTION_SECRET = import.meta.env.REACT_APP_ENCRYPTION_SECRET;
+
+if (!ENCRYPTION_SECRET) {
+  console.error('REACT_APP_ENCRYPTION_SECRET no está configurado en .env');
+  console.error('Asegúrese de que widget/.env contiene: REACT_APP_ENCRYPTION_SECRET=<valor>');
+  throw new Error('REACT_APP_ENCRYPTION_SECRET no configurado - reinicie el servidor');
+}
 
 /**
  * Envía un mensaje al backend del chatbot.
