@@ -151,6 +151,7 @@ Cuando el entorno ya esté instalado y autenticado, sigue la guía de Daniel par
 
 ## Documentación útil
 
+- [Backend RAG](backend/README.md)
 - [Chunking e índice vectorial - chatbot-latam](docs/README_DANIEL_BASE_CONOCIMIENTO.md)
 - [Glosario RAG para dummies](docs/GLOSARIO_RAG_DUMMIES.md)
 - [Iniciar sesión en Hugging Face desde consola](docs/HF_AUTH_LOGIN.md)

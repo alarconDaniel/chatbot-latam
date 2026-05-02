@@ -6,18 +6,53 @@ from sentence_transformers import SentenceTransformer
 from app.core.config import settings
 import logging
 
+try:
+    import torch
+except ImportError:  # pragma: no cover - torch is expected via sentence-transformers
+    torch = None
+
 logger = logging.getLogger(__name__)
+
+
+def _resolve_embedding_device() -> str:
+    """Select the fastest available embedding device.
+
+    Preference order:
+    - explicit config override
+    - CUDA GPU
+    - Apple MPS
+    - CPU
+    """
+
+    configured = (settings.embedding_device or "auto").strip().lower()
+    if configured and configured != "auto":
+        return configured
+
+    if torch is not None:
+        if torch.cuda.is_available():
+            return "cuda"
+
+        mps_backend = getattr(torch.backends, "mps", None)
+        if mps_backend is not None and mps_backend.is_available():
+            return "mps"
+
+    return "cpu"
 
 
 class Retriever:
     """Loads FAISS index and retrieves relevant chunks."""
 
     def __init__(self):
-        logger.debug("Loading embedding model: paraphrase-multilingual-MiniLM-L12-v2")
-        self.model = SentenceTransformer(
-            "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+        device = _resolve_embedding_device()
+        logger.debug(
+            "Loading embedding model: paraphrase-multilingual-MiniLM-L12-v2 on device: %s",
+            device,
         )
-        logger.debug("Embedding model loaded")
+        self.model = SentenceTransformer(
+            "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            device=device,
+        )
+        logger.info("Embedding model loaded on device: %s", device)
 
         logger.debug(f"Loading FAISS index from: {settings.index_path}/index.faiss")
         self.index = faiss.read_index(f"{settings.index_path}/index.faiss")
@@ -49,7 +84,11 @@ class Retriever:
         logger.debug(f"Encoding query: '{query[:40]}...' (country: {country})")
 
         # Embed query
-        query_embedding = self.model.encode([query], normalize_embeddings=True)
+        query_embedding = self.model.encode(
+            [query],
+            normalize_embeddings=True,
+            convert_to_numpy=True,
+        )
         query_embedding = np.array(query_embedding, dtype=np.float32)
 
         logger.debug(f"Query embedding shape: {query_embedding.shape}")

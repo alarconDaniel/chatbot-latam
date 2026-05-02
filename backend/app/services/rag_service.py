@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from app.schemas.chat import AskRequest, AskResponse
 from app.services.guardrails import sanitize_input, filter_output
 from app.services.retriever import get_retriever
@@ -19,6 +19,9 @@ class RAGService:
         """Main RAG pipeline: sanitize → retrieve → generate → filter → response."""
         try:
             cleaned_message = self._validate_input(request.message)
+            if cleaned_message is None:
+                return self._respectful_boundary_response()
+
             chunks = self._retrieve_context(cleaned_message, request.country)
             answer = self._generate_answer(chunks, cleaned_message)
             return self._build_success_response(answer, chunks)
@@ -29,14 +32,18 @@ class RAGService:
             logger.error(f"RAG pipeline error - session: {request.sessionId}: {str(e)}", exc_info=True)
             return self._error_response("Ocurrió un error procesando tu pregunta. Por favor, intenta de nuevo.", safe_mode=False)
 
-    def _validate_input(self, message: str) -> str:
+    def _validate_input(self, message: str) -> Optional[str]:
         """Check for injections and return cleaned message."""
         logger.debug(f"Validating input: '{message[:50]}...'")
-        cleaned_message, is_injection = sanitize_input(message)
+        cleaned_message, is_injection, is_rude = sanitize_input(message)
 
         if is_injection:
             logger.warning("Injection attempt detected")
             raise ValueError("Injection pattern detected")
+
+        if is_rude:
+            logger.warning("Rude user input detected")
+            return None
 
         return cleaned_message
 
@@ -66,6 +73,19 @@ class RAGService:
 
         logger.info(f"Generated answer: {len(answer)} chars")
         return answer
+
+    def _respectful_boundary_response(self) -> AskResponse:
+        """Reply with a calm boundary when the user is rude."""
+
+        return AskResponse(
+            answer=(
+                "No continuaré esta conversación si el trato no es respetuoso. "
+                "Si quieres seguir, reformula tu pregunta con amabilidad y con gusto te ayudo."
+            ),
+            sources=[],
+            suggestedLinks=[],
+            safeMode=True,
+        )
 
     def _build_success_response(self, answer: str, chunks: List[Dict[str, Any]]) -> AskResponse:
         """Construct successful response with sources and links."""
@@ -104,7 +124,10 @@ class RAGService:
     def _error_response(self, message: str, safe_mode: bool = True) -> AskResponse:
         """Build error response."""
         return AskResponse(
-            answer=message if not safe_mode else "No puedo procesar esa solicitud. Por favor, hazme una pregunta sobre los portales de Latinoamérica Comparte.",
+            answer=message if not safe_mode else (
+                "No encontré información suficiente para responder con precisión. "
+                "Puedo ayudarte si consultas sobre admisión, certificación, convivencia, contacto o programas del portal."
+            ),
             sources=[],
             suggestedLinks=[],
             safeMode=safe_mode,

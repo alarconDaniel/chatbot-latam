@@ -9,3 +9,4 @@ groq
 pydantic-settings
 python-dotenv
 chromadb
+cryptography
