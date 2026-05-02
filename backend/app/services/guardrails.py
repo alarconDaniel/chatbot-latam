@@ -17,29 +17,48 @@ INJECTION_PATTERNS = [
     r"you\s+are\s+now",
 ]
 
+# Patrones simples de abuso directo hacia el asistente
+RUDENESS_PATTERNS = [
+    r"\bidiota\b",
+    r"\bimb[eé]cil\b",
+    r"\bpendejo\b",
+    r"\bh[úu]e?von\b",
+    r"\bstupid\b",
+    r"\bdumb\b",
+    r"\bshut\s+up\b",
+    r"go\s+to\s+hell",
+    r"vete\s+a\s+la\s+mierda",
+    r"maleducad[oa]",
+]
 
-def sanitize_input(message: str) -> Tuple[str, bool]:
+
+def sanitize_input(message: str) -> Tuple[str, bool, bool]:
     """
-    Limpia entrada y detecta inyecciones.
-    Retorna: (mensaje limpio, es_modo_seguro)
+    Limpia entrada y detecta inyecciones o abuso directo.
+    Retorna: (mensaje limpio, es_inyeccion, es_desagradable)
     """
     # Validar longitud
     if len(message) > settings.max_message_length:
-        return "", True
+        return "", True, False
 
     # Eliminar saltos y caracteres de control inusuales
     cleaned = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", " ", message)
     cleaned = cleaned.strip()
 
     if not cleaned:
-        return "", True
+        return "", True, False
 
     # Detectar patrones de inyección
     for pattern in INJECTION_PATTERNS:
         if re.search(pattern, cleaned, re.IGNORECASE):
-            return cleaned, True
+            return cleaned, True, False
 
-    return cleaned, False
+    # Detectar trato agresivo directo
+    for pattern in RUDENESS_PATTERNS:
+        if re.search(pattern, cleaned, re.IGNORECASE):
+            return cleaned, False, True
+
+    return cleaned, False, False
 
 
 def filter_output(response: str) -> str:

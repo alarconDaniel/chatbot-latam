@@ -22,6 +22,7 @@ class AskResponse(BaseModel):
 class EncryptedPayload(BaseModel):
     """Encrypted payload structure."""
 
+    encryptedKey: str  # base64 encoded RSA-OAEP encrypted session key
     iv: str  # base64 encoded IV
     ciphertext: str  # base64 encoded ciphertext
 
@@ -36,6 +37,19 @@ class EncryptedResponse(BaseModel):
     """Encrypted response payload."""
 
     encrypted: EncryptedPayload
+
+
+class PublicKeyResponse(BaseModel):
+    """Backend public key used by the frontend to encrypt session keys."""
+
+    publicKey: str
+
+
+class PublicKeyMeta(BaseModel):
+    """Metadata about the backend public key."""
+
+    pem: str
+    kid: str
 
 
 class HealthResponse(BaseModel):

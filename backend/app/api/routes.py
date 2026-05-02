@@ -6,16 +6,39 @@ from app.schemas.chat import (
     EncryptedRequest,
     EncryptedResponse,
     EncryptedPayload,
+    PublicKeyResponse,
 )
 from app.services.rag_service import get_rag_service, RAGService
-from app.utils.encryption import encrypt_payload, decrypt_payload
-from app.core.config import settings
+from app.utils.encryption import (
+    encrypt_payload,
+    decrypt_payload,
+    decrypt_session_key,
+    get_server_public_key_pem,
+    get_server_public_key_meta,
+)
 from app.core.logging import get_logger
-import logging
 
 logger = get_logger()
 
 router = APIRouter(prefix="/api/chat", tags=["chat"])
+
+
+@router.get("/crypto/public-key", response_model=PublicKeyResponse)
+async def get_public_key() -> PublicKeyResponse:
+    """Expose the backend public key used to protect per-request session keys."""
+
+    return PublicKeyResponse(publicKey=get_server_public_key_pem())
+
+
+@router.get("/crypto/public-key-meta")
+async def get_public_key_meta() -> dict:
+    """Non-breaking JSON endpoint that returns PEM + key id (`kid`).
+
+    This endpoint is additive: existing clients can keep calling
+    `/crypto/public-key` (plain PEM). Newer clients can query this
+    endpoint to obtain a `kid` useful for key rotation checks.
+    """
+    return get_server_public_key_meta()
 
 
 @router.get("/health", response_model=HealthResponse)
@@ -31,13 +54,14 @@ async def ask(
 ) -> EncryptedResponse:
     """Answer user question using RAG pipeline (encrypted)."""
     try:
-        # Desencriptar request
+        # Desencriptar la clave de sesión y luego el payload de negocio
+        session_key = decrypt_session_key(request.encrypted.encryptedKey)
         decrypted_data = decrypt_payload(
             {
                 "iv": request.encrypted.iv,
                 "ciphertext": request.encrypted.ciphertext,
             },
-            settings.encryption_secret,
+            session_key,
         )
 
         # Crear AskRequest a partir de datos desencriptados
@@ -50,14 +74,13 @@ async def ask(
         logger.info(f"Response generated - safeMode: {response.safeMode}")
 
         # Encriptar response
-        encrypted_response = encrypt_payload(
-            response.dict(), settings.encryption_secret
-        )
+        encrypted_response = encrypt_payload(response.dict(), session_key)
 
         logger.info("Response encrypted successfully")
 
         return EncryptedResponse(
             encrypted=EncryptedPayload(
+                encryptedKey=request.encrypted.encryptedKey,
                 iv=encrypted_response["iv"],
                 ciphertext=encrypted_response["ciphertext"],
             )
