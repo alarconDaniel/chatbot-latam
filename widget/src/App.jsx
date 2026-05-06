@@ -16,10 +16,9 @@ export default function App() {
   return (
     <main style={pageStyle}>
       <ChatWidget
-        apiBaseUrl="http://127.0.0.1:8000"
-        country="latam"
-        title="Asistente Virtual"
-        placeholder="Escribe tu mensaje..."
+          country="latam"
+          title="Asistente Virtual"
+          placeholder="Escribe tu mensaje..."
       />
     </main>
   );

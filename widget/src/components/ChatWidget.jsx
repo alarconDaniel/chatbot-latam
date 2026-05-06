@@ -225,7 +225,7 @@ function TypingIndicator() {
 }
 
 export default function ChatWidget({
-  apiBaseUrl = "http://127.0.0.1:8000",
+  apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000",
   country = "latam",
   sessionId,
   title = "Asistente Virtual",
@@ -292,9 +292,6 @@ export default function ChatWidget({
 
       setMessages((prev) => [...prev, botMessage]);
 
-      // Las fuentes vienen del backend en result.sources,
-      // pero quedan ocultas en la interfaz por ahora.
-      console.log("Respuesta del backend:", result);
     } catch (error) {
       console.error("Error conectando con el backend:", error);
 
