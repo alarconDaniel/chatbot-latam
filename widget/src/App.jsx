@@ -16,7 +16,7 @@ export default function App() {
   return (
     <main style={pageStyle}>
       <ChatWidget
-          country="latam"
+          country="co"
           title="Asistente Virtual"
           placeholder="Escribe tu mensaje..."
       />

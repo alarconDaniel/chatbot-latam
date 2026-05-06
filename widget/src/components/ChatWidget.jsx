@@ -276,7 +276,7 @@ function TypingIndicator() {
 
 export default function ChatWidget({
   apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000",
-  country = "latam",
+  country = "co",
   sessionId,
   title = "Asistente Virtual",
   placeholder = "Escribe tu mensaje...",
