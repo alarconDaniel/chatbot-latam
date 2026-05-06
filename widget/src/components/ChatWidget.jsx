@@ -42,6 +42,7 @@ const headerTextStyle = {
   display: "flex",
   flexDirection: "column",
   gap: "2px",
+  flex: 1,
 };
 
 const titleStyle = {
@@ -63,6 +64,22 @@ const onlineDotStyle = {
   borderRadius: "50%",
   background: "#22c55e",
   display: "inline-block",
+};
+
+const closeButtonStyle = {
+  width: "32px",
+  height: "32px",
+  borderRadius: "999px",
+  border: "none",
+  background: "rgba(255, 255, 255, 0.14)",
+  color: "#ffffff",
+  fontSize: "20px",
+  fontWeight: 700,
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  lineHeight: 1,
 };
 
 const listStyle = {
@@ -167,6 +184,30 @@ const dotStyle = {
   display: "inline-block",
 };
 
+const faqContainerStyle = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "7px",
+  marginTop: "6px",
+};
+
+const faqButtonStyle = {
+  border: "1px solid #bfdbfe",
+  background: "#eff6ff",
+  color: "#1e3a8a",
+  borderRadius: "999px",
+  padding: "7px 10px",
+  fontSize: "12px",
+  fontWeight: 600,
+  cursor: "pointer",
+};
+
+const disabledFaqButtonStyle = {
+  ...faqButtonStyle,
+  opacity: 0.6,
+  cursor: "not-allowed",
+};
+
 const footerStyle = {
   display: "flex",
   alignItems: "center",
@@ -203,6 +244,15 @@ const disabledButtonStyle = {
   cursor: "not-allowed",
 };
 
+const frequentQuestions = [
+  "¿Qué es Latinoamérica Comparte?",
+  "¿Qué es Colombia Comparte?",
+  "¿Qué es EDIFICA?",
+  "¿Cómo funciona EDIFICA?",
+  "¿Qué es NODUS?",
+  "¿Cómo puedo apoyar?",
+];
+
 function formatTime() {
   return new Intl.DateTimeFormat("es-CO", {
     hour: "2-digit",
@@ -230,6 +280,7 @@ export default function ChatWidget({
   sessionId,
   title = "Asistente Virtual",
   placeholder = "Escribe tu mensaje...",
+  onClose,
 }) {
   const [messages, setMessages] = useState([
     {
@@ -242,7 +293,10 @@ export default function ChatWidget({
 
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
+  const [isOpen, setIsOpen] = useState(true);
+
   const listRef = useRef(null);
+  const inputRef = useRef(null);
 
   const resolvedSessionId = useMemo(() => {
     if (sessionId) return sessionId;
@@ -254,13 +308,32 @@ export default function ChatWidget({
     return `session-${Date.now()}`;
   }, [sessionId]);
 
+  const focusInput = () => {
+    window.requestAnimationFrame(() => {
+      inputRef.current?.focus();
+    });
+  };
+
+  useEffect(() => {
+    focusInput();
+  }, []);
+
   useEffect(() => {
     if (!listRef.current) return;
     listRef.current.scrollTop = listRef.current.scrollHeight;
+    focusInput();
   }, [messages, loading]);
 
-  const handleSendMessage = async () => {
-    const trimmedMessage = input.trim();
+  const handleClose = () => {
+    setIsOpen(false);
+
+    if (typeof onClose === "function") {
+      onClose();
+    }
+  };
+
+  const handleSendMessage = async (messageToSend) => {
+    const trimmedMessage = (messageToSend ?? input).trim();
 
     if (!trimmedMessage || loading) return;
 
@@ -274,6 +347,7 @@ export default function ChatWidget({
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
+    focusInput();
 
     try {
       const result = await askChatbot({
@@ -291,7 +365,6 @@ export default function ChatWidget({
       };
 
       setMessages((prev) => [...prev, botMessage]);
-
     } catch (error) {
       console.error("Error conectando con el backend:", error);
 
@@ -305,7 +378,12 @@ export default function ChatWidget({
       setMessages((prev) => [...prev, fallbackError]);
     } finally {
       setLoading(false);
+      focusInput();
     }
+  };
+
+  const handleFrequentQuestion = (question) => {
+    handleSendMessage(question);
   };
 
   const onKeyDown = (event) => {
@@ -314,6 +392,10 @@ export default function ChatWidget({
       handleSendMessage();
     }
   };
+
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <section style={containerStyle}>
@@ -328,12 +410,24 @@ export default function ChatWidget({
             En línea
           </div>
         </div>
+
+        <button
+          type="button"
+          style={closeButtonStyle}
+          onClick={handleClose}
+          aria-label="Cerrar chatbot"
+          title="Cerrar"
+        >
+          ×
+        </button>
       </header>
 
       <div ref={listRef} style={listStyle}>
-        {messages.map((message) => {
+        {messages.map((message, index) => {
           const isUser = message.role === "user";
           const isError = message.role === "error";
+          const isLastMessage = index === messages.length - 1;
+          const showFrequentQuestions = !isUser && isLastMessage && !loading;
 
           return (
             <div key={message.id} style={isUser ? userRowStyle : botRowStyle}>
@@ -360,6 +454,22 @@ export default function ChatWidget({
                 >
                   {message.time}
                 </span>
+
+                {showFrequentQuestions && (
+                  <div style={faqContainerStyle}>
+                    {frequentQuestions.map((question) => (
+                      <button
+                        key={question}
+                        type="button"
+                        style={loading ? disabledFaqButtonStyle : faqButtonStyle}
+                        onClick={() => handleFrequentQuestion(question)}
+                        disabled={loading}
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           );
@@ -370,19 +480,20 @@ export default function ChatWidget({
 
       <footer style={footerStyle}>
         <input
+          ref={inputRef}
           style={inputStyle}
           value={input}
           onChange={(event) => setInput(event.target.value)}
           onKeyDown={onKeyDown}
           placeholder={placeholder}
           aria-label="Mensaje"
-          disabled={loading}
+          autoComplete="off"
         />
 
         <button
           type="button"
           style={loading ? disabledButtonStyle : buttonStyle}
-          onClick={handleSendMessage}
+          onClick={() => handleSendMessage()}
           disabled={loading}
         >
           Enviar
