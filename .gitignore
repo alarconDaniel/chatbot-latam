@@ -137,6 +137,8 @@ celerybeat.pid
 # Environments
 .env
 .envrc
+.env.local
+.env.*.local
 .venv
 env/
 venv/
@@ -173,7 +175,7 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+.idea/
 
 # Abstra
 # Abstra is an AI-powered process automation framework.
@@ -186,7 +188,7 @@ cython_debug/
 #  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 #  and can be added to the global gitignore or merged into this file. However, if you prefer, 
 #  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
+.vscode/
 
 # Ruff stuff:
 .ruff_cache/
@@ -206,37 +208,21 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Proyecto chatbot-latam - archivos locales y pesados
+# Claude Code (configuración local del asistente — no subir)
+.claude/
 
-# Mirror bruto de HTTrack. No subir.
+# ── Proyecto chatbot-latam ────────────────────────────────────────────────────
+
+# Knowledge base: archivos grandes o locales que no se suben
 knowledge_base/raw/mirror/
-
-# Corpus bruto inicial de HTTrack. Se conserva local, no se sube.
 knowledge_base/processed/corpus_from_httrack.jsonl
-
-# Índice vectorial básico de prueba. El índice oficial es FAISS.
 knowledge_base/processed/vector_index/
 
-# Logs locales
-logs/
-*.log
-
-# Caches locales
-.cache/
-.pytest_cache/
-__pycache__/
-
-# Entorno virtual
-.venv/
-
-# Archivos temporales del sistema
-.DS_Store
-Thumbs.db
-
-# Node / React
-node_modules/
-widget/node_modules/
-dist/
+# Builds frontend
 widget/dist/
-.env
+
+# Secretos locales adicionales
 backend/.env
+
+# Docker: archivos generados en runtime (no se commitean)
+docker-compose.override.yml
