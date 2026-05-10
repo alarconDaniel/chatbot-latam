@@ -1,0 +1,213 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────────────────
+  # BACKEND
+  # ─────────────────────────────────────────────────────────────────────────────
+  test-backend:
+    name: Backend — Lint & Test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Syntax check (all modules)
+        run: |
+          python -m py_compile \
+            app/main.py \
+            app/core/config.py \
+            app/core/logging.py \
+            app/api/routes.py \
+            app/services/guardrails.py \
+            app/services/model_client.py \
+            app/services/rag_service.py \
+            app/services/retriever.py \
+            app/utils/encryption.py
+
+      - name: Run tests
+        run: python test.py
+
+  build-backend-image:
+    name: Backend — Build Docker Image
+    runs-on: ubuntu-latest
+    needs: test-backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: backend/Dockerfile
+          push: false
+          # DOWNLOAD_MODEL=false: skip the 470 MB model download in CI.
+          # The model is downloaded at container startup on first run.
+          build-args: |
+            DOWNLOAD_MODEL=false
+          tags: chatbot-latam-backend:ci-${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # FRONTEND
+  # ─────────────────────────────────────────────────────────────────────────────
+  build-frontend:
+    name: Frontend — Install & Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: widget
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: widget/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (Vite)
+        env:
+          VITE_API_BASE_URL: http://localhost:8000
+        run: npm run build
+
+  build-frontend-image:
+    name: Frontend — Build Docker Image
+    runs-on: ubuntu-latest
+    needs: build-frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: widget/Dockerfile
+          push: false
+          build-args: |
+            VITE_API_BASE_URL=http://localhost:8000
+          tags: chatbot-latam-frontend:ci-${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# CD — DESPLIEGUE (DESACTIVADO)
+#
+# Para activar cuando estés listo:
+#   1. Descomentar el job "deploy" completo.
+#   2. Agregar los secretos en GitHub → Settings → Secrets and variables → Actions:
+#        AWS:   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+#        Azure: AZURE_CREDENTIALS
+#        (GITHUB_TOKEN ya existe automáticamente para GHCR)
+#   3. Cambiar las URLs/recursos a los de tu entorno real.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+  # deploy:
+  #   name: CD — Push & Deploy
+  #   runs-on: ubuntu-latest
+  #   needs: [build-backend-image, build-frontend-image]
+  #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  #   permissions:
+  #     contents: read
+  #     packages: write
+  #
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #
+  #     - name: Log in to GitHub Container Registry (GHCR)
+  #       uses: docker/login-action@v3
+  #       with:
+  #         registry: ghcr.io
+  #         username: ${{ github.actor }}
+  #         password: ${{ secrets.GITHUB_TOKEN }}
+  #
+  #     - name: Push backend image to GHCR
+  #       uses: docker/build-push-action@v5
+  #       with:
+  #         context: .
+  #         file: backend/Dockerfile
+  #         push: true
+  #         build-args: |
+  #           DOWNLOAD_MODEL=true
+  #         tags: |
+  #           ghcr.io/${{ github.repository_owner }}/chatbot-latam-backend:latest
+  #           ghcr.io/${{ github.repository_owner }}/chatbot-latam-backend:${{ github.sha }}
+  #         cache-from: type=gha
+  #         cache-to: type=gha,mode=max
+  #
+  #     - name: Push frontend image to GHCR
+  #       uses: docker/build-push-action@v5
+  #       with:
+  #         context: .
+  #         file: widget/Dockerfile
+  #         push: true
+  #         build-args: |
+  #           VITE_API_BASE_URL=https://api.tu-dominio.com   # <-- cambiar
+  #         tags: |
+  #           ghcr.io/${{ github.repository_owner }}/chatbot-latam-frontend:latest
+  #           ghcr.io/${{ github.repository_owner }}/chatbot-latam-frontend:${{ github.sha }}
+  #         cache-from: type=gha
+  #         cache-to: type=gha,mode=max
+  #
+  #     # ── Opción A: AWS ECS ───────────────────────────────────────────────────
+  #     # - name: Configure AWS credentials
+  #     #   uses: aws-actions/configure-aws-credentials@v4
+  #     #   with:
+  #     #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #     #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #     #     aws-region: us-east-1
+  #     #
+  #     # - name: Deploy backend to ECS
+  #     #   run: |
+  #     #     aws ecs update-service \
+  #     #       --cluster chatbot-latam \
+  #     #       --service chatbot-backend \
+  #     #       --force-new-deployment
+  #
+  #     # ── Opción B: Azure Container Apps ─────────────────────────────────────
+  #     # - name: Azure Login
+  #     #   uses: azure/login@v2
+  #     #   with:
+  #     #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+  #     #
+  #     # - name: Deploy backend to Azure Container Apps
+  #     #   run: |
+  #     #     az containerapp update \
+  #     #       --name chatbot-backend \
+  #     #       --resource-group chatbot-latam-rg \
+  #     #       --image ghcr.io/${{ github.repository_owner }}/chatbot-latam-backend:${{ github.sha }}

@@ -1,0 +1,53 @@
+version: '3.9'
+
+# ─────────────────────────────────────────────────────────────────────────────
+# USO LOCAL
+#   1. Copia .env.example → .env y rellena GROQ_API_KEY
+#   2. docker compose up --build
+#
+#   Backend  → http://localhost:8000
+#   Frontend → http://localhost:3000
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: chatbot-latam-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GROQ_MODEL=${GROQ_MODEL:-llama-3.1-8b-instant}
+      - TOP_K=${TOP_K:-4}
+      - MAX_MESSAGE_LENGTH=${MAX_MESSAGE_LENGTH:-500}
+      - LOG_LEVEL_STR=${LOG_LEVEL_STR:-INFO}
+      - LOG_TO_CONSOLE=true
+      - EMBEDDING_DEVICE=cpu
+      # ALLOWED_ORIGINS usa el default del código: ["http://localhost:3000"]
+      # Para producción sobreescribir aquí:
+      # - ALLOWED_ORIGINS=["https://tu-frontend.com"]
+    restart: unless-stopped
+    networks:
+      - colcom-shared
+
+  frontend:
+    build:
+      context: .
+      dockerfile: widget/Dockerfile
+      args:
+        # URL del backend tal como la ve el navegador del usuario final.
+        # En local el browser habla con http://localhost:8000 directamente.
+        - VITE_API_BASE_URL=http://localhost:8000
+    container_name: chatbot-latam-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  colcom-shared:
+    external: true
+    name: colcom-shared-network

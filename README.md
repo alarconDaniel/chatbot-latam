@@ -6,11 +6,62 @@ Chatbot para los portales país de Latinoamérica Comparte.
 
 El objetivo del proyecto es construir un chatbot público, seguro y acotado, usando una base documental curada y recuperación de información mediante RAG.
 
-## Antes de empezar
+## Inicio rápido con Docker
+
+La forma más sencilla de levantar el chatbot completo (backend + frontend) en tu máquina local.
+
+**Requisitos previos:** Docker Desktop instalado y en ejecución.
+
+```bash
+# 1. Copia el archivo de variables de entorno y rellena tu GROQ_API_KEY
+cp .env.example .env
+
+# 2. Construye y arranca ambos servicios
+docker compose up --build
+```
+
+| Servicio | URL local |
+|---|---|
+| Frontend (chat widget) | http://localhost:3000 |
+| Backend (API REST) | http://localhost:8000 |
+| Health check | http://localhost:8000/api/chat/health |
+
+> **Nota:** el primer build descarga PyTorch y el modelo de embeddings (~1.5 GB). Los builds posteriores usan la caché de Docker y son rápidos.
+
+Para detener los contenedores:
+
+```bash
+docker compose down
+```
+
+---
+
+## Desarrollo sin Docker
+
+Si prefieres correr los servicios directamente en tu máquina (útil para editar código con hot-reload):
+
+```bash
+# Backend (Python)
+cd backend
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env               # rellenar GROQ_API_KEY
+python -m uvicorn app.main:app --reload --port 8000
+
+# Frontend (en otra terminal)
+cd widget
+npm install
+npm run dev                        # http://localhost:3000
+```
+
+---
+
+## Antes de empezar (setup con WSL 2)
 
 Esta guía está pensada para trabajar desde Windows 10 usando WSL 2 con Ubuntu.
 
-## 1. Abrir PowerShell como administrador
+### 1. Abrir PowerShell como administrador
 
 En Windows:
 
@@ -19,7 +70,7 @@ En Windows:
 3. Clic derecho.
 4. Selecciona `Ejecutar como administrador`.
 
-## 2. Instalar WSL
+### 2. Instalar WSL
 
 En PowerShell:
 
@@ -49,7 +100,7 @@ También puedes dejar WSL 2 como versión por defecto:
 wsl --set-default-version 2
 ```
 
-## 3. Entrar a Ubuntu
+### 3. Entrar a Ubuntu
 
 Desde PowerShell:
 
@@ -71,7 +122,7 @@ Ejemplo recomendado:
 /home/admon/chatbot-latam
 ```
 
-## 4. Instalar dependencias básicas del sistema
+### 4. Instalar dependencias básicas del sistema
 
 Dentro de Ubuntu:
 
@@ -88,7 +139,7 @@ python3 --version
 pip3 --version
 ```
 
-## 5. Clonar el repositorio
+### 5. Clonar el repositorio
 
 Ubícate en tu home:
 
@@ -109,7 +160,7 @@ La ruta final esperada es:
 /home/admon/chatbot-latam
 ```
 
-## 6. Crear y activar el entorno virtual
+### 6. Crear y activar el entorno virtual
 
 Desde la raíz del proyecto:
 
@@ -125,7 +176,7 @@ Actualiza pip:
 python -m pip install --upgrade pip
 ```
 
-## 7. Instalar dependencias del proyecto
+### 7. Instalar dependencias del proyecto
 
 Instala las dependencias desde el archivo `requirements.txt`:
 
@@ -135,7 +186,7 @@ pip install -r requirements.txt
 
 El proyecto usa PyTorch en CPU para evitar descargar dependencias CUDA/NVIDIA innecesarias en WSL.
 
-## 8. Iniciar sesión en Hugging Face
+### 8. Iniciar sesión en Hugging Face
 
 Algunos modelos o flujos pueden requerir autenticación con Hugging Face.
 
@@ -143,7 +194,7 @@ Sigue esta guía:
 
 [Iniciar sesión en Hugging Face desde consola](docs/HF_AUTH_LOGIN.md)
 
-## 9. Continuar con chunking e índice vectorial
+### 9. Continuar con chunking e índice vectorial
 
 Cuando el entorno ya esté instalado y autenticado, sigue la guía de Daniel para la base de conocimiento:
 
