@@ -29,6 +29,8 @@ services:
       # Para producción sobreescribir aquí:
       # - ALLOWED_ORIGINS=["https://tu-frontend.com"]
     restart: unless-stopped
+    networks:
+      - colcom-shared
 
   frontend:
     build:
@@ -44,3 +46,8 @@ services:
     depends_on:
       - backend
     restart: unless-stopped
+
+networks:
+  colcom-shared:
+    external: true
+    name: colcom-shared-network
