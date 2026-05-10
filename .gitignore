@@ -210,6 +210,7 @@ __marimo__/
 
 # Claude Code (configuración local del asistente — no subir)
 .claude/
+CLAUDE.md
 
 # ── Proyecto chatbot-latam ────────────────────────────────────────────────────
 
