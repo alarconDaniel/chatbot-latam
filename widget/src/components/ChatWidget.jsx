@@ -142,9 +142,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 90% 10%, rgba(252,209,22,0.18) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(206,17,38,0.12) 0, transparent 26%), linear-gradient(90deg, rgba(252,209,22,0.05) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(0,56,147,0.04) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fffdf6 0%, #f6fbff 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(16,29,48,0.24), rgba(16,29,48,0.24)), linear-gradient(180deg, #fcd116 0%, #fcd116 50%, #003893 50%, #003893 75%, #ce1126 75%, #ce1126 100%)",
-      userBubbleBorder: "rgba(0,56,147,0.30)",
-      userBubbleShadow: "0 16px 30px rgba(0,56,147,0.22)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.18)",
+      userBubbleShadow: "0 14px 28px rgba(126,103,246,0.18)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(252,209,22,0.44) 0 7px, rgba(0,56,147,0.30) 7px 13px, rgba(206,17,38,0.28) 13px 19px, transparent 19px), #ffffff",
       botBubbleBorder: "rgba(0, 56, 147, 0.24)",
@@ -170,9 +170,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 90% 10%, rgba(252,209,22,0.16) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(225,52,70,0.13) 0, transparent 26%), linear-gradient(90deg, rgba(252,209,22,0.08) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(5,14,28,0.26), rgba(5,14,28,0.26)), linear-gradient(180deg, #fcd116 0%, #fcd116 50%, #0a4ea3 50%, #0a4ea3 75%, #d6283d 75%, #d6283d 100%)",
-      userBubbleBorder: "rgba(252,209,22,0.30)",
-      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.28)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.16)",
+      userBubbleShadow: "0 14px 28px rgba(4,18,34,0.24)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(252,209,22,0.42) 0 7px, rgba(68,132,245,0.36) 7px 13px, rgba(225,70,58,0.34) 13px 19px, transparent 19px), rgba(20, 56, 87, 0.96)",
       botBubbleBorder: "rgba(252,209,22,0.24)",
@@ -203,9 +203,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 88% 12%, rgba(213,43,30,0.12) 0, transparent 24%), radial-gradient(circle at 12% 86%, rgba(0,57,166,0.16) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(0,57,166,0.045) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fcfdff 0%, #f4f7ff 58%, #fff7f6 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(8,18,35,0.22), rgba(8,18,35,0.22)), radial-gradient(circle at 18% 24%, rgba(255,255,255,0.98) 0 4.4%, transparent 4.8%), linear-gradient(90deg, #0039a6 0%, #0039a6 38%, transparent 38%, transparent 100%), linear-gradient(180deg, #ffffff 0%, #ffffff 50%, #d52b1e 50%, #d52b1e 100%)",
-      userBubbleBorder: "rgba(0,57,166,0.30)",
-      userBubbleShadow: "0 16px 30px rgba(0,57,166,0.22)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.18)",
+      userBubbleShadow: "0 14px 28px rgba(126,103,246,0.18)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(0,57,166,0.42) 0 8px, rgba(255,255,255,0.64) 8px 14px, rgba(213,43,30,0.30) 14px 20px, transparent 20px), #ffffff",
       botBubbleBorder: "rgba(0,57,166,0.24)",
@@ -231,9 +231,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 88% 12%, rgba(225,70,58,0.14) 0, transparent 24%), radial-gradient(circle at 12% 86%, rgba(68,132,245,0.18) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(5,14,28,0.28), rgba(5,14,28,0.28)), radial-gradient(circle at 18% 24%, rgba(255,255,255,0.98) 0 4.4%, transparent 4.8%), linear-gradient(90deg, #0039a6 0%, #0039a6 38%, transparent 38%, transparent 100%), linear-gradient(180deg, #f0f7ff 0%, #f0f7ff 50%, #d52b1e 50%, #d52b1e 100%)",
-      userBubbleBorder: "rgba(104,158,255,0.28)",
-      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.30)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.16)",
+      userBubbleShadow: "0 14px 28px rgba(4,18,34,0.24)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(68,132,245,0.46) 0 8px, rgba(255,255,255,0.26) 8px 14px, rgba(225,70,58,0.38) 14px 20px, transparent 20px), rgba(20, 56, 87, 0.96)",
       botBubbleBorder: "rgba(104,158,255,0.24)",
@@ -264,9 +264,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 90% 10%, rgba(244,197,66,0.18) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(239,51,64,0.12) 0, transparent 26%), linear-gradient(90deg, rgba(244,197,66,0.05) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(3,78,162,0.04) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fffdf6 0%, #f6fbff 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(16,29,48,0.24), rgba(16,29,48,0.24)), linear-gradient(180deg, #f4c542 0%, #f4c542 50%, #034ea2 50%, #034ea2 75%, #ef3340 75%, #ef3340 100%)",
-      userBubbleBorder: "rgba(3,78,162,0.30)",
-      userBubbleShadow: "0 16px 30px rgba(3,78,162,0.22)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.18)",
+      userBubbleShadow: "0 14px 28px rgba(126,103,246,0.18)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(244,197,66,0.44) 0 7px, rgba(3,78,162,0.30) 7px 13px, rgba(239,51,64,0.28) 13px 19px, transparent 19px), #ffffff",
       botBubbleBorder: "rgba(3,78,162,0.24)",
@@ -292,9 +292,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 90% 10%, rgba(244,197,66,0.16) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(239,82,92,0.13) 0, transparent 26%), linear-gradient(90deg, rgba(244,197,66,0.08) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(5,14,28,0.26), rgba(5,14,28,0.26)), linear-gradient(180deg, #f4c542 0%, #f4c542 50%, #145fba 50%, #145fba 75%, #ef5260 75%, #ef5260 100%)",
-      userBubbleBorder: "rgba(244,197,66,0.30)",
-      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.28)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.16)",
+      userBubbleShadow: "0 14px 28px rgba(4,18,34,0.24)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(244,197,66,0.42) 0 7px, rgba(58,128,224,0.36) 7px 13px, rgba(239,82,92,0.34) 13px 19px, transparent 19px), rgba(20, 56, 87, 0.96)",
       botBubbleBorder: "rgba(244,197,66,0.24)",
@@ -325,9 +325,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 50% 10%, rgba(246,180,14,0.12) 0, transparent 18%), radial-gradient(circle at 12% 84%, rgba(116,172,223,0.18) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(74,145,209,0.04) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fbfeff 0%, #f1f8ff 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(12,35,57,0.22), rgba(12,35,57,0.22)), radial-gradient(circle at 50% 50%, rgba(246,180,14,0.96) 0 8%, transparent 8.5%), linear-gradient(180deg, #74acdf 0%, #74acdf 33%, #f8fdff 33%, #f8fdff 67%, #74acdf 67%, #74acdf 100%)",
-      userBubbleBorder: "rgba(74,145,209,0.32)",
-      userBubbleShadow: "0 16px 30px rgba(52,125,189,0.22)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.18)",
+      userBubbleShadow: "0 14px 28px rgba(126,103,246,0.18)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(116,172,223,0.48) 0 7px, rgba(246,180,14,0.30) 7px 13px, rgba(116,172,223,0.48) 13px 19px, transparent 19px), #ffffff",
       botBubbleBorder: "rgba(74,145,209,0.26)",
@@ -353,9 +353,9 @@ const COUNTRY_VISUAL_THEMES = {
       chatBackground:
         "radial-gradient(circle at 50% 10%, rgba(246,180,14,0.14) 0, transparent 18%), radial-gradient(circle at 12% 84%, rgba(116,172,223,0.18) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
       userBubbleBackground:
-        "linear-gradient(rgba(5,14,28,0.28), rgba(5,14,28,0.28)), radial-gradient(circle at 50% 50%, rgba(246,180,14,0.96) 0 8%, transparent 8.5%), linear-gradient(180deg, #74acdf 0%, #74acdf 33%, #f0f7ff 33%, #f0f7ff 67%, #74acdf 67%, #74acdf 100%)",
-      userBubbleBorder: "rgba(149,202,245,0.30)",
-      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.30)",
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.16)",
+      userBubbleShadow: "0 14px 28px rgba(4,18,34,0.24)",
       botBubbleBackground:
         "linear-gradient(90deg, rgba(116,172,223,0.46) 0 7px, rgba(246,180,14,0.34) 7px 13px, rgba(116,172,223,0.46) 13px 19px, transparent 19px), rgba(20, 56, 87, 0.96)",
       botBubbleBorder: "rgba(149,202,245,0.26)",
@@ -480,10 +480,227 @@ function buildStyles({ isDark, isLargeText, country }) {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-8px); }
       }
+      .lc-launcher-shell { user-select: none; }
+      .lc-launcher-button {
+        transition: transform 220ms ease, filter 220ms ease, box-shadow 220ms ease;
+      }
+      .lc-launcher-button:hover {
+        transform: translateY(-4px) scale(1.035);
+        filter: brightness(1.04);
+      }
+      .lc-launcher-button:active {
+        transform: translateY(-1px) scale(0.985);
+      }
+      .lc-launcher-coco { animation: lcLauncherCoco 4.2s ease-in-out infinite; }
+      .lc-launcher-ring { animation: lcLauncherRing 2.8s ease-in-out infinite; }
+      .lc-launcher-ring-alt { animation: lcLauncherRingAlt 3.1s ease-in-out infinite; }
+      .lc-launcher-shine { animation: lcLauncherShine 3.6s ease-in-out infinite; }
+      .lc-launcher-sparkle { animation: lcLauncherSparkle 2.6s ease-in-out infinite; }
+      .lc-launcher-hint { animation: lcLauncherHint 4.2s ease-in-out infinite; }
+      @keyframes lcLauncherCoco {
+        0%, 100% { transform: translateY(7px) scale(1); }
+        50% { transform: translateY(1px) scale(1.035); }
+      }
+      @keyframes lcLauncherRing {
+        0%, 100% { transform: scale(1); opacity: 0.64; }
+        50% { transform: scale(1.1); opacity: 0.18; }
+      }
+      @keyframes lcLauncherRingAlt {
+        0%, 100% { transform: scale(1); opacity: 0.42; }
+        50% { transform: scale(1.14); opacity: 0.08; }
+      }
+      @keyframes lcLauncherShine {
+        0%, 100% { transform: translateX(0) rotate(18deg); opacity: 0.34; }
+        50% { transform: translateX(9px) rotate(18deg); opacity: 0.62; }
+      }
+      @keyframes lcLauncherSparkle {
+        0%, 100% { transform: rotate(0deg) scale(0.92); opacity: 0.74; }
+        50% { transform: rotate(14deg) scale(1.12); opacity: 1; }
+      }
+      @keyframes lcLauncherHint {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      @media (max-width: 560px) {
+        .lc-launcher-shell {
+          right: 16px !important;
+          bottom: max(16px, env(safe-area-inset-bottom)) !important;
+          gap: 0 !important;
+        }
+        .lc-launcher-hint { display: none !important; }
+        .lc-launcher-button {
+          width: 108px !important;
+          height: 108px !important;
+        }
+        .lc-launcher-coco {
+          width: 126px !important;
+          height: 126px !important;
+        }
+      }
       .lc-input::placeholder {
         color: ${isDark ? "rgba(225,239,251,0.62)" : "rgba(105,124,141,0.78)"};
       }
     `,
+
+    launcherShell: {
+      position: "fixed",
+      right: "24px",
+      bottom: "max(22px, env(safe-area-inset-bottom))",
+      zIndex: 9999,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-end",
+      gap: "14px",
+      pointerEvents: "none",
+      fontFamily:
+        "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    },
+
+    launcherHint: {
+      maxWidth: "220px",
+      padding: "13px 15px",
+      borderRadius: "22px",
+      background: isDark ? "rgba(16, 49, 77, 0.94)" : "rgba(255, 255, 255, 0.96)",
+      border: `1px solid ${countryStyle.botBubbleBorder || colors.border}`,
+      boxShadow: isDark
+        ? "0 18px 42px rgba(3, 18, 33, 0.30)"
+        : "0 18px 42px rgba(24, 68, 97, 0.16)",
+      backdropFilter: "blur(14px)",
+      WebkitBackdropFilter: "blur(14px)",
+      color: colors.text,
+      display: "flex",
+      flexDirection: "column",
+      gap: "2px",
+      pointerEvents: "none",
+      textAlign: "left",
+    },
+
+    launcherHintEyebrow: {
+      color: colors.subtle,
+      fontSize: "10.5px",
+      fontWeight: 950,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      lineHeight: 1.2,
+    },
+
+    launcherHintTitle: {
+      color: colors.text,
+      fontSize: "15px",
+      fontWeight: 950,
+      letterSpacing: "-0.02em",
+      lineHeight: 1.2,
+    },
+
+    launcherHintText: {
+      color: colors.muted,
+      fontSize: "12.5px",
+      fontWeight: 750,
+      lineHeight: 1.35,
+    },
+
+    launcherButton: {
+      width: "122px",
+      height: "122px",
+      borderRadius: "999px",
+      border: `2px solid ${isDark ? "rgba(255,255,255,0.24)" : "rgba(255,255,255,0.96)"}`,
+      background: countryStyle.headerBackground || colors.headerBg,
+      boxShadow: isDark
+        ? "0 26px 58px rgba(2, 16, 28, 0.46), inset 0 1px 0 rgba(255,255,255,0.28)"
+        : "0 26px 58px rgba(24, 68, 97, 0.28), inset 0 1px 0 rgba(255,255,255,0.54)",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      position: "relative",
+      overflow: "visible",
+      padding: 0,
+      pointerEvents: "auto",
+      isolation: "isolate",
+      WebkitTapHighlightColor: "transparent",
+    },
+
+    launcherOrb: {
+      position: "absolute",
+      inset: "9px",
+      borderRadius: "999px",
+      background: isDark
+        ? "radial-gradient(circle at 34% 28%, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.10) 34%, rgba(255,255,255,0.04) 72%, rgba(255,255,255,0.02) 100%)"
+        : "radial-gradient(circle at 34% 28%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.58) 34%, rgba(255,255,255,0.18) 72%, rgba(255,255,255,0.08) 100%)",
+      border: `1px solid ${isDark ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.72)"}`,
+      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.30)",
+      pointerEvents: "none",
+      zIndex: 1,
+    },
+
+    launcherRing: {
+      position: "absolute",
+      inset: "-10px",
+      borderRadius: "999px",
+      border: `2px solid ${isDark ? "rgba(151,222,255,0.34)" : "rgba(42,140,217,0.24)"}`,
+      pointerEvents: "none",
+      zIndex: -1,
+    },
+
+    launcherRingAlt: {
+      position: "absolute",
+      inset: "-18px",
+      borderRadius: "999px",
+      border: `1px dashed ${isDark ? "rgba(255,255,255,0.24)" : "rgba(42,140,217,0.18)"}`,
+      pointerEvents: "none",
+      zIndex: -2,
+    },
+
+    launcherShine: {
+      position: "absolute",
+      top: "10px",
+      left: "18px",
+      width: "34px",
+      height: "68px",
+      borderRadius: "999px",
+      background: "linear-gradient(180deg, rgba(255,255,255,0.74) 0%, rgba(255,255,255,0.04) 100%)",
+      pointerEvents: "none",
+      zIndex: 2,
+    },
+
+    launcherSparkle: {
+      position: "absolute",
+      top: "15px",
+      right: "18px",
+      color: "#ffffff",
+      fontSize: "19px",
+      fontWeight: 950,
+      lineHeight: 1,
+      textShadow: "0 6px 14px rgba(0,0,0,0.24)",
+      pointerEvents: "none",
+      zIndex: 5,
+    },
+
+    launcherCocoImage: {
+      position: "relative",
+      zIndex: 3,
+      width: "142px",
+      height: "142px",
+      objectFit: "contain",
+      display: "block",
+      pointerEvents: "none",
+      filter: isDark
+        ? "drop-shadow(0 14px 18px rgba(0,0,0,0.34))"
+        : "drop-shadow(0 14px 18px rgba(24,68,97,0.22))",
+    },
+
+    launcherStatusDot: {
+      position: "absolute",
+      right: "13px",
+      bottom: "14px",
+      width: "14px",
+      height: "14px",
+      borderRadius: "999px",
+      background: colors.success,
+      border: `3px solid ${isDark ? "#173b5b" : "#ffffff"}`,
+      pointerEvents: "none",
+      zIndex: 6,
+    },
 
     widget: {
       width: "100%",
@@ -1760,7 +1977,7 @@ export default function ChatWidget({
   const [messages, setMessages] = useState([createInitialMessage()]);
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [screen, setScreen] = useState("home");
   const [theme, setTheme] = useState(() => getStoredValue("latamChatTheme", "light"));
   const [textSize, setTextSize] = useState(() => getStoredValue("latamChatTextSize", "normal"));
@@ -1832,6 +2049,13 @@ export default function ChatWidget({
     setIsOpen(false);
     if (typeof onClose === "function") {
       onClose();
+    }
+  };
+
+  const handleOpen = () => {
+    setIsOpen(true);
+    if (screen === "chat") {
+      focusInput();
     }
   };
 
@@ -1986,7 +2210,52 @@ export default function ChatWidget({
   );
 
   if (!isOpen) {
-    return null;
+    return (
+      <>
+        <style>{styles.globalStyle}</style>
+
+        <aside
+          className="lc-launcher-shell"
+          style={styles.launcherShell}
+          aria-label="Abrir el asistente virtual Coco"
+        >
+          <div className="lc-launcher-hint" style={styles.launcherHint} aria-hidden="true">
+            <span style={styles.launcherHintEyebrow}>Asistente virtual</span>
+            <strong style={styles.launcherHintTitle}>Habla con Coco</strong>
+            <span style={styles.launcherHintText}>Haz clic para abrir el chat</span>
+          </div>
+
+          <button
+            type="button"
+            className="lc-launcher-button"
+            style={styles.launcherButton}
+            onClick={handleOpen}
+            aria-label="Abrir el chatbot de Coco"
+            title="Abrir chatbot de Coco"
+          >
+            <span className="lc-launcher-ring" style={styles.launcherRing} aria-hidden="true"></span>
+            <span className="lc-launcher-ring-alt" style={styles.launcherRingAlt} aria-hidden="true"></span>
+            <span className="lc-launcher-shine" style={styles.launcherShine} aria-hidden="true"></span>
+            <span style={styles.launcherOrb} aria-hidden="true"></span>
+            <span className="lc-launcher-sparkle" style={styles.launcherSparkle} aria-hidden="true">✦</span>
+
+            <img
+              className="lc-launcher-coco"
+              src={homeCocoGif || welcomeBirdImage}
+              alt=""
+              aria-hidden="true"
+              style={styles.launcherCocoImage}
+              onError={(event) => {
+                event.currentTarget.onerror = null;
+                event.currentTarget.src = welcomeBirdImage;
+              }}
+            />
+
+            <span className="lc-pulse" style={styles.launcherStatusDot} aria-hidden="true"></span>
+          </button>
+        </aside>
+      </>
+    );
   }
 
   return (
