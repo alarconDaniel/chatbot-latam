@@ -52,7 +52,335 @@ function saveStoredValue(key, value) {
   }
 }
 
-function buildStyles({ isDark, isLargeText }) {
+const COUNTRY_THEME_ALIASES = {
+  latam: "latam",
+  lac: "latam",
+  regional: "latam",
+  co: "co",
+  colombia: "co",
+  cl: "cl",
+  chile: "cl",
+  ec: "ec",
+  ecuador: "ec",
+  ar: "ar",
+  argentina: "ar",
+};
+
+const COUNTRY_VISUAL_THEMES = {
+  latam: {
+    label: "Latinoamérica",
+    badgeLabel: "Latinoamérica Comparte",
+    emoji: "🌎",
+    light: {
+      headerBackground:
+        "linear-gradient(135deg, #29c2d6 0%, #2a8cd9 48%, #7c65ef 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #29c2d6 0%, #2a8cd9 48%, #7c65ef 100%)",
+      homeBackground:
+        "radial-gradient(circle at 18% 14%, rgba(83, 210, 235, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(239, 92, 169, 0.14) 0, transparent 22%), radial-gradient(circle at 80% 84%, rgba(126, 103, 246, 0.1) 0, transparent 30%), linear-gradient(160deg, #ffffff 0%, #f7fcff 48%, #edf8ff 100%)",
+      chatBackground:
+        "radial-gradient(circle at 12% 10%, rgba(42, 140, 200, 0.08) 0 2px, transparent 2.5px), radial-gradient(circle at 84% 18%, rgba(244, 114, 182, 0.12) 0, transparent 24%), radial-gradient(circle at 18% 78%, rgba(98, 219, 240, 0.16) 0, transparent 26%), repeating-linear-gradient(135deg, rgba(42, 133, 188, 0.045) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fbfeff 0%, #f0f8ff 100%)",
+      userBubbleBackground:
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.18)",
+      userBubbleShadow: "0 14px 28px rgba(126,103,246,0.18)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(41,194,214,0.22) 0 5px, rgba(42,140,217,0.16) 5px 10px, rgba(124,101,239,0.14) 10px 15px, transparent 15px), #ffffff",
+      botBubbleBorder: "rgba(42, 133, 188, 0.13)",
+      badgeBackground: "rgba(255,255,255,0.22)",
+      badgeBorder: "rgba(255,255,255,0.32)",
+      badgeColor: "#ffffff",
+      typingDot: "#127ea6",
+      inputShellBorder: "rgba(42, 133, 188, 0.13)",
+      inputSparkBackground: "#effbff",
+      inputSparkColor: "#127ea6",
+      sendButtonBackground:
+        "linear-gradient(135deg, #ee5ea3 0%, #8867f6 56%, #2d88d8 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 26px rgba(126,103,246,0.24)",
+    },
+    dark: {
+      headerBackground:
+        "linear-gradient(135deg, #28bfd4 0%, #2d88d8 48%, #7a62f0 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #28bfd4 0%, #2d88d8 48%, #7a62f0 100%)",
+      homeBackground:
+        "radial-gradient(circle at 18% 14%, rgba(129, 225, 255, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(255, 107, 184, 0.18) 0, transparent 22%), radial-gradient(circle at 78% 84%, rgba(139, 98, 247, 0.16) 0, transparent 30%), linear-gradient(160deg, #3189bf 0%, #286fa7 44%, #1f5688 100%)",
+      chatBackground:
+        "radial-gradient(circle at 12% 10%, rgba(255,255,255,0.11) 0 2px, transparent 2.4px), radial-gradient(circle at 84% 18%, rgba(255, 112, 184, 0.12) 0, transparent 24%), radial-gradient(circle at 18% 78%, rgba(106, 226, 245, 0.1) 0, transparent 26%), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #235b8b 0%, #1d4f7d 100%)",
+      userBubbleBackground:
+        "linear-gradient(135deg, #ef5ca9 0%, #8964f7 56%, #2c88d7 100%)",
+      userBubbleBorder: "rgba(255,255,255,0.16)",
+      userBubbleShadow: "0 14px 28px rgba(4,18,34,0.24)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(41,194,214,0.25) 0 5px, rgba(42,140,217,0.20) 5px 10px, rgba(124,101,239,0.18) 10px 15px, transparent 15px), rgba(20, 56, 87, 0.96)",
+      botBubbleBorder: "rgba(208, 231, 251, 0.13)",
+      badgeBackground: "rgba(255,255,255,0.16)",
+      badgeBorder: "rgba(255,255,255,0.22)",
+      badgeColor: "#ffffff",
+      typingDot: "#d8f8ff",
+      inputShellBorder: "rgba(208, 231, 251, 0.13)",
+      inputSparkBackground: "rgba(255,255,255,0.08)",
+      inputSparkColor: "#d8f8ff",
+      sendButtonBackground:
+        "linear-gradient(135deg, #ee5ea3 0%, #8867f6 56%, #2d88d8 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 26px rgba(126,103,246,0.24)",
+    },
+  },
+  co: {
+    label: "Colombia",
+    badgeLabel: "Colombia Comparte",
+    emoji: "🇨🇴",
+    light: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(18,31,54,0.16), rgba(18,31,54,0.16)), linear-gradient(135deg, #fcd116 0%, #fcd116 42%, #003893 42%, #003893 72%, #ce1126 72%, #ce1126 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #fcd116 0%, #fcd116 50%, #003893 50%, #003893 75%, #ce1126 75%, #ce1126 100%)",
+      homeBackground:
+        "radial-gradient(circle at 15% 14%, rgba(252,209,22,0.26) 0, transparent 26%), radial-gradient(circle at 86% 18%, rgba(0,56,147,0.18) 0, transparent 24%), radial-gradient(circle at 76% 86%, rgba(206,17,38,0.14) 0, transparent 28%), linear-gradient(160deg, #fffdf4 0%, #f8fbff 48%, #fff6f7 100%)",
+      chatBackground:
+        "radial-gradient(circle at 90% 10%, rgba(252,209,22,0.18) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(206,17,38,0.12) 0, transparent 26%), linear-gradient(90deg, rgba(252,209,22,0.05) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(0,56,147,0.04) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fffdf6 0%, #f6fbff 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(16,29,48,0.24), rgba(16,29,48,0.24)), linear-gradient(180deg, #fcd116 0%, #fcd116 50%, #003893 50%, #003893 75%, #ce1126 75%, #ce1126 100%)",
+      userBubbleBorder: "rgba(0,56,147,0.30)",
+      userBubbleShadow: "0 16px 30px rgba(0,56,147,0.22)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(252,209,22,0.44) 0 7px, rgba(0,56,147,0.30) 7px 13px, rgba(206,17,38,0.28) 13px 19px, transparent 19px), #ffffff",
+      botBubbleBorder: "rgba(0, 56, 147, 0.24)",
+      badgeBackground: "rgba(255,255,255,0.24)",
+      badgeBorder: "rgba(255,255,255,0.38)",
+      badgeColor: "#ffffff",
+      typingDot: "#0b4fa3",
+      inputShellBorder: "rgba(0,56,147,0.22)",
+      inputSparkBackground: "linear-gradient(180deg, rgba(252,209,22,0.34), rgba(252,209,22,0.14))",
+      inputSparkColor: "#0b4fa3",
+      sendButtonBackground:
+        "linear-gradient(135deg, #fcd116 0%, #fcd116 38%, #003893 39%, #003893 70%, #ce1126 71%, #ce1126 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 28px rgba(0,56,147,0.28)",
+    },
+    dark: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(5,14,28,0.24), rgba(5,14,28,0.24)), linear-gradient(135deg, #fcd116 0%, #fcd116 42%, #0a4ea3 42%, #0a4ea3 72%, #d6283d 72%, #d6283d 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #fcd116 0%, #fcd116 50%, #0a4ea3 50%, #0a4ea3 75%, #d6283d 75%, #d6283d 100%)",
+      homeBackground:
+        "radial-gradient(circle at 16% 14%, rgba(252,209,22,0.22) 0, transparent 28%), radial-gradient(circle at 86% 18%, rgba(46,119,228,0.20) 0, transparent 24%), radial-gradient(circle at 76% 86%, rgba(225,52,70,0.16) 0, transparent 30%), linear-gradient(160deg, #2f6f99 0%, #24577d 46%, #1b4464 100%)",
+      chatBackground:
+        "radial-gradient(circle at 90% 10%, rgba(252,209,22,0.16) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(225,52,70,0.13) 0, transparent 26%), linear-gradient(90deg, rgba(252,209,22,0.08) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(5,14,28,0.26), rgba(5,14,28,0.26)), linear-gradient(180deg, #fcd116 0%, #fcd116 50%, #0a4ea3 50%, #0a4ea3 75%, #d6283d 75%, #d6283d 100%)",
+      userBubbleBorder: "rgba(252,209,22,0.30)",
+      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.28)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(252,209,22,0.42) 0 7px, rgba(68,132,245,0.36) 7px 13px, rgba(225,70,58,0.34) 13px 19px, transparent 19px), rgba(20, 56, 87, 0.96)",
+      botBubbleBorder: "rgba(252,209,22,0.24)",
+      badgeBackground: "rgba(255,255,255,0.18)",
+      badgeBorder: "rgba(255,255,255,0.28)",
+      badgeColor: "#ffffff",
+      typingDot: "#ffe07b",
+      inputShellBorder: "rgba(252,209,22,0.22)",
+      inputSparkBackground: "rgba(252,209,22,0.16)",
+      inputSparkColor: "#ffe07b",
+      sendButtonBackground:
+        "linear-gradient(135deg, #fcd116 0%, #fcd116 38%, #0a4ea3 39%, #0a4ea3 70%, #d6283d 71%, #d6283d 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 28px rgba(0,0,0,0.32)",
+    },
+  },
+  cl: {
+    label: "Chile",
+    badgeLabel: "Chile Comparte",
+    emoji: "🇨🇱",
+    light: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(8,22,44,0.16), rgba(8,22,44,0.16)), linear-gradient(135deg, #0039a6 0%, #1b59c9 34%, #ffffff 34%, #ffffff 60%, #d52b1e 60%, #d52b1e 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #0039a6 0%, #0039a6 34%, #ffffff 34%, #ffffff 67%, #d52b1e 67%, #d52b1e 100%)",
+      homeBackground:
+        "radial-gradient(circle at 16% 14%, rgba(0,57,166,0.20) 0, transparent 26%), radial-gradient(circle at 86% 18%, rgba(213,43,30,0.16) 0, transparent 24%), radial-gradient(circle at 74% 84%, rgba(255,255,255,0.72) 0, transparent 24%), linear-gradient(160deg, #ffffff 0%, #f6f9ff 50%, #fff6f5 100%)",
+      chatBackground:
+        "radial-gradient(circle at 88% 12%, rgba(213,43,30,0.12) 0, transparent 24%), radial-gradient(circle at 12% 86%, rgba(0,57,166,0.16) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(0,57,166,0.045) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fcfdff 0%, #f4f7ff 58%, #fff7f6 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(8,18,35,0.22), rgba(8,18,35,0.22)), radial-gradient(circle at 18% 24%, rgba(255,255,255,0.98) 0 4.4%, transparent 4.8%), linear-gradient(90deg, #0039a6 0%, #0039a6 38%, transparent 38%, transparent 100%), linear-gradient(180deg, #ffffff 0%, #ffffff 50%, #d52b1e 50%, #d52b1e 100%)",
+      userBubbleBorder: "rgba(0,57,166,0.30)",
+      userBubbleShadow: "0 16px 30px rgba(0,57,166,0.22)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(0,57,166,0.42) 0 8px, rgba(255,255,255,0.64) 8px 14px, rgba(213,43,30,0.30) 14px 20px, transparent 20px), #ffffff",
+      botBubbleBorder: "rgba(0,57,166,0.24)",
+      badgeBackground: "rgba(255,255,255,0.24)",
+      badgeBorder: "rgba(255,255,255,0.38)",
+      badgeColor: "#ffffff",
+      typingDot: "#0039a6",
+      inputShellBorder: "rgba(0,57,166,0.22)",
+      inputSparkBackground: "rgba(0,57,166,0.12)",
+      inputSparkColor: "#0039a6",
+      sendButtonBackground:
+        "linear-gradient(135deg, #0039a6 0%, #1f62d1 42%, #ffffff 43%, #ffffff 58%, #d52b1e 59%, #d52b1e 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 28px rgba(0,57,166,0.28)",
+    },
+    dark: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(5,14,28,0.26), rgba(5,14,28,0.26)), linear-gradient(135deg, #0039a6 0%, #1b59c9 34%, #f0f7ff 34%, #f0f7ff 60%, #d52b1e 60%, #d52b1e 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #0039a6 0%, #0039a6 34%, #f0f7ff 34%, #f0f7ff 67%, #d52b1e 67%, #d52b1e 100%)",
+      homeBackground:
+        "radial-gradient(circle at 16% 14%, rgba(68,132,245,0.22) 0, transparent 28%), radial-gradient(circle at 86% 18%, rgba(225,70,58,0.18) 0, transparent 24%), radial-gradient(circle at 74% 84%, rgba(255,255,255,0.10) 0, transparent 26%), linear-gradient(160deg, #2c6794 0%, #235073 46%, #183b58 100%)",
+      chatBackground:
+        "radial-gradient(circle at 88% 12%, rgba(225,70,58,0.14) 0, transparent 24%), radial-gradient(circle at 12% 86%, rgba(68,132,245,0.18) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(5,14,28,0.28), rgba(5,14,28,0.28)), radial-gradient(circle at 18% 24%, rgba(255,255,255,0.98) 0 4.4%, transparent 4.8%), linear-gradient(90deg, #0039a6 0%, #0039a6 38%, transparent 38%, transparent 100%), linear-gradient(180deg, #f0f7ff 0%, #f0f7ff 50%, #d52b1e 50%, #d52b1e 100%)",
+      userBubbleBorder: "rgba(104,158,255,0.28)",
+      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.30)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(68,132,245,0.46) 0 8px, rgba(255,255,255,0.26) 8px 14px, rgba(225,70,58,0.38) 14px 20px, transparent 20px), rgba(20, 56, 87, 0.96)",
+      botBubbleBorder: "rgba(104,158,255,0.24)",
+      badgeBackground: "rgba(255,255,255,0.18)",
+      badgeBorder: "rgba(255,255,255,0.28)",
+      badgeColor: "#ffffff",
+      typingDot: "#9dc2ff",
+      inputShellBorder: "rgba(104,158,255,0.22)",
+      inputSparkBackground: "rgba(68,132,245,0.16)",
+      inputSparkColor: "#9dc2ff",
+      sendButtonBackground:
+        "linear-gradient(135deg, #0039a6 0%, #1f62d1 42%, #f0f7ff 43%, #f0f7ff 58%, #d52b1e 59%, #d52b1e 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 28px rgba(0,0,0,0.32)",
+    },
+  },
+  ec: {
+    label: "Ecuador",
+    badgeLabel: "Ecuador Comparte",
+    emoji: "🇪🇨",
+    light: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(18,31,54,0.16), rgba(18,31,54,0.16)), linear-gradient(135deg, #f4c542 0%, #f4c542 42%, #034ea2 42%, #034ea2 72%, #ef3340 72%, #ef3340 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #f4c542 0%, #f4c542 50%, #034ea2 50%, #034ea2 75%, #ef3340 75%, #ef3340 100%)",
+      homeBackground:
+        "radial-gradient(circle at 15% 14%, rgba(244,197,66,0.26) 0, transparent 26%), radial-gradient(circle at 86% 18%, rgba(3,78,162,0.18) 0, transparent 24%), radial-gradient(circle at 76% 86%, rgba(239,51,64,0.14) 0, transparent 28%), linear-gradient(160deg, #fffdf4 0%, #f7fbff 48%, #fff6f7 100%)",
+      chatBackground:
+        "radial-gradient(circle at 90% 10%, rgba(244,197,66,0.18) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(239,51,64,0.12) 0, transparent 26%), linear-gradient(90deg, rgba(244,197,66,0.05) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(3,78,162,0.04) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fffdf6 0%, #f6fbff 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(16,29,48,0.24), rgba(16,29,48,0.24)), linear-gradient(180deg, #f4c542 0%, #f4c542 50%, #034ea2 50%, #034ea2 75%, #ef3340 75%, #ef3340 100%)",
+      userBubbleBorder: "rgba(3,78,162,0.30)",
+      userBubbleShadow: "0 16px 30px rgba(3,78,162,0.22)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(244,197,66,0.44) 0 7px, rgba(3,78,162,0.30) 7px 13px, rgba(239,51,64,0.28) 13px 19px, transparent 19px), #ffffff",
+      botBubbleBorder: "rgba(3,78,162,0.24)",
+      badgeBackground: "rgba(255,255,255,0.24)",
+      badgeBorder: "rgba(255,255,255,0.38)",
+      badgeColor: "#ffffff",
+      typingDot: "#034ea2",
+      inputShellBorder: "rgba(3,78,162,0.22)",
+      inputSparkBackground: "linear-gradient(180deg, rgba(244,197,66,0.34), rgba(244,197,66,0.14))",
+      inputSparkColor: "#034ea2",
+      sendButtonBackground:
+        "linear-gradient(135deg, #f4c542 0%, #f4c542 38%, #034ea2 39%, #034ea2 70%, #ef3340 71%, #ef3340 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 28px rgba(3,78,162,0.28)",
+    },
+    dark: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(5,14,28,0.24), rgba(5,14,28,0.24)), linear-gradient(135deg, #f4c542 0%, #f4c542 42%, #145fba 42%, #145fba 72%, #ef5260 72%, #ef5260 100%)",
+      ribbonBackground:
+        "linear-gradient(90deg, #f4c542 0%, #f4c542 50%, #145fba 50%, #145fba 75%, #ef5260 75%, #ef5260 100%)",
+      homeBackground:
+        "radial-gradient(circle at 16% 14%, rgba(244,197,66,0.22) 0, transparent 28%), radial-gradient(circle at 86% 18%, rgba(58,128,224,0.20) 0, transparent 24%), radial-gradient(circle at 76% 86%, rgba(239,82,92,0.16) 0, transparent 30%), linear-gradient(160deg, #2f6f99 0%, #24577d 46%, #1b4464 100%)",
+      chatBackground:
+        "radial-gradient(circle at 90% 10%, rgba(244,197,66,0.16) 0, transparent 22%), radial-gradient(circle at 12% 86%, rgba(239,82,92,0.13) 0, transparent 26%), linear-gradient(90deg, rgba(244,197,66,0.08) 0 3px, transparent 3px), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(5,14,28,0.26), rgba(5,14,28,0.26)), linear-gradient(180deg, #f4c542 0%, #f4c542 50%, #145fba 50%, #145fba 75%, #ef5260 75%, #ef5260 100%)",
+      userBubbleBorder: "rgba(244,197,66,0.30)",
+      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.28)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(244,197,66,0.42) 0 7px, rgba(58,128,224,0.36) 7px 13px, rgba(239,82,92,0.34) 13px 19px, transparent 19px), rgba(20, 56, 87, 0.96)",
+      botBubbleBorder: "rgba(244,197,66,0.24)",
+      badgeBackground: "rgba(255,255,255,0.18)",
+      badgeBorder: "rgba(255,255,255,0.28)",
+      badgeColor: "#ffffff",
+      typingDot: "#ffe39a",
+      inputShellBorder: "rgba(244,197,66,0.22)",
+      inputSparkBackground: "rgba(244,197,66,0.16)",
+      inputSparkColor: "#ffe39a",
+      sendButtonBackground:
+        "linear-gradient(135deg, #f4c542 0%, #f4c542 38%, #145fba 39%, #145fba 70%, #ef5260 71%, #ef5260 100%)",
+      sendButtonColor: "#ffffff",
+      sendButtonShadow: "0 14px 28px rgba(0,0,0,0.32)",
+    },
+  },
+  ar: {
+    label: "Argentina",
+    badgeLabel: "Argentina Comparte",
+    emoji: "🇦🇷",
+    light: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(12,35,57,0.14), rgba(12,35,57,0.14)), radial-gradient(circle at 50% 50%, rgba(246,180,14,0.95) 0 7%, transparent 7.4%), linear-gradient(135deg, #74acdf 0%, #dff2ff 48%, #74acdf 100%)",
+      ribbonBackground:
+        "radial-gradient(circle at 50% 50%, rgba(246,180,14,0.95) 0 9%, transparent 9.5%), linear-gradient(90deg, #74acdf 0%, #dff2ff 50%, #74acdf 100%)",
+      homeBackground:
+        "radial-gradient(circle at 50% 18%, rgba(246,180,14,0.20) 0, transparent 18%), radial-gradient(circle at 16% 16%, rgba(116,172,223,0.26) 0, transparent 26%), radial-gradient(circle at 84% 82%, rgba(116,172,223,0.20) 0, transparent 28%), linear-gradient(160deg, #ffffff 0%, #f5fbff 48%, #eef8ff 100%)",
+      chatBackground:
+        "radial-gradient(circle at 50% 10%, rgba(246,180,14,0.12) 0, transparent 18%), radial-gradient(circle at 12% 84%, rgba(116,172,223,0.18) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(74,145,209,0.04) 0 1px, transparent 1px 18px), linear-gradient(180deg, #fbfeff 0%, #f1f8ff 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(12,35,57,0.22), rgba(12,35,57,0.22)), radial-gradient(circle at 50% 50%, rgba(246,180,14,0.96) 0 8%, transparent 8.5%), linear-gradient(180deg, #74acdf 0%, #74acdf 33%, #f8fdff 33%, #f8fdff 67%, #74acdf 67%, #74acdf 100%)",
+      userBubbleBorder: "rgba(74,145,209,0.32)",
+      userBubbleShadow: "0 16px 30px rgba(52,125,189,0.22)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(116,172,223,0.48) 0 7px, rgba(246,180,14,0.30) 7px 13px, rgba(116,172,223,0.48) 13px 19px, transparent 19px), #ffffff",
+      botBubbleBorder: "rgba(74,145,209,0.26)",
+      badgeBackground: "rgba(255,255,255,0.24)",
+      badgeBorder: "rgba(255,255,255,0.38)",
+      badgeColor: "#ffffff",
+      typingDot: "#347dbd",
+      inputShellBorder: "rgba(74,145,209,0.22)",
+      inputSparkBackground: "rgba(116,172,223,0.20)",
+      inputSparkColor: "#2167a6",
+      sendButtonBackground:
+        "radial-gradient(circle at 50% 50%, rgba(246,180,14,0.96) 0 12%, transparent 12.5%), linear-gradient(135deg, #74acdf 0%, #dff2ff 48%, #74acdf 100%)",
+      sendButtonColor: "#0f3c66",
+      sendButtonShadow: "0 14px 28px rgba(52,125,189,0.28)",
+    },
+    dark: {
+      headerBackground:
+        "linear-gradient(135deg, rgba(5,14,28,0.22), rgba(5,14,28,0.22)), radial-gradient(circle at 50% 50%, rgba(246,180,14,0.95) 0 7%, transparent 7.4%), linear-gradient(135deg, #74acdf 0%, #dff2ff 48%, #74acdf 100%)",
+      ribbonBackground:
+        "radial-gradient(circle at 50% 50%, rgba(246,180,14,0.95) 0 9%, transparent 9.5%), linear-gradient(90deg, #74acdf 0%, #dff2ff 50%, #74acdf 100%)",
+      homeBackground:
+        "radial-gradient(circle at 50% 18%, rgba(246,180,14,0.18) 0, transparent 18%), radial-gradient(circle at 16% 16%, rgba(116,172,223,0.22) 0, transparent 28%), radial-gradient(circle at 84% 82%, rgba(116,172,223,0.16) 0, transparent 30%), linear-gradient(160deg, #2f6f99 0%, #24577d 46%, #1b4464 100%)",
+      chatBackground:
+        "radial-gradient(circle at 50% 10%, rgba(246,180,14,0.14) 0, transparent 18%), radial-gradient(circle at 12% 84%, rgba(116,172,223,0.18) 0, transparent 28%), repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px), linear-gradient(180deg, #214e73 0%, #183e5d 100%)",
+      userBubbleBackground:
+        "linear-gradient(rgba(5,14,28,0.28), rgba(5,14,28,0.28)), radial-gradient(circle at 50% 50%, rgba(246,180,14,0.96) 0 8%, transparent 8.5%), linear-gradient(180deg, #74acdf 0%, #74acdf 33%, #f0f7ff 33%, #f0f7ff 67%, #74acdf 67%, #74acdf 100%)",
+      userBubbleBorder: "rgba(149,202,245,0.30)",
+      userBubbleShadow: "0 16px 30px rgba(0,0,0,0.30)",
+      botBubbleBackground:
+        "linear-gradient(90deg, rgba(116,172,223,0.46) 0 7px, rgba(246,180,14,0.34) 7px 13px, rgba(116,172,223,0.46) 13px 19px, transparent 19px), rgba(20, 56, 87, 0.96)",
+      botBubbleBorder: "rgba(149,202,245,0.26)",
+      badgeBackground: "rgba(255,255,255,0.18)",
+      badgeBorder: "rgba(255,255,255,0.28)",
+      badgeColor: "#ffffff",
+      typingDot: "#b9e1ff",
+      inputShellBorder: "rgba(149,202,245,0.22)",
+      inputSparkBackground: "rgba(116,172,223,0.16)",
+      inputSparkColor: "#b9e1ff",
+      sendButtonBackground:
+        "radial-gradient(circle at 50% 50%, rgba(246,180,14,0.96) 0 12%, transparent 12.5%), linear-gradient(135deg, #74acdf 0%, #dff2ff 48%, #74acdf 100%)",
+      sendButtonColor: "#0f3c66",
+      sendButtonShadow: "0 14px 28px rgba(0,0,0,0.32)",
+    },
+  },
+};
+
+function getCountryTheme(country) {
+  const normalizedCountry = String(country || "latam").trim().toLowerCase();
+  const themeKey = COUNTRY_THEME_ALIASES[normalizedCountry] || "latam";
+  return COUNTRY_VISUAL_THEMES[themeKey];
+}
+
+function buildStyles({ isDark, isLargeText, country }) {
   const colors = isDark
     ? {
         pageBg:
@@ -102,6 +430,9 @@ function buildStyles({ isDark, isLargeText }) {
         shadow: "0 30px 70px rgba(24, 68, 97, 0.16)",
         softShadow: "0 18px 38px rgba(24, 68, 97, 0.1)",
       };
+
+  const countryTheme = getCountryTheme(country);
+  const countryStyle = countryTheme[isDark ? "dark" : "light"];
 
   const chatFontSize = isLargeText ? "15.5px" : "14px";
   const textBase = isLargeText ? "14.5px" : "13.5px";
@@ -175,7 +506,7 @@ function buildStyles({ isDark, isLargeText }) {
     header: {
       minHeight: "78px",
       padding: "16px",
-      background: colors.headerBg,
+      background: countryStyle.headerBackground || colors.headerBg,
       color: colors.white,
       display: "flex",
       alignItems: "center",
@@ -184,6 +515,14 @@ function buildStyles({ isDark, isLargeText }) {
       overflow: "hidden",
       flexShrink: 0,
       boxSizing: "border-box",
+    },
+
+    countryRibbon: {
+      width: "100%",
+      height: "7px",
+      background: countryStyle.ribbonBackground,
+      boxShadow: isDark ? "0 8px 18px rgba(0,0,0,0.18)" : "0 8px 18px rgba(24,68,97,0.08)",
+      flexShrink: 0,
     },
 
     headerArcOne: {
@@ -254,6 +593,27 @@ function buildStyles({ isDark, isLargeText }) {
       fontSize: "12px",
       color: "rgba(255,255,255,0.88)",
       whiteSpace: "nowrap",
+    },
+
+    headerCountryBadge: {
+      width: "fit-content",
+      maxWidth: "100%",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "6px",
+      padding: "4px 8px",
+      borderRadius: "999px",
+      background: countryStyle.badgeBackground,
+      border: `1px solid ${countryStyle.badgeBorder}`,
+      color: countryStyle.badgeColor,
+      fontSize: "10.5px",
+      fontWeight: 900,
+      lineHeight: 1,
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      boxShadow: "0 8px 18px rgba(0,0,0,0.12)",
+      backdropFilter: "blur(10px)",
     },
 
     onlineDot: {
@@ -333,9 +693,11 @@ function buildStyles({ isDark, isLargeText }) {
       flex: 1,
       position: "relative",
       padding: "18px",
-      background: isDark
-        ? "radial-gradient(circle at 18% 14%, rgba(129, 225, 255, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(255, 107, 184, 0.18) 0, transparent 22%), radial-gradient(circle at 78% 84%, rgba(139, 98, 247, 0.16) 0, transparent 30%), linear-gradient(160deg, #3189bf 0%, #286fa7 44%, #1f5688 100%)"
-        : "radial-gradient(circle at 18% 14%, rgba(83, 210, 235, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(239, 92, 169, 0.14) 0, transparent 22%), radial-gradient(circle at 80% 84%, rgba(126, 103, 246, 0.1) 0, transparent 30%), linear-gradient(160deg, #ffffff 0%, #f7fcff 48%, #edf8ff 100%)",
+      background:
+        countryStyle.homeBackground ||
+        (isDark
+          ? "radial-gradient(circle at 18% 14%, rgba(129, 225, 255, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(255, 107, 184, 0.18) 0, transparent 22%), radial-gradient(circle at 78% 84%, rgba(139, 98, 247, 0.16) 0, transparent 30%), linear-gradient(160deg, #3189bf 0%, #286fa7 44%, #1f5688 100%)"
+          : "radial-gradient(circle at 18% 14%, rgba(83, 210, 235, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(239, 92, 169, 0.14) 0, transparent 22%), radial-gradient(circle at 80% 84%, rgba(126, 103, 246, 0.1) 0, transparent 30%), linear-gradient(160deg, #ffffff 0%, #f7fcff 48%, #edf8ff 100%)"),
       overflow: "hidden",
       boxSizing: "border-box",
     },
@@ -1049,7 +1411,7 @@ function buildStyles({ isDark, isLargeText }) {
       display: "flex",
       flexDirection: "column",
       minHeight: 0,
-      background: colors.chatBg,
+      background: countryStyle.chatBackground || colors.chatBg,
     },
 
     messages: {
@@ -1091,6 +1453,24 @@ function buildStyles({ isDark, isLargeText }) {
       color: colors.text,
       fontSize: "13px",
       fontWeight: 950,
+    },
+
+    introCountryBadge: {
+      width: "fit-content",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "6px",
+      marginTop: "5px",
+      marginBottom: "5px",
+      padding: "4px 8px",
+      borderRadius: "999px",
+      background: isDark ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.84)",
+      border: `1px solid ${countryStyle.botBubbleBorder}`,
+      color: colors.text,
+      fontSize: "10.5px",
+      fontWeight: 900,
+      lineHeight: 1,
+      boxShadow: isDark ? "0 8px 18px rgba(0,0,0,0.16)" : "0 8px 18px rgba(24,68,97,0.08)",
     },
 
     introText: {
@@ -1141,8 +1521,8 @@ function buildStyles({ isDark, isLargeText }) {
       whiteSpace: "pre-wrap",
       wordBreak: "break-word",
       color: colors.text,
-      background: colors.botBubble,
-      border: `1px solid ${colors.border}`,
+      background: countryStyle.botBubbleBackground,
+      border: `1px solid ${countryStyle.botBubbleBorder}`,
       boxShadow: isDark ? "0 12px 26px rgba(4,18,34,0.18)" : "0 12px 26px rgba(24,68,97,0.08)",
     },
 
@@ -1155,8 +1535,10 @@ function buildStyles({ isDark, isLargeText }) {
       whiteSpace: "pre-wrap",
       wordBreak: "break-word",
       color: colors.white,
-      background: colors.userBubble,
-      boxShadow: "0 14px 28px rgba(126,103,246,0.18)",
+      background: countryStyle.userBubbleBackground || colors.userBubble,
+      border: `1px solid ${countryStyle.userBubbleBorder || "rgba(255,255,255,0.18)"}`,
+      boxShadow: countryStyle.userBubbleShadow || "0 14px 28px rgba(126,103,246,0.18)",
+      textShadow: "0 1px 2px rgba(0, 0, 0, 0.28)",
     },
 
     errorBubble: {
@@ -1236,8 +1618,8 @@ function buildStyles({ isDark, isLargeText }) {
       padding: "13px 15px",
       borderRadius: "22px",
       borderBottomLeftRadius: "8px",
-      background: colors.botBubble,
-      border: `1px solid ${colors.border}`,
+      background: countryStyle.botBubbleBackground,
+      border: `1px solid ${countryStyle.botBubbleBorder}`,
       boxShadow: isDark ? "0 12px 26px rgba(4,18,34,0.18)" : "0 12px 26px rgba(24,68,97,0.08)",
     },
 
@@ -1245,7 +1627,7 @@ function buildStyles({ isDark, isLargeText }) {
       width: "6px",
       height: "6px",
       borderRadius: "999px",
-      background: isDark ? "#d8f8ff" : "#127ea6",
+      background: countryStyle.typingDot,
       display: "inline-block",
     },
 
@@ -1268,7 +1650,7 @@ function buildStyles({ isDark, isLargeText }) {
       gap: "8px",
       borderRadius: "999px",
       padding: "5px 5px 5px 14px",
-      border: `1px solid ${colors.border}`,
+      border: `1px solid ${countryStyle.inputShellBorder || colors.border}`,
       background: colors.inputBg,
       boxShadow: isDark ? "inset 0 1px 0 rgba(255,255,255,0.04)" : "inset 0 1px 0 rgba(255,255,255,0.9)",
     },
@@ -1277,8 +1659,8 @@ function buildStyles({ isDark, isLargeText }) {
       width: "24px",
       height: "24px",
       borderRadius: "999px",
-      background: isDark ? "rgba(255,255,255,0.08)" : "#effbff",
-      color: isDark ? "#d8f8ff" : "#127ea6",
+      background: countryStyle.inputSparkBackground,
+      color: countryStyle.inputSparkColor,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -1302,8 +1684,8 @@ function buildStyles({ isDark, isLargeText }) {
       height: "46px",
       borderRadius: "999px",
       border: "none",
-      background: "linear-gradient(135deg, #ee5ea3 0%, #8867f6 56%, #2d88d8 100%)",
-      color: colors.white,
+      background: countryStyle.sendButtonBackground,
+      color: countryStyle.sendButtonColor,
       cursor: "pointer",
       fontSize: "18px",
       fontWeight: 950,
@@ -1311,7 +1693,8 @@ function buildStyles({ isDark, isLargeText }) {
       alignItems: "center",
       justifyContent: "center",
       flexShrink: 0,
-      boxShadow: "0 14px 26px rgba(126,103,246,0.24)",
+      boxShadow: countryStyle.sendButtonShadow,
+      textShadow: "0 1px 2px rgba(0, 0, 0, 0.22)",
     },
 
     disabledSendButton: {
@@ -1319,8 +1702,8 @@ function buildStyles({ isDark, isLargeText }) {
       height: "46px",
       borderRadius: "999px",
       border: "none",
-      background: "linear-gradient(135deg, #ee5ea3 0%, #8867f6 56%, #2d88d8 100%)",
-      color: colors.white,
+      background: countryStyle.sendButtonBackground,
+      color: countryStyle.sendButtonColor,
       cursor: "not-allowed",
       fontSize: "18px",
       fontWeight: 950,
@@ -1330,6 +1713,7 @@ function buildStyles({ isDark, isLargeText }) {
       flexShrink: 0,
       opacity: 0.48,
       boxShadow: "none",
+      textShadow: "0 1px 2px rgba(0, 0, 0, 0.18)",
     },
   };
 }
@@ -1367,7 +1751,7 @@ function TypingIndicator({ styles }) {
 
 export default function ChatWidget({
   apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000",
-  country = "co",
+  country = "latam",
   sessionId,
   title = "Coco",
   placeholder = "Escribe tu mensaje...",
@@ -1390,7 +1774,17 @@ export default function ChatWidget({
   const isDark = theme === "dark";
   const isLargeText = textSize === "large";
 
-  const styles = useMemo(() => buildStyles({ isDark, isLargeText }), [isDark, isLargeText]);
+  const styles = useMemo(
+    () => buildStyles({ isDark, isLargeText, country }),
+    [isDark, isLargeText, country]
+  );
+
+  const activeCountryTheme = useMemo(
+    () => getCountryTheme(country),
+    [country]
+  );
+
+  const isCountrySpecificTheme = activeCountryTheme.label !== "Latinoamérica";
 
   const resolvedSessionId = useMemo(() => {
     if (sessionId) return sessionId;
@@ -1529,6 +1923,12 @@ export default function ChatWidget({
           <span className="lc-pulse" style={styles.onlineDot}></span>
           {headerStatusText}
         </div>
+        {isCountrySpecificTheme ? (
+          <div style={styles.headerCountryBadge}>
+            <span aria-hidden="true">{activeCountryTheme.emoji}</span>
+            <span>{activeCountryTheme.badgeLabel}</span>
+          </div>
+        ) : null}
       </div>
 
       <div style={styles.headerActions}>
@@ -1593,6 +1993,9 @@ export default function ChatWidget({
     <section style={styles.widget}>
       <style>{styles.globalStyle}</style>
       {screen !== "home" ? renderHeader() : null}
+      {screen !== "home" && isCountrySpecificTheme ? (
+        <div style={styles.countryRibbon} aria-hidden="true"></div>
+      ) : null}
 
       {screen === "home" ? (
         <main className="lc-page-scroll" style={styles.homePage}>
@@ -1766,6 +2169,12 @@ export default function ChatWidget({
               <AssistantAvatar styles={styles} size="intro" />
               <div>
                 <p style={styles.introTitle}>Coco</p>
+                {isCountrySpecificTheme ? (
+                  <span style={styles.introCountryBadge}>
+                    <span aria-hidden="true">{activeCountryTheme.emoji}</span>
+                    <span>{activeCountryTheme.badgeLabel}</span>
+                  </span>
+                ) : null}
                 <p style={styles.introText}>
                   Pregúntale a Coco sobre Latinoamérica Comparte, Colombia Comparte, EDIFICA, NODUS, iniciativas o formas de apoyo.
                 </p>
