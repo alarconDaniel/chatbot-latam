@@ -16,7 +16,11 @@ export default function App() {
   return (
     <main style={pageStyle}>
       <ChatWidget
-          country="co"
+          country="latam"
+          //country="co"
+          //country="cl"
+          //country="ar"
+          //country="ec"
           title="Asistente Virtual"
           placeholder="Escribe tu mensaje..."
       />

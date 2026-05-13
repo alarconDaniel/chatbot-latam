@@ -36,7 +36,7 @@ async function getServerPublicKey(apiBaseUrl) {
  */
 export async function askChatbot({
   message,
-  country = "co",
+  country = "latam",
   sessionId,
   apiBaseUrl = DEFAULT_API_BASE_URL,
 }) {
