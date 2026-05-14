@@ -1,0 +1,59 @@
+﻿ID: q036
+Tema: noticias
+Pregunta: ¿Qué proyectos relevantes se mencionan en las acciones recientes?
+SecciÃ³n esperada: Noticias / acciones
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8824.79it/s]
+
+Pregunta: ┐QuÚ proyectos relevantes se mencionan en las acciones recientes?
+
+================================================================================
+#1 | score=0.5056
+TÝtulo: QuÚ acciones recientes tiene Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Las acciones recientes y proyectos relevantes de Colombia Comparte incluyen la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal, procesos de transici¾n familiar mediante emprendimiento, formaci¾n en mentalidad emprendedora con j¾venes del Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas.
+
+================================================================================
+#2 | score=0.4676
+TÝtulo: Mensajes principales para la portada de Colombia Comparte
+Secci¾n: Portada institucional
+PaÝs: co
+Fuente: 
+
+La portada de Colombia Comparte debe alinearse con la evoluci¾n del ecosistema LatinoamÚrica Comparte. Su comunicaci¾n puede destacar tres mensajes centrales: primero, el emprendimiento y la formaci¾n como camino para recuperar productividad y construir futuro, articulados desde Comparte Academia; segundo, el fortalecimiento de liderazgo, desarrollo humano, cultura organizacional y transformaci¾n empresarial desde Comparte Liderazgo; tercero, las conferencias, experiencias y eventos corporativos de Comparte Talento. Esta narrativa debe conservar el prop¾sito de acompa±ar a personas, familias y empresas en procesos de transformaci¾n sostenible.
+
+================================================================================
+#3 | score=0.4613
+TÝtulo: Acciones recientes y proyectos relevantes de Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Entre las acciones recientes y proyectos relevantes de Colombia Comparte se mencionan la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal en procesos de transici¾n familiar a travÚs del emprendimiento, la formaci¾n en mentalidad emprendedora en j¾venes de colegios como el Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas. El LinkedIn p·blico de Colombia Comparte tambiÚn reporta trabajo con estudiantes de grado 9 del Gimnasio JosÚ JoaquÝn Casas, quienes presentaron pitches con ideas innovadoras y fortalecieron mentalidad emprendedora y trabajo en equipo.
+
+================================================================================
+#4 | score=0.4316
+TÝtulo: Arquitectura actual de LatinoamÚrica Comparte
+Secci¾n: Ecosistema institucional
+PaÝs: latam
+Fuente: 
+
+La narrativa institucional vigente debe presentar a LatinoamÚrica Comparte como el ecosistema general. Bajo esta arquitectura existen tres grandes lÝneas: Comparte Academia, enfocada en formaci¾n y emprendimiento; Comparte Liderazgo, orientada a liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes; y Comparte Talento, dedicada a conferencias, speakers, artistas, experiencias y eventos corporativos. Las respuestas del chatbot deben priorizar esta estructura como referencia institucional vigente.
+
+================================================================================
+#5 | score=0.4298
+TÝtulo: Transici¾n de EDIFICA hacia la nueva arquitectura institucional
+Secci¾n: Actualizaci¾n de narrativa
+PaÝs: co
+Fuente: 
+
+La comunicaci¾n institucional anterior estaba muy enfocada en PROGRAMA EDIFICA, EDIFICA DESKUBRE y EDIFICA ESTRUCTURA. La narrativa vigente debe hablar desde LatinoamÚrica Comparte como ecosistema general y desde sus tres lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. Por esta raz¾n, cuando el chatbot reciba preguntas sobre EDIFICA, debe explicar la transici¾n de marca y priorizar la estructura actual, en lugar de presentar EDIFICA como la arquitectura principal vigente.
+

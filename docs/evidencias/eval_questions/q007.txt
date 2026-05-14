@@ -1,0 +1,59 @@
+﻿ID: q007
+Tema: descubre
+Pregunta: ¿Cuánto dura DESCUBRE?
+SecciÃ³n esperada: Programas de Comparte Academia
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8797.08it/s]
+
+Pregunta: ┐Cußnto dura DESCUBRE?
+
+================================================================================
+#1 | score=0.3695
+TÝtulo: ESTRUCTURA: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+ESTRUCTURA es un programa avanzado de emprendimiento de Comparte Academia y tiene una duraci¾n de 12 meses. Estß dise±ado para personas que ya tienen una idea de negocio o un emprendimiento en marcha y desean fortalecerlo de manera mßs organizada, estratÚgica y sostenible. Trabaja estructuraci¾n empresarial, modelo de negocio, finanzas, marketing, ventas, liderazgo, trabajo de campo y acompa±amiento personalizado. Su duraci¾n incluye formaci¾n, trabajo de campo y etapa de vuelo y acompa±amiento.
+
+================================================================================
+#2 | score=0.3588
+TÝtulo: DESCUBRE: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+DESCUBRE es un programa inicial de emprendimiento de Comparte Academia y tiene una duraci¾n de 1 mes. Estß enfocado en ayudar a las personas a descubrir, despertar y estructurar sus capacidades emprendedoras. Se dirige a quienes desean emprender, tienen una idea en construcci¾n o necesitan claridad para definir el camino de su proyecto. Su enfoque se centra en exploraci¾n, mentalidad, validaci¾n inicial y orientaci¾n emprendedora.
+
+================================================================================
+#3 | score=0.1589
+TÝtulo: Impacto de Colombia Comparte: personas, familias, empresas y mentores
+Secci¾n: Impacto
+PaÝs: co
+Fuente: 
+
+El impacto reportado por Colombia Comparte incluye 10 a±os transformando vidas y culturas, mßs de 1.200 personas y familias acompa±adas en su reconstrucci¾n productiva, mßs de 70 empresas comprometidas con su gente y mßs de 65 mentores y voluntarios al servicio del prop¾sito. Si una persona pregunta cußntas familias ha acompa±ado Colombia Comparte, la referencia vigente del corpus es mßs de 1.200 personas y familias acompa±adas, siempre que el equipo mantenga aprobada esa cifra editorial. Como antecedente hist¾rico, Portafolio report¾ en 2023 que la instituci¾n habÝa ayudado a mßs de 400 familias a salir adelante.
+
+================================================================================
+#4 | score=0.1557
+TÝtulo: Cußntas familias ha acompa±ado Colombia Comparte
+Secci¾n: Impacto
+PaÝs: co
+Fuente: 
+
+Colombia Comparte reporta mßs de 1.200 personas y familias acompa±adas en su reconstrucci¾n productiva, junto con mßs de 70 empresas comprometidas con su gente y mßs de 65 mentores y voluntarios vinculados al prop¾sito. Cuando se pregunte por el impacto o por cußntas familias ha acompa±ado Colombia Comparte, esta es la cifra editorial vigente del corpus, siempre que el equipo mantenga aprobada esa actualizaci¾n. Como antecedente hist¾rico, Portafolio report¾ en 2023 mßs de 400 familias ayudadas.
+
+================================================================================
+#5 | score=0.0944
+TÝtulo: Mensajes principales para la portada de Colombia Comparte
+Secci¾n: Portada institucional
+PaÝs: co
+Fuente: 
+
+La portada de Colombia Comparte debe alinearse con la evoluci¾n del ecosistema LatinoamÚrica Comparte. Su comunicaci¾n puede destacar tres mensajes centrales: primero, el emprendimiento y la formaci¾n como camino para recuperar productividad y construir futuro, articulados desde Comparte Academia; segundo, el fortalecimiento de liderazgo, desarrollo humano, cultura organizacional y transformaci¾n empresarial desde Comparte Liderazgo; tercero, las conferencias, experiencias y eventos corporativos de Comparte Talento. Esta narrativa debe conservar el prop¾sito de acompa±ar a personas, familias y empresas en procesos de transformaci¾n sostenible.
+

@@ -1,0 +1,59 @@
+﻿ID: q005
+Tema: comparte_talento
+Pregunta: ¿Qué es Comparte Talento?
+SecciÃ³n esperada: Líneas del ecosistema
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8610.31it/s]
+
+Pregunta: ┐QuÚ es Comparte Talento?
+
+================================================================================
+#1 | score=0.6160
+TÝtulo: Comparte Talento: conferencias, speakers y experiencias corporativas
+Secci¾n: LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Comparte Talento es la lÝnea de conferencias, speakers, artistas, experiencias y eventos corporativos del ecosistema LatinoamÚrica Comparte. Antes se conocÝa como TOP SPEAKERS. El chatbot debe usar Comparte Talento como denominaci¾n vigente y puede mencionar TOP SPEAKERS ·nicamente para explicar la transici¾n del nombre cuando el usuario pregunte por esa referencia anterior.
+
+================================================================================
+#2 | score=0.4471
+TÝtulo: DESCUBRE: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+DESCUBRE es un programa inicial de emprendimiento de Comparte Academia y tiene una duraci¾n de 1 mes. Estß enfocado en ayudar a las personas a descubrir, despertar y estructurar sus capacidades emprendedoras. Se dirige a quienes desean emprender, tienen una idea en construcci¾n o necesitan claridad para definir el camino de su proyecto. Su enfoque se centra en exploraci¾n, mentalidad, validaci¾n inicial y orientaci¾n emprendedora.
+
+================================================================================
+#3 | score=0.4257
+TÝtulo: Empresas comprometidas con su gente: Academia, Liderazgo y Talento
+Secci¾n: Empresas y lÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Para empresas comprometidas con su gente, la oferta debe presentarse alineada con las tres lÝneas del ecosistema LatinoamÚrica Comparte. Comparte Academia articula formaci¾n y emprendimiento, incluyendo programas como DESCUBRE y ESTRUCTURA. Comparte Liderazgo se enfoca en liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes. Comparte Talento re·ne conferencias, speakers, artistas, experiencias y eventos corporativos; esta lÝnea antes se conocÝa como TOP SPEAKERS.
+
+================================================================================
+#4 | score=0.3995
+TÝtulo: Comparte Academia: formaci¾n y emprendimiento
+Secci¾n: LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Comparte Academia es la lÝnea de formaci¾n y emprendimiento dentro del ecosistema LatinoamÚrica Comparte. Agrupa programas orientados a acompa±ar procesos emprendedores, entre ellos DESCUBRE y ESTRUCTURA, ademßs de otros que puedan surgir mßs adelante. El chatbot debe presentar esta lÝnea como el marco actual para hablar de formaci¾n emprendedora.
+
+================================================================================
+#5 | score=0.3922
+TÝtulo: LatinoamÚrica Comparte: prop¾sito regional
+Secci¾n: QuiÚnes somos
+PaÝs: latam
+Fuente: 
+
+LatinoamÚrica Comparte es una red que une personas, empresas y comunidades para construir una regi¾n mßs humana, productiva y consciente. El movimiento naci¾ en Colombia a partir de una historia real de pÚrdida, fe y prop¾sito, y evolucion¾ hacia una red continental enfocada en bienestar, cultura organizacional y emprendimiento con prop¾sito. La narrativa institucional vigente se organiza como un ecosistema con tres grandes lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. En cada paÝs acompa±a a personas, familias y empresas a reencontrar su prop¾sito productivo y construir un futuro sostenible.
+

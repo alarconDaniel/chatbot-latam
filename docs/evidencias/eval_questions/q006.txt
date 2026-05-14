@@ -1,0 +1,59 @@
+﻿ID: q006
+Tema: descubre
+Pregunta: ¿Qué es DESCUBRE?
+SecciÃ³n esperada: Programas de Comparte Academia
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8729.63it/s]
+
+Pregunta: ┐QuÚ es DESCUBRE?
+
+================================================================================
+#1 | score=0.3753
+TÝtulo: DESCUBRE: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+DESCUBRE es un programa inicial de emprendimiento de Comparte Academia y tiene una duraci¾n de 1 mes. Estß enfocado en ayudar a las personas a descubrir, despertar y estructurar sus capacidades emprendedoras. Se dirige a quienes desean emprender, tienen una idea en construcci¾n o necesitan claridad para definir el camino de su proyecto. Su enfoque se centra en exploraci¾n, mentalidad, validaci¾n inicial y orientaci¾n emprendedora.
+
+================================================================================
+#2 | score=0.3591
+TÝtulo: LatinoamÚrica Comparte: prop¾sito regional
+Secci¾n: QuiÚnes somos
+PaÝs: latam
+Fuente: 
+
+LatinoamÚrica Comparte es una red que une personas, empresas y comunidades para construir una regi¾n mßs humana, productiva y consciente. El movimiento naci¾ en Colombia a partir de una historia real de pÚrdida, fe y prop¾sito, y evolucion¾ hacia una red continental enfocada en bienestar, cultura organizacional y emprendimiento con prop¾sito. La narrativa institucional vigente se organiza como un ecosistema con tres grandes lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. En cada paÝs acompa±a a personas, familias y empresas a reencontrar su prop¾sito productivo y construir un futuro sostenible.
+
+================================================================================
+#3 | score=0.3563
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+
+================================================================================
+#4 | score=0.3305
+TÝtulo: Comparte Academia: formaci¾n y emprendimiento
+Secci¾n: LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Comparte Academia es la lÝnea de formaci¾n y emprendimiento dentro del ecosistema LatinoamÚrica Comparte. Agrupa programas orientados a acompa±ar procesos emprendedores, entre ellos DESCUBRE y ESTRUCTURA, ademßs de otros que puedan surgir mßs adelante. El chatbot debe presentar esta lÝnea como el marco actual para hablar de formaci¾n emprendedora.
+
+================================================================================
+#5 | score=0.3279
+TÝtulo: QuiÚnes somos: comunidad de prop¾sito, empatÝa y servicio
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte se define como una comunidad de mentores, coaches, conferencistas y aliados que creen en el poder del prop¾sito, la empatÝa y el servicio. Cada miembro del equipo aporta conocimiento y tiempo para acompa±ar a emprendedores, familias y empresas en procesos de transformaci¾n. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, bienestar empresarial, cultura organizacional, liderazgo humano y productividad sostenible, en coherencia con la evoluci¾n del ecosistema LatinoamÚrica Comparte.
+

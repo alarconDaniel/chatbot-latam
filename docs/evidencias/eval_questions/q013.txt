@@ -1,0 +1,59 @@
+﻿ID: q013
+Tema: organizacion
+Pregunta: ¿Qué es Colombia Comparte?
+SecciÃ³n esperada: Sobre nosotros
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8893.24it/s]
+
+Pregunta: ┐QuÚ es Colombia Comparte?
+
+================================================================================
+#1 | score=0.8036
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+
+================================================================================
+#2 | score=0.7778
+TÝtulo: LatinoamÚrica Comparte: prop¾sito regional
+Secci¾n: QuiÚnes somos
+PaÝs: latam
+Fuente: 
+
+LatinoamÚrica Comparte es una red que une personas, empresas y comunidades para construir una regi¾n mßs humana, productiva y consciente. El movimiento naci¾ en Colombia a partir de una historia real de pÚrdida, fe y prop¾sito, y evolucion¾ hacia una red continental enfocada en bienestar, cultura organizacional y emprendimiento con prop¾sito. La narrativa institucional vigente se organiza como un ecosistema con tres grandes lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. En cada paÝs acompa±a a personas, familias y empresas a reencontrar su prop¾sito productivo y construir un futuro sostenible.
+
+================================================================================
+#3 | score=0.7470
+TÝtulo: C¾mo acompa±a Colombia Comparte a las empresas
+Secci¾n: Empresas y lÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Colombia Comparte acompa±a a las empresas a travÚs de las lÝneas del ecosistema LatinoamÚrica Comparte. Comparte Liderazgo aborda liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes. Comparte Talento re·ne conferencias, speakers, artistas, experiencias y eventos corporativos. Comparte Academia articula formaci¾n y emprendimiento, incluyendo programas como DESCUBRE y ESTRUCTURA.
+
+================================================================================
+#4 | score=0.7252
+TÝtulo: Enlaces oficiales de navegaci¾n de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐QuÚ enlaces oficiales tiene Colombia Comparte para conocer su informaci¾n institucional?ö, el chatbot puede compartir estas pßginas p·blicas principales: inicio https://colombiacomparte.com/; sobre nosotros https://colombiacomparte.com/sobre-nosotros/; nuestra misi¾n en acci¾n https://colombiacomparte.com/nuestra-mision-en-accion/; shows y conferencias https://colombiacomparte.com/shows-y-conferencias/; noticias https://colombiacomparte.com/noticias/; y contacto https://colombiacomparte.com/contacto/. Estos enlaces ayudan a navegar hacia informaci¾n institucional, actualidad, oferta de conferencias y contacto.
+
+================================================================================
+#5 | score=0.7196
+TÝtulo: A quiÚnes acompa±a Colombia Comparte
+Secci¾n: A quiÚn acompa±amos
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐A quiÚnes acompa±a Colombia Comparte?ö, la respuesta debe indicar de forma directa que Colombia Comparte acompa±a a personas y familias en reconstrucci¾n econ¾mica, a emprendedores que desean crear o fortalecer su negocio y a empresas comprometidas con su gente. Su trabajo se relaciona con la pobreza oculta o pobreza vergonzante, cuando una crisis como una quiebra, un despido, una enfermedad u otro cambio inesperado afecta la estabilidad del hogar. La organizaci¾n busca recuperar productividad, autonomÝa y oportunidades desde el emprendimiento y el acompa±amiento.
+

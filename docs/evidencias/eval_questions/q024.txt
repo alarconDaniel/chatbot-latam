@@ -1,0 +1,59 @@
+﻿ID: q024
+Tema: contacto
+Pregunta: ¿Cómo puedo contactar a Colombia Comparte?
+SecciÃ³n esperada: Contacto
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8968.16it/s]
+
+Pregunta: ┐C¾mo puedo contactar a Colombia Comparte?
+
+================================================================================
+#1 | score=0.8182
+TÝtulo: D¾nde pedir mßs informaci¾n sobre Colombia Comparte
+Secci¾n: Contacto
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐D¾nde puedo pedir mßs informaci¾n sobre Colombia Comparte?ö, el canal recomendado es la pßgina oficial de contacto https://colombiacomparte.com/contacto/. Desde allÝ puede consultar vÝas p·blicas de atenci¾n y formularios disponibles. El chatbot debe priorizar esta ruta oficial para solicitudes de informaci¾n sobre Colombia Comparte y no debe pedir datos sensibles dentro de la conversaci¾n.
+
+================================================================================
+#2 | score=0.8172
+TÝtulo: Contacto p·blico para Colombia Comparte
+Secci¾n: Contacto
+PaÝs: co
+Fuente: 
+
+Para solicitudes de informaci¾n, emprendimiento, alianzas o empresas, el chatbot debe redirigir al formulario oficial de contacto. El documento editorial indica como contacto para mßs informaci¾n empresarial a Eduardo Del Castillo en eduardodelcastillo@colombiacomparte.com; publicaciones p·blicas de LinkedIn tambiÚn muestran ese correo y el n·mero 321 230 2138. Por seguridad y trazabilidad, el chatbot debe recomendar el formulario oficial o el correo p·blico, sin pedir al usuario datos sensibles dentro del chat.
+
+================================================================================
+#3 | score=0.7116
+TÝtulo: Enlaces oficiales de navegaci¾n de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐QuÚ enlaces oficiales tiene Colombia Comparte para conocer su informaci¾n institucional?ö, el chatbot puede compartir estas pßginas p·blicas principales: inicio https://colombiacomparte.com/; sobre nosotros https://colombiacomparte.com/sobre-nosotros/; nuestra misi¾n en acci¾n https://colombiacomparte.com/nuestra-mision-en-accion/; shows y conferencias https://colombiacomparte.com/shows-y-conferencias/; noticias https://colombiacomparte.com/noticias/; y contacto https://colombiacomparte.com/contacto/. Estos enlaces ayudan a navegar hacia informaci¾n institucional, actualidad, oferta de conferencias y contacto.
+
+================================================================================
+#4 | score=0.6931
+TÝtulo: D¾nde ver shows y conferencias de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial / LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Los shows, conferencias y experiencias corporativas de Colombia Comparte se relacionan con la lÝnea Comparte Talento. Para ver esta oferta, el enlace oficial es la pßgina de shows y conferencias de Colombia Comparte. El chatbot puede compartir esa ruta cuando el usuario pregunte d¾nde consultar conferencias, speakers, experiencias o eventos corporativos.
+
+================================================================================
+#5 | score=0.6597
+TÝtulo: C¾mo apoyar a Colombia Comparte
+Secci¾n: Donaciones / apoyo
+PaÝs: co
+Fuente: 
+
+Las personas y empresas pueden apoyar a Colombia Comparte vinculßndose como empresas aliadas, donando o contactando a la organizaci¾n mediante sus canales oficiales. En el portal regional se informa una cuenta de ahorros Bancolombia a nombre de Fundaci¾n Colombia Comparte y el NIT 901.213.196-8. Fondos en Acci¾n presenta a Colombia Comparte como una fundaci¾n que apoya a quienes enfrentan pobreza oculta, empodera emprendedores y fortalece familias de empleados. El chatbot debe dirigir a enlaces oficiales de apoyo y evitar procesar pagos o datos bancarios dentro de la conversaci¾n.
+

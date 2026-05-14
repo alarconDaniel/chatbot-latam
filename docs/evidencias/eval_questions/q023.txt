@@ -1,0 +1,59 @@
+﻿ID: q023
+Tema: apoyo_latam
+Pregunta: ¿Cómo puedo apoyar a Latinoamérica Comparte?
+SecciÃ³n esperada: Cómo apoyar / Contacto
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 9000.36it/s]
+
+Pregunta: ┐C¾mo puedo apoyar a LatinoamÚrica Comparte?
+
+================================================================================
+#1 | score=0.8450
+TÝtulo: C¾mo apoyar a LatinoamÚrica Comparte
+Secci¾n: C¾mo apoyar / Contacto
+PaÝs: latam
+Fuente: 
+
+Si el usuario pregunta ô┐C¾mo puedo apoyar a LatinoamÚrica Comparte?ö, debe orientarse al portal regional de LatinoamÚrica Comparte, especialmente a la secci¾n oficial de c¾mo apoyar y al formulario de contacto regional. Las personas y empresas pueden conocer allÝ los canales p·blicos de vinculaci¾n, donaci¾n o contacto. Esta consulta corresponde a LatinoamÚrica Comparte como red regional, por lo que el chatbot debe priorizar los enlaces regionales https://www.latinoamericacomparte.com/#como-apoyar y https://www.latinoamericacomparte.com/#contactenos, sin recolectar datos sensibles ni procesar pagos dentro del chat.
+
+================================================================================
+#2 | score=0.7232
+TÝtulo: C¾mo apoyar a Colombia Comparte
+Secci¾n: Donaciones / apoyo
+PaÝs: co
+Fuente: 
+
+Las personas y empresas pueden apoyar a Colombia Comparte vinculßndose como empresas aliadas, donando o contactando a la organizaci¾n mediante sus canales oficiales. En el portal regional se informa una cuenta de ahorros Bancolombia a nombre de Fundaci¾n Colombia Comparte y el NIT 901.213.196-8. Fondos en Acci¾n presenta a Colombia Comparte como una fundaci¾n que apoya a quienes enfrentan pobreza oculta, empodera emprendedores y fortalece familias de empleados. El chatbot debe dirigir a enlaces oficiales de apoyo y evitar procesar pagos o datos bancarios dentro de la conversaci¾n.
+
+================================================================================
+#3 | score=0.7102
+TÝtulo: LatinoamÚrica Comparte: prop¾sito regional
+Secci¾n: QuiÚnes somos
+PaÝs: latam
+Fuente: 
+
+LatinoamÚrica Comparte es una red que une personas, empresas y comunidades para construir una regi¾n mßs humana, productiva y consciente. El movimiento naci¾ en Colombia a partir de una historia real de pÚrdida, fe y prop¾sito, y evolucion¾ hacia una red continental enfocada en bienestar, cultura organizacional y emprendimiento con prop¾sito. La narrativa institucional vigente se organiza como un ecosistema con tres grandes lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. En cada paÝs acompa±a a personas, familias y empresas a reencontrar su prop¾sito productivo y construir un futuro sostenible.
+
+================================================================================
+#4 | score=0.6616
+TÝtulo: Mensajes principales para la portada de Colombia Comparte
+Secci¾n: Portada institucional
+PaÝs: co
+Fuente: 
+
+La portada de Colombia Comparte debe alinearse con la evoluci¾n del ecosistema LatinoamÚrica Comparte. Su comunicaci¾n puede destacar tres mensajes centrales: primero, el emprendimiento y la formaci¾n como camino para recuperar productividad y construir futuro, articulados desde Comparte Academia; segundo, el fortalecimiento de liderazgo, desarrollo humano, cultura organizacional y transformaci¾n empresarial desde Comparte Liderazgo; tercero, las conferencias, experiencias y eventos corporativos de Comparte Talento. Esta narrativa debe conservar el prop¾sito de acompa±ar a personas, familias y empresas en procesos de transformaci¾n sostenible.
+
+================================================================================
+#5 | score=0.6564
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+

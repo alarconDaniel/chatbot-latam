@@ -1,0 +1,59 @@
+﻿ID: q026
+Tema: latam_paises
+Pregunta: ¿En qué países tiene presencia Latinoamérica Comparte?
+SecciÃ³n esperada: Portales por país
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8451.21it/s]
+
+Pregunta: ┐En quÚ paÝses tiene presencia LatinoamÚrica Comparte?
+
+================================================================================
+#1 | score=0.7780
+TÝtulo: PaÝses vinculados a LatinoamÚrica Comparte
+Secci¾n: Portales por paÝs
+PaÝs: latam
+Fuente: 
+
+El portal de LatinoamÚrica Comparte enlaza portales o espacios para Colombia Comparte, Ecuador Comparte, Chile Comparte y Argentina Comparte. Para preguntas regionales, el chatbot debe responder desde la visi¾n latinoamericana; para preguntas de paÝs, debe priorizar la fuente del paÝs correspondiente si existe.
+
+================================================================================
+#2 | score=0.7011
+TÝtulo: LatinoamÚrica Comparte: prop¾sito regional
+Secci¾n: QuiÚnes somos
+PaÝs: latam
+Fuente: 
+
+LatinoamÚrica Comparte es una red que une personas, empresas y comunidades para construir una regi¾n mßs humana, productiva y consciente. El movimiento naci¾ en Colombia a partir de una historia real de pÚrdida, fe y prop¾sito, y evolucion¾ hacia una red continental enfocada en bienestar, cultura organizacional y emprendimiento con prop¾sito. La narrativa institucional vigente se organiza como un ecosistema con tres grandes lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. En cada paÝs acompa±a a personas, familias y empresas a reencontrar su prop¾sito productivo y construir un futuro sostenible.
+
+================================================================================
+#3 | score=0.6777
+TÝtulo: C¾mo apoyar a LatinoamÚrica Comparte
+Secci¾n: C¾mo apoyar / Contacto
+PaÝs: latam
+Fuente: 
+
+Si el usuario pregunta ô┐C¾mo puedo apoyar a LatinoamÚrica Comparte?ö, debe orientarse al portal regional de LatinoamÚrica Comparte, especialmente a la secci¾n oficial de c¾mo apoyar y al formulario de contacto regional. Las personas y empresas pueden conocer allÝ los canales p·blicos de vinculaci¾n, donaci¾n o contacto. Esta consulta corresponde a LatinoamÚrica Comparte como red regional, por lo que el chatbot debe priorizar los enlaces regionales https://www.latinoamericacomparte.com/#como-apoyar y https://www.latinoamericacomparte.com/#contactenos, sin recolectar datos sensibles ni procesar pagos dentro del chat.
+
+================================================================================
+#4 | score=0.6600
+TÝtulo: Enlaces oficiales de navegaci¾n de LatinoamÚrica Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: latam
+Fuente: 
+
+Los enlaces p·blicos principales de LatinoamÚrica Comparte son: sitio institucional https://www.latinoamericacomparte.com/; equipo https://www.latinoamericacomparte.com/#equipo; noticias https://www.latinoamericacomparte.com/#noticias; c¾mo apoyar https://www.latinoamericacomparte.com/#como-apoyar; y contacto https://www.latinoamericacomparte.com/#contactenos. El chatbot puede compartir estas rutas cuando una persona solicite informaci¾n oficial o necesite orientarse dentro del sitio regional.
+
+================================================================================
+#5 | score=0.6275
+TÝtulo: Mensajes principales para la portada de Colombia Comparte
+Secci¾n: Portada institucional
+PaÝs: co
+Fuente: 
+
+La portada de Colombia Comparte debe alinearse con la evoluci¾n del ecosistema LatinoamÚrica Comparte. Su comunicaci¾n puede destacar tres mensajes centrales: primero, el emprendimiento y la formaci¾n como camino para recuperar productividad y construir futuro, articulados desde Comparte Academia; segundo, el fortalecimiento de liderazgo, desarrollo humano, cultura organizacional y transformaci¾n empresarial desde Comparte Liderazgo; tercero, las conferencias, experiencias y eventos corporativos de Comparte Talento. Esta narrativa debe conservar el prop¾sito de acompa±ar a personas, familias y empresas en procesos de transformaci¾n sostenible.
+

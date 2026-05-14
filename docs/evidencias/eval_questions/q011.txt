@@ -1,0 +1,59 @@
+﻿ID: q011
+Tema: transicion
+Pregunta: ¿Qué pasó con EDIFICA?
+SecciÃ³n esperada: Actualización de narrativa
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8777.00it/s]
+
+Pregunta: ┐QuÚ pas¾ con EDIFICA?
+
+================================================================================
+#1 | score=0.3528
+TÝtulo: Transici¾n de EDIFICA hacia la nueva arquitectura institucional
+Secci¾n: Actualizaci¾n de narrativa
+PaÝs: co
+Fuente: 
+
+La comunicaci¾n institucional anterior estaba muy enfocada en PROGRAMA EDIFICA, EDIFICA DESKUBRE y EDIFICA ESTRUCTURA. La narrativa vigente debe hablar desde LatinoamÚrica Comparte como ecosistema general y desde sus tres lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. Por esta raz¾n, cuando el chatbot reciba preguntas sobre EDIFICA, debe explicar la transici¾n de marca y priorizar la estructura actual, en lugar de presentar EDIFICA como la arquitectura principal vigente.
+
+================================================================================
+#2 | score=0.2961
+TÝtulo: Historia de Colombia Comparte
+Secci¾n: Nuestra historia
+PaÝs: co
+Fuente: 
+
+Colombia Comparte naci¾ de una historia real de pÚrdida, fe y reconstrucci¾n. Sus cofundadores, Carolina Ruiz Herrera y Eduardo Del Castillo, vivieron una crisis econ¾mica profunda y descubrieron que cuando una persona vuelve a sentirse productiva, vuelve a vivir. Guiados por la fe y el deseo de servir, crearon una organizaci¾n para acompa±ar a familias que enfrentan pobreza oculta o pobreza vergonzante. La historia p·blica reportada por Portafolio se±ala que la fundaci¾n naci¾ en 2015 con un enfoque ocupacional y no asistencialista, buscando que las personas sean productivas y tengan oportunidades de trabajo.
+
+================================================================================
+#3 | score=0.2655
+TÝtulo: QuiÚnes fundaron Colombia Comparte
+Secci¾n: Nuestra historia
+PaÝs: co
+Fuente: 
+
+Quienes fundaron Colombia Comparte fueron Carolina Ruiz Herrera y Eduardo Del Castillo. Ellos cofundaron la organizaci¾n a partir de una historia real de pÚrdida, fe y reconstrucci¾n, con el prop¾sito de acompa±ar a familias que enfrentan pobreza oculta o pobreza vergonzante. Su historia p·blica se asocia con un enfoque ocupacional y no asistencialista, orientado a recuperar productividad y oportunidades.
+
+================================================================================
+#4 | score=0.2398
+TÝtulo: A quiÚnes acompa±a Colombia Comparte
+Secci¾n: A quiÚn acompa±amos
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐A quiÚnes acompa±a Colombia Comparte?ö, la respuesta debe indicar de forma directa que Colombia Comparte acompa±a a personas y familias en reconstrucci¾n econ¾mica, a emprendedores que desean crear o fortalecer su negocio y a empresas comprometidas con su gente. Su trabajo se relaciona con la pobreza oculta o pobreza vergonzante, cuando una crisis como una quiebra, un despido, una enfermedad u otro cambio inesperado afecta la estabilidad del hogar. La organizaci¾n busca recuperar productividad, autonomÝa y oportunidades desde el emprendimiento y el acompa±amiento.
+
+================================================================================
+#5 | score=0.2340
+TÝtulo: Impacto de Colombia Comparte: personas, familias, empresas y mentores
+Secci¾n: Impacto
+PaÝs: co
+Fuente: 
+
+El impacto reportado por Colombia Comparte incluye 10 a±os transformando vidas y culturas, mßs de 1.200 personas y familias acompa±adas en su reconstrucci¾n productiva, mßs de 70 empresas comprometidas con su gente y mßs de 65 mentores y voluntarios al servicio del prop¾sito. Si una persona pregunta cußntas familias ha acompa±ado Colombia Comparte, la referencia vigente del corpus es mßs de 1.200 personas y familias acompa±adas, siempre que el equipo mantenga aprobada esa cifra editorial. Como antecedente hist¾rico, Portafolio report¾ en 2023 que la instituci¾n habÝa ayudado a mßs de 400 familias a salir adelante.
+

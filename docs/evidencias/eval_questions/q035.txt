@@ -1,0 +1,59 @@
+﻿ID: q035
+Tema: noticias
+Pregunta: ¿Qué acciones recientes tiene Colombia Comparte?
+SecciÃ³n esperada: Noticias / acciones
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8569.56it/s]
+
+Pregunta: ┐QuÚ acciones recientes tiene Colombia Comparte?
+
+================================================================================
+#1 | score=0.8350
+TÝtulo: QuÚ acciones recientes tiene Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Las acciones recientes y proyectos relevantes de Colombia Comparte incluyen la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal, procesos de transici¾n familiar mediante emprendimiento, formaci¾n en mentalidad emprendedora con j¾venes del Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas.
+
+================================================================================
+#2 | score=0.8156
+TÝtulo: Acciones recientes y proyectos relevantes de Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Entre las acciones recientes y proyectos relevantes de Colombia Comparte se mencionan la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal en procesos de transici¾n familiar a travÚs del emprendimiento, la formaci¾n en mentalidad emprendedora en j¾venes de colegios como el Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas. El LinkedIn p·blico de Colombia Comparte tambiÚn reporta trabajo con estudiantes de grado 9 del Gimnasio JosÚ JoaquÝn Casas, quienes presentaron pitches con ideas innovadoras y fortalecieron mentalidad emprendedora y trabajo en equipo.
+
+================================================================================
+#3 | score=0.7966
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+
+================================================================================
+#4 | score=0.7743
+TÝtulo: Impacto de Colombia Comparte: personas, familias, empresas y mentores
+Secci¾n: Impacto
+PaÝs: co
+Fuente: 
+
+El impacto reportado por Colombia Comparte incluye 10 a±os transformando vidas y culturas, mßs de 1.200 personas y familias acompa±adas en su reconstrucci¾n productiva, mßs de 70 empresas comprometidas con su gente y mßs de 65 mentores y voluntarios al servicio del prop¾sito. Si una persona pregunta cußntas familias ha acompa±ado Colombia Comparte, la referencia vigente del corpus es mßs de 1.200 personas y familias acompa±adas, siempre que el equipo mantenga aprobada esa cifra editorial. Como antecedente hist¾rico, Portafolio report¾ en 2023 que la instituci¾n habÝa ayudado a mßs de 400 familias a salir adelante.
+
+================================================================================
+#5 | score=0.7387
+TÝtulo: C¾mo acompa±a Colombia Comparte a las empresas
+Secci¾n: Empresas y lÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Colombia Comparte acompa±a a las empresas a travÚs de las lÝneas del ecosistema LatinoamÚrica Comparte. Comparte Liderazgo aborda liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes. Comparte Talento re·ne conferencias, speakers, artistas, experiencias y eventos corporativos. Comparte Academia articula formaci¾n y emprendimiento, incluyendo programas como DESCUBRE y ESTRUCTURA.
+

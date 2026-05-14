@@ -1,0 +1,59 @@
+﻿ID: q003
+Tema: comparte_academia
+Pregunta: ¿Qué es Comparte Academia?
+SecciÃ³n esperada: Líneas del ecosistema
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8725.44it/s]
+
+Pregunta: ┐QuÚ es Comparte Academia?
+
+================================================================================
+#1 | score=0.6168
+TÝtulo: DESCUBRE: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+DESCUBRE es un programa inicial de emprendimiento de Comparte Academia y tiene una duraci¾n de 1 mes. Estß enfocado en ayudar a las personas a descubrir, despertar y estructurar sus capacidades emprendedoras. Se dirige a quienes desean emprender, tienen una idea en construcci¾n o necesitan claridad para definir el camino de su proyecto. Su enfoque se centra en exploraci¾n, mentalidad, validaci¾n inicial y orientaci¾n emprendedora.
+
+================================================================================
+#2 | score=0.6076
+TÝtulo: ESTRUCTURA: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+ESTRUCTURA es un programa avanzado de emprendimiento de Comparte Academia y tiene una duraci¾n de 12 meses. Estß dise±ado para personas que ya tienen una idea de negocio o un emprendimiento en marcha y desean fortalecerlo de manera mßs organizada, estratÚgica y sostenible. Trabaja estructuraci¾n empresarial, modelo de negocio, finanzas, marketing, ventas, liderazgo, trabajo de campo y acompa±amiento personalizado. Su duraci¾n incluye formaci¾n, trabajo de campo y etapa de vuelo y acompa±amiento.
+
+================================================================================
+#3 | score=0.5968
+TÝtulo: Comparte Academia: formaci¾n y emprendimiento
+Secci¾n: LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Comparte Academia es la lÝnea de formaci¾n y emprendimiento dentro del ecosistema LatinoamÚrica Comparte. Agrupa programas orientados a acompa±ar procesos emprendedores, entre ellos DESCUBRE y ESTRUCTURA, ademßs de otros que puedan surgir mßs adelante. El chatbot debe presentar esta lÝnea como el marco actual para hablar de formaci¾n emprendedora.
+
+================================================================================
+#4 | score=0.4761
+TÝtulo: Arquitectura actual de LatinoamÚrica Comparte
+Secci¾n: Ecosistema institucional
+PaÝs: latam
+Fuente: 
+
+La narrativa institucional vigente debe presentar a LatinoamÚrica Comparte como el ecosistema general. Bajo esta arquitectura existen tres grandes lÝneas: Comparte Academia, enfocada en formaci¾n y emprendimiento; Comparte Liderazgo, orientada a liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes; y Comparte Talento, dedicada a conferencias, speakers, artistas, experiencias y eventos corporativos. Las respuestas del chatbot deben priorizar esta estructura como referencia institucional vigente.
+
+================================================================================
+#5 | score=0.4559
+TÝtulo: Empresas comprometidas con su gente: Academia, Liderazgo y Talento
+Secci¾n: Empresas y lÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Para empresas comprometidas con su gente, la oferta debe presentarse alineada con las tres lÝneas del ecosistema LatinoamÚrica Comparte. Comparte Academia articula formaci¾n y emprendimiento, incluyendo programas como DESCUBRE y ESTRUCTURA. Comparte Liderazgo se enfoca en liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes. Comparte Talento re·ne conferencias, speakers, artistas, experiencias y eventos corporativos; esta lÝnea antes se conocÝa como TOP SPEAKERS.
+

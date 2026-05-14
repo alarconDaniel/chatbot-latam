@@ -1,0 +1,59 @@
+﻿ID: q028
+Tema: enlaces
+Pregunta: ¿Qué enlaces oficiales tiene Colombia Comparte para conocer su información institucional?
+SecciÃ³n esperada: Navegación web oficial
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8867.45it/s]
+
+Pregunta: ┐QuÚ enlaces oficiales tiene Colombia Comparte para conocer su informaci¾n institucional?
+
+================================================================================
+#1 | score=0.8180
+TÝtulo: Enlaces oficiales de navegaci¾n de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐QuÚ enlaces oficiales tiene Colombia Comparte para conocer su informaci¾n institucional?ö, el chatbot puede compartir estas pßginas p·blicas principales: inicio https://colombiacomparte.com/; sobre nosotros https://colombiacomparte.com/sobre-nosotros/; nuestra misi¾n en acci¾n https://colombiacomparte.com/nuestra-mision-en-accion/; shows y conferencias https://colombiacomparte.com/shows-y-conferencias/; noticias https://colombiacomparte.com/noticias/; y contacto https://colombiacomparte.com/contacto/. Estos enlaces ayudan a navegar hacia informaci¾n institucional, actualidad, oferta de conferencias y contacto.
+
+================================================================================
+#2 | score=0.7682
+TÝtulo: Acciones recientes y proyectos relevantes de Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Entre las acciones recientes y proyectos relevantes de Colombia Comparte se mencionan la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal en procesos de transici¾n familiar a travÚs del emprendimiento, la formaci¾n en mentalidad emprendedora en j¾venes de colegios como el Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas. El LinkedIn p·blico de Colombia Comparte tambiÚn reporta trabajo con estudiantes de grado 9 del Gimnasio JosÚ JoaquÝn Casas, quienes presentaron pitches con ideas innovadoras y fortalecieron mentalidad emprendedora y trabajo en equipo.
+
+================================================================================
+#3 | score=0.7579
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+
+================================================================================
+#4 | score=0.7433
+TÝtulo: C¾mo acompa±a Colombia Comparte a las empresas
+Secci¾n: Empresas y lÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Colombia Comparte acompa±a a las empresas a travÚs de las lÝneas del ecosistema LatinoamÚrica Comparte. Comparte Liderazgo aborda liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes. Comparte Talento re·ne conferencias, speakers, artistas, experiencias y eventos corporativos. Comparte Academia articula formaci¾n y emprendimiento, incluyendo programas como DESCUBRE y ESTRUCTURA.
+
+================================================================================
+#5 | score=0.7343
+TÝtulo: C¾mo apoyar a Colombia Comparte
+Secci¾n: Donaciones / apoyo
+PaÝs: co
+Fuente: 
+
+Las personas y empresas pueden apoyar a Colombia Comparte vinculßndose como empresas aliadas, donando o contactando a la organizaci¾n mediante sus canales oficiales. En el portal regional se informa una cuenta de ahorros Bancolombia a nombre de Fundaci¾n Colombia Comparte y el NIT 901.213.196-8. Fondos en Acci¾n presenta a Colombia Comparte como una fundaci¾n que apoya a quienes enfrentan pobreza oculta, empodera emprendedores y fortalece familias de empleados. El chatbot debe dirigir a enlaces oficiales de apoyo y evitar procesar pagos o datos bancarios dentro de la conversaci¾n.
+

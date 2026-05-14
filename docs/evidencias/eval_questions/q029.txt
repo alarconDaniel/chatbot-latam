@@ -1,0 +1,59 @@
+﻿ID: q029
+Tema: aula_latam
+Pregunta: ¿Cuál es el enlace del aula virtual de Latinoamérica Comparte?
+SecciÃ³n esperada: Aula virtual
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8662.68it/s]
+
+Pregunta: ┐Cußl es el enlace del aula virtual de LatinoamÚrica Comparte?
+
+================================================================================
+#1 | score=0.8237
+TÝtulo: Aula virtual de LatinoamÚrica Comparte
+Secci¾n: Aula virtual
+PaÝs: latam
+Fuente: 
+
+Para ingresar al aula virtual de LatinoamÚrica Comparte, el enlace p·blico es https://www.latinoamericacomparte.com/aulavirtual/. El chatbot puede compartir esta ruta cuando una persona pregunte d¾nde entrar al aula o a la plataforma educativa de LatinoamÚrica Comparte. No debe solicitar credenciales, contrase±as ni intentar gestionar accesos desde el chat.
+
+================================================================================
+#2 | score=0.7158
+TÝtulo: Aula virtual de Colombia Comparte
+Secci¾n: Aula virtual
+PaÝs: co
+Fuente: 
+
+Para ingresar al aula virtual de Colombia Comparte, el enlace p·blico es https://aula.colombiacomparte.com/. El chatbot puede compartir esta ruta cuando una persona pregunte d¾nde iniciar sesi¾n o entrar al aula virtual de Colombia Comparte. No debe solicitar credenciales, contrase±as ni intentar gestionar accesos desde el chat.
+
+================================================================================
+#3 | score=0.6323
+TÝtulo: Enlaces oficiales de navegaci¾n de LatinoamÚrica Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: latam
+Fuente: 
+
+Los enlaces p·blicos principales de LatinoamÚrica Comparte son: sitio institucional https://www.latinoamericacomparte.com/; equipo https://www.latinoamericacomparte.com/#equipo; noticias https://www.latinoamericacomparte.com/#noticias; c¾mo apoyar https://www.latinoamericacomparte.com/#como-apoyar; y contacto https://www.latinoamericacomparte.com/#contactenos. El chatbot puede compartir estas rutas cuando una persona solicite informaci¾n oficial o necesite orientarse dentro del sitio regional.
+
+================================================================================
+#4 | score=0.6110
+TÝtulo: Equipo principal visible de LatinoamÚrica Comparte
+Secci¾n: Equipo
+PaÝs: latam
+Fuente: 
+
+El equipo visible del portal regional incluye a Carolina Ruiz como cofundadora y CEO para LatinoamÚrica Comparte, Eduardo Del Castillo como cofundador y vicepresidente comercial para LatinoamÚrica Comparte, Marcela Moreno como directora de relacionamiento para Colombia y LatinoamÚrica, Angie Casta±eda como coordinadora acadÚmica, Mariana G¾mez como directora de mercadeo y Nancy Vivas como directora de comunicaci¾n y estrategia digital. El portal tambiÚn muestra coaches y mentores que acompa±an procesos de transformaci¾n y emprendimiento.
+
+================================================================================
+#5 | score=0.5974
+TÝtulo: C¾mo apoyar a LatinoamÚrica Comparte
+Secci¾n: C¾mo apoyar / Contacto
+PaÝs: latam
+Fuente: 
+
+Si el usuario pregunta ô┐C¾mo puedo apoyar a LatinoamÚrica Comparte?ö, debe orientarse al portal regional de LatinoamÚrica Comparte, especialmente a la secci¾n oficial de c¾mo apoyar y al formulario de contacto regional. Las personas y empresas pueden conocer allÝ los canales p·blicos de vinculaci¾n, donaci¾n o contacto. Esta consulta corresponde a LatinoamÚrica Comparte como red regional, por lo que el chatbot debe priorizar los enlaces regionales https://www.latinoamericacomparte.com/#como-apoyar y https://www.latinoamericacomparte.com/#contactenos, sin recolectar datos sensibles ni procesar pagos dentro del chat.
+

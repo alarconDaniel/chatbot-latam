@@ -1,0 +1,59 @@
+﻿ID: q010
+Tema: transicion
+Pregunta: ¿TOP SPEAKERS sigue existiendo?
+SecciÃ³n esperada: Actualización de narrativa / Líneas del ecosistema
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8496.37it/s]
+
+Pregunta: ┐TOP SPEAKERS sigue existiendo?
+
+================================================================================
+#1 | score=0.3988
+TÝtulo: Comparte Talento: conferencias, speakers y experiencias corporativas
+Secci¾n: LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Comparte Talento es la lÝnea de conferencias, speakers, artistas, experiencias y eventos corporativos del ecosistema LatinoamÚrica Comparte. Antes se conocÝa como TOP SPEAKERS. El chatbot debe usar Comparte Talento como denominaci¾n vigente y puede mencionar TOP SPEAKERS ·nicamente para explicar la transici¾n del nombre cuando el usuario pregunte por esa referencia anterior.
+
+================================================================================
+#2 | score=0.3801
+TÝtulo: Transici¾n de EDIFICA hacia la nueva arquitectura institucional
+Secci¾n: Actualizaci¾n de narrativa
+PaÝs: co
+Fuente: 
+
+La comunicaci¾n institucional anterior estaba muy enfocada en PROGRAMA EDIFICA, EDIFICA DESKUBRE y EDIFICA ESTRUCTURA. La narrativa vigente debe hablar desde LatinoamÚrica Comparte como ecosistema general y desde sus tres lÝneas: Comparte Academia, Comparte Liderazgo y Comparte Talento. Por esta raz¾n, cuando el chatbot reciba preguntas sobre EDIFICA, debe explicar la transici¾n de marca y priorizar la estructura actual, en lugar de presentar EDIFICA como la arquitectura principal vigente.
+
+================================================================================
+#3 | score=0.3099
+TÝtulo: Alcance seguro para respuestas del chatbot
+Secci¾n: Guardrails de contenido
+PaÝs: latam
+Fuente: 
+
+El chatbot debe responder ·nicamente con informaci¾n p·blica y aprobada sobre la organizaci¾n, historia, impacto, programas, noticias, equipo, formas de apoyo y contacto. No debe afirmar que puede inscribir personas, aprobar estudiantes, entregar recursos, prestar dinero, cobrar pagos, acceder al aula privada, consultar datos internos, gestionar cursos, revelar informaci¾n administrativa, mostrar credenciales, entregar contrase±as, compartir rutas internas del CMS, exponer paneles privados ni reemplazar el contacto oficial. Si no tiene evidencia suficiente en el corpus, debe decir que no cuenta con informaci¾n suficiente y sugerir contactar a Colombia Comparte.
+
+================================================================================
+#4 | score=0.2906
+TÝtulo: PaÝses vinculados a LatinoamÚrica Comparte
+Secci¾n: Portales por paÝs
+PaÝs: latam
+Fuente: 
+
+El portal de LatinoamÚrica Comparte enlaza portales o espacios para Colombia Comparte, Ecuador Comparte, Chile Comparte y Argentina Comparte. Para preguntas regionales, el chatbot debe responder desde la visi¾n latinoamericana; para preguntas de paÝs, debe priorizar la fuente del paÝs correspondiente si existe.
+
+================================================================================
+#5 | score=0.2606
+TÝtulo: D¾nde ver noticias de Colombia Comparte
+Secci¾n: Noticias
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐D¾nde puedo ver noticias de Colombia Comparte?ö, el chatbot debe indicar que las noticias y novedades p·blicas se consultan en la secci¾n oficial de noticias: https://colombiacomparte.com/noticias/. Esta es la ruta recomendada para revisar publicaciones, avances, actividades y actualizaciones institucionales de Colombia Comparte.
+

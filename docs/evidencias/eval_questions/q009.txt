@@ -1,0 +1,59 @@
+﻿ID: q009
+Tema: estructura
+Pregunta: ¿Cuánto dura ESTRUCTURA?
+SecciÃ³n esperada: Programas de Comparte Academia
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8797.08it/s]
+
+Pregunta: ┐Cußnto dura ESTRUCTURA?
+
+================================================================================
+#1 | score=0.4838
+TÝtulo: ESTRUCTURA: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+ESTRUCTURA es un programa avanzado de emprendimiento de Comparte Academia y tiene una duraci¾n de 12 meses. Estß dise±ado para personas que ya tienen una idea de negocio o un emprendimiento en marcha y desean fortalecerlo de manera mßs organizada, estratÚgica y sostenible. Trabaja estructuraci¾n empresarial, modelo de negocio, finanzas, marketing, ventas, liderazgo, trabajo de campo y acompa±amiento personalizado. Su duraci¾n incluye formaci¾n, trabajo de campo y etapa de vuelo y acompa±amiento.
+
+================================================================================
+#2 | score=0.4585
+TÝtulo: DESCUBRE: quÚ es y cußnto dura
+Secci¾n: Programas de Comparte Academia
+PaÝs: co
+Fuente: 
+
+DESCUBRE es un programa inicial de emprendimiento de Comparte Academia y tiene una duraci¾n de 1 mes. Estß enfocado en ayudar a las personas a descubrir, despertar y estructurar sus capacidades emprendedoras. Se dirige a quienes desean emprender, tienen una idea en construcci¾n o necesitan claridad para definir el camino de su proyecto. Su enfoque se centra en exploraci¾n, mentalidad, validaci¾n inicial y orientaci¾n emprendedora.
+
+================================================================================
+#3 | score=0.2260
+TÝtulo: Cußntas familias ha acompa±ado Colombia Comparte
+Secci¾n: Impacto
+PaÝs: co
+Fuente: 
+
+Colombia Comparte reporta mßs de 1.200 personas y familias acompa±adas en su reconstrucci¾n productiva, junto con mßs de 70 empresas comprometidas con su gente y mßs de 65 mentores y voluntarios vinculados al prop¾sito. Cuando se pregunte por el impacto o por cußntas familias ha acompa±ado Colombia Comparte, esta es la cifra editorial vigente del corpus, siempre que el equipo mantenga aprobada esa actualizaci¾n. Como antecedente hist¾rico, Portafolio report¾ en 2023 mßs de 400 familias ayudadas.
+
+================================================================================
+#4 | score=0.2081
+TÝtulo: Comparte Academia: formaci¾n y emprendimiento
+Secci¾n: LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Comparte Academia es la lÝnea de formaci¾n y emprendimiento dentro del ecosistema LatinoamÚrica Comparte. Agrupa programas orientados a acompa±ar procesos emprendedores, entre ellos DESCUBRE y ESTRUCTURA, ademßs de otros que puedan surgir mßs adelante. El chatbot debe presentar esta lÝnea como el marco actual para hablar de formaci¾n emprendedora.
+
+================================================================================
+#5 | score=0.1992
+TÝtulo: Historia de Colombia Comparte
+Secci¾n: Nuestra historia
+PaÝs: co
+Fuente: 
+
+Colombia Comparte naci¾ de una historia real de pÚrdida, fe y reconstrucci¾n. Sus cofundadores, Carolina Ruiz Herrera y Eduardo Del Castillo, vivieron una crisis econ¾mica profunda y descubrieron que cuando una persona vuelve a sentirse productiva, vuelve a vivir. Guiados por la fe y el deseo de servir, crearon una organizaci¾n para acompa±ar a familias que enfrentan pobreza oculta o pobreza vergonzante. La historia p·blica reportada por Portafolio se±ala que la fundaci¾n naci¾ en 2015 con un enfoque ocupacional y no asistencialista, buscando que las personas sean productivas y tengan oportunidades de trabajo.
+

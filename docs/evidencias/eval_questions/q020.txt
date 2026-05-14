@@ -1,0 +1,59 @@
+﻿ID: q020
+Tema: publicos
+Pregunta: ¿Colombia Comparte acompaña familias en reconstrucción económica?
+SecciÃ³n esperada: A quién acompañamos
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8774.14it/s]
+
+Pregunta: ┐Colombia Comparte acompa±a familias en reconstrucci¾n econ¾mica?
+
+================================================================================
+#1 | score=0.7889
+TÝtulo: Impacto de Colombia Comparte: personas, familias, empresas y mentores
+Secci¾n: Impacto
+PaÝs: co
+Fuente: 
+
+El impacto reportado por Colombia Comparte incluye 10 a±os transformando vidas y culturas, mßs de 1.200 personas y familias acompa±adas en su reconstrucci¾n productiva, mßs de 70 empresas comprometidas con su gente y mßs de 65 mentores y voluntarios al servicio del prop¾sito. Si una persona pregunta cußntas familias ha acompa±ado Colombia Comparte, la referencia vigente del corpus es mßs de 1.200 personas y familias acompa±adas, siempre que el equipo mantenga aprobada esa cifra editorial. Como antecedente hist¾rico, Portafolio report¾ en 2023 que la instituci¾n habÝa ayudado a mßs de 400 familias a salir adelante.
+
+================================================================================
+#2 | score=0.7828
+TÝtulo: Cußntas familias ha acompa±ado Colombia Comparte
+Secci¾n: Impacto
+PaÝs: co
+Fuente: 
+
+Colombia Comparte reporta mßs de 1.200 personas y familias acompa±adas en su reconstrucci¾n productiva, junto con mßs de 70 empresas comprometidas con su gente y mßs de 65 mentores y voluntarios vinculados al prop¾sito. Cuando se pregunte por el impacto o por cußntas familias ha acompa±ado Colombia Comparte, esta es la cifra editorial vigente del corpus, siempre que el equipo mantenga aprobada esa actualizaci¾n. Como antecedente hist¾rico, Portafolio report¾ en 2023 mßs de 400 familias ayudadas.
+
+================================================================================
+#3 | score=0.7540
+TÝtulo: Historia de Colombia Comparte
+Secci¾n: Nuestra historia
+PaÝs: co
+Fuente: 
+
+Colombia Comparte naci¾ de una historia real de pÚrdida, fe y reconstrucci¾n. Sus cofundadores, Carolina Ruiz Herrera y Eduardo Del Castillo, vivieron una crisis econ¾mica profunda y descubrieron que cuando una persona vuelve a sentirse productiva, vuelve a vivir. Guiados por la fe y el deseo de servir, crearon una organizaci¾n para acompa±ar a familias que enfrentan pobreza oculta o pobreza vergonzante. La historia p·blica reportada por Portafolio se±ala que la fundaci¾n naci¾ en 2015 con un enfoque ocupacional y no asistencialista, buscando que las personas sean productivas y tengan oportunidades de trabajo.
+
+================================================================================
+#4 | score=0.7478
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+
+================================================================================
+#5 | score=0.7462
+TÝtulo: A quiÚnes acompa±a Colombia Comparte
+Secci¾n: A quiÚn acompa±amos
+PaÝs: co
+Fuente: 
+
+Colombia Comparte impulsa el progreso humano y productivo dentro y fuera de la empresa. Acompa±a a personas y familias en procesos de reconstrucci¾n econ¾mica, emprendedores que quieren crear o fortalecer su negocio y empresas comprometidas con su gente. Su foco estß en la llamada pobreza oculta o pobreza vergonzante: hogares donde una quiebra, despido, enfermedad u otro cambio inesperado desordena la vida, la autoestima y la estabilidad econ¾mica. La organizaci¾n busca ofrecer una oportunidad real para recuperar productividad y reconstruir futuro desde el emprendimiento.
+

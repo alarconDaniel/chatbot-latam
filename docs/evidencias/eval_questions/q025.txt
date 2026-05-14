@@ -1,0 +1,59 @@
+﻿ID: q025
+Tema: contacto
+Pregunta: ¿Dónde puedo pedir más información sobre Colombia Comparte?
+SecciÃ³n esperada: Contacto
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8994.35it/s]
+
+Pregunta: ┐D¾nde puedo pedir mßs informaci¾n sobre Colombia Comparte?
+
+================================================================================
+#1 | score=0.8411
+TÝtulo: D¾nde pedir mßs informaci¾n sobre Colombia Comparte
+Secci¾n: Contacto
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐D¾nde puedo pedir mßs informaci¾n sobre Colombia Comparte?ö, el canal recomendado es la pßgina oficial de contacto https://colombiacomparte.com/contacto/. Desde allÝ puede consultar vÝas p·blicas de atenci¾n y formularios disponibles. El chatbot debe priorizar esta ruta oficial para solicitudes de informaci¾n sobre Colombia Comparte y no debe pedir datos sensibles dentro de la conversaci¾n.
+
+================================================================================
+#2 | score=0.7768
+TÝtulo: Enlaces oficiales de navegaci¾n de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐QuÚ enlaces oficiales tiene Colombia Comparte para conocer su informaci¾n institucional?ö, el chatbot puede compartir estas pßginas p·blicas principales: inicio https://colombiacomparte.com/; sobre nosotros https://colombiacomparte.com/sobre-nosotros/; nuestra misi¾n en acci¾n https://colombiacomparte.com/nuestra-mision-en-accion/; shows y conferencias https://colombiacomparte.com/shows-y-conferencias/; noticias https://colombiacomparte.com/noticias/; y contacto https://colombiacomparte.com/contacto/. Estos enlaces ayudan a navegar hacia informaci¾n institucional, actualidad, oferta de conferencias y contacto.
+
+================================================================================
+#3 | score=0.7712
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+
+================================================================================
+#4 | score=0.7711
+TÝtulo: Acciones recientes y proyectos relevantes de Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Entre las acciones recientes y proyectos relevantes de Colombia Comparte se mencionan la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal en procesos de transici¾n familiar a travÚs del emprendimiento, la formaci¾n en mentalidad emprendedora en j¾venes de colegios como el Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas. El LinkedIn p·blico de Colombia Comparte tambiÚn reporta trabajo con estudiantes de grado 9 del Gimnasio JosÚ JoaquÝn Casas, quienes presentaron pitches con ideas innovadoras y fortalecieron mentalidad emprendedora y trabajo en equipo.
+
+================================================================================
+#5 | score=0.7585
+TÝtulo: QuÚ acciones recientes tiene Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Las acciones recientes y proyectos relevantes de Colombia Comparte incluyen la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal, procesos de transici¾n familiar mediante emprendimiento, formaci¾n en mentalidad emprendedora con j¾venes del Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas.
+

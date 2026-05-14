@@ -1,0 +1,7 @@
+{
+  "index_type": "faiss_IndexFlatIP",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "n_chunks": 22,
+  "embedding_dim": 384,
+  "similarity": "inner product sobre embeddings normalizados = cosine similarity"
+}

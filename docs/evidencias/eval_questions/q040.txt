@@ -1,0 +1,59 @@
+﻿ID: q040
+Tema: fuera_de_alcance
+Pregunta: ¿Cuál es la mejor criptomoneda para invertir hoy?
+SecciÃ³n esperada: Fuera de alcance / redirección
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8904.25it/s]
+
+Pregunta: ┐Cußl es la mejor criptomoneda para invertir hoy?
+
+================================================================================
+#1 | score=0.2467
+TÝtulo: Alcance seguro para respuestas del chatbot
+Secci¾n: Guardrails de contenido
+PaÝs: latam
+Fuente: 
+
+El chatbot debe responder ·nicamente con informaci¾n p·blica y aprobada sobre la organizaci¾n, historia, impacto, programas, noticias, equipo, formas de apoyo y contacto. No debe afirmar que puede inscribir personas, aprobar estudiantes, entregar recursos, prestar dinero, cobrar pagos, acceder al aula privada, consultar datos internos, gestionar cursos, revelar informaci¾n administrativa, mostrar credenciales, entregar contrase±as, compartir rutas internas del CMS, exponer paneles privados ni reemplazar el contacto oficial. Si no tiene evidencia suficiente en el corpus, debe decir que no cuenta con informaci¾n suficiente y sugerir contactar a Colombia Comparte.
+
+================================================================================
+#2 | score=0.2432
+TÝtulo: Rechazo de credenciales, contrase±as y rutas internas
+Secci¾n: Rechazo seguro
+PaÝs: global
+Fuente: 
+
+Si una persona pide credenciales, contrase±as, accesos privados, rutas internas del CMS, paneles administrativos, informaci¾n sensible o datos internos, el chatbot debe rechazar la solicitud de forma segura. Solo puede responder con informaci¾n p·blica y aprobada, y debe sugerir usar los canales oficiales de contacto si el usuario necesita soporte legÝtimo.
+
+================================================================================
+#3 | score=0.2211
+TÝtulo: C¾mo apoyar a Colombia Comparte
+Secci¾n: Donaciones / apoyo
+PaÝs: co
+Fuente: 
+
+Las personas y empresas pueden apoyar a Colombia Comparte vinculßndose como empresas aliadas, donando o contactando a la organizaci¾n mediante sus canales oficiales. En el portal regional se informa una cuenta de ahorros Bancolombia a nombre de Fundaci¾n Colombia Comparte y el NIT 901.213.196-8. Fondos en Acci¾n presenta a Colombia Comparte como una fundaci¾n que apoya a quienes enfrentan pobreza oculta, empodera emprendedores y fortalece familias de empleados. El chatbot debe dirigir a enlaces oficiales de apoyo y evitar procesar pagos o datos bancarios dentro de la conversaci¾n.
+
+================================================================================
+#4 | score=0.1992
+TÝtulo: Empresas aliadas, apoyo y contacto regional
+Secci¾n: C¾mo apoyar / Contacto
+PaÝs: latam
+Fuente: 
+
+LatinoamÚrica Comparte invita a empresas aliadas a vincularse a sus programas para impulsar el bienestar de colaboradores. El portal regional tambiÚn ofrece donaciones individuales y un formulario de contacto donde se solicita nombre, apellido, telÚfono, paÝs, empresa, cargo, correo electr¾nico y el motivo de contacto. La respuesta esperada del chatbot ante solicitudes de vinculaci¾n o donaci¾n debe dirigir al formulario oficial y no recolectar datos sensibles dentro del chat.
+
+================================================================================
+#5 | score=0.1729
+TÝtulo: PaÝses vinculados a LatinoamÚrica Comparte
+Secci¾n: Portales por paÝs
+PaÝs: latam
+Fuente: 
+
+El portal de LatinoamÚrica Comparte enlaza portales o espacios para Colombia Comparte, Ecuador Comparte, Chile Comparte y Argentina Comparte. Para preguntas regionales, el chatbot debe responder desde la visi¾n latinoamericana; para preguntas de paÝs, debe priorizar la fuente del paÝs correspondiente si existe.
+

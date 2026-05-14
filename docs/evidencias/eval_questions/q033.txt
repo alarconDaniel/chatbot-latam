@@ -1,0 +1,59 @@
+﻿ID: q033
+Tema: enlaces_talento
+Pregunta: ¿Dónde puedo ver shows y conferencias de Colombia Comparte?
+SecciÃ³n esperada: Navegación web oficial / Líneas del ecosistema
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8662.14it/s]
+
+Pregunta: ┐D¾nde puedo ver shows y conferencias de Colombia Comparte?
+
+================================================================================
+#1 | score=0.8244
+TÝtulo: D¾nde ver shows y conferencias de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial / LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Los shows, conferencias y experiencias corporativas de Colombia Comparte se relacionan con la lÝnea Comparte Talento. Para ver esta oferta, el enlace oficial es la pßgina de shows y conferencias de Colombia Comparte. El chatbot puede compartir esa ruta cuando el usuario pregunte d¾nde consultar conferencias, speakers, experiencias o eventos corporativos.
+
+================================================================================
+#2 | score=0.6722
+TÝtulo: Enlaces oficiales de navegaci¾n de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐QuÚ enlaces oficiales tiene Colombia Comparte para conocer su informaci¾n institucional?ö, el chatbot puede compartir estas pßginas p·blicas principales: inicio https://colombiacomparte.com/; sobre nosotros https://colombiacomparte.com/sobre-nosotros/; nuestra misi¾n en acci¾n https://colombiacomparte.com/nuestra-mision-en-accion/; shows y conferencias https://colombiacomparte.com/shows-y-conferencias/; noticias https://colombiacomparte.com/noticias/; y contacto https://colombiacomparte.com/contacto/. Estos enlaces ayudan a navegar hacia informaci¾n institucional, actualidad, oferta de conferencias y contacto.
+
+================================================================================
+#3 | score=0.6653
+TÝtulo: D¾nde ver noticias de Colombia Comparte
+Secci¾n: Noticias
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐D¾nde puedo ver noticias de Colombia Comparte?ö, el chatbot debe indicar que las noticias y novedades p·blicas se consultan en la secci¾n oficial de noticias: https://colombiacomparte.com/noticias/. Esta es la ruta recomendada para revisar publicaciones, avances, actividades y actualizaciones institucionales de Colombia Comparte.
+
+================================================================================
+#4 | score=0.6629
+TÝtulo: D¾nde pedir mßs informaci¾n sobre Colombia Comparte
+Secci¾n: Contacto
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐D¾nde puedo pedir mßs informaci¾n sobre Colombia Comparte?ö, el canal recomendado es la pßgina oficial de contacto https://colombiacomparte.com/contacto/. Desde allÝ puede consultar vÝas p·blicas de atenci¾n y formularios disponibles. El chatbot debe priorizar esta ruta oficial para solicitudes de informaci¾n sobre Colombia Comparte y no debe pedir datos sensibles dentro de la conversaci¾n.
+
+================================================================================
+#5 | score=0.6352
+TÝtulo: Acciones recientes y proyectos relevantes de Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Entre las acciones recientes y proyectos relevantes de Colombia Comparte se mencionan la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal en procesos de transici¾n familiar a travÚs del emprendimiento, la formaci¾n en mentalidad emprendedora en j¾venes de colegios como el Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas. El LinkedIn p·blico de Colombia Comparte tambiÚn reporta trabajo con estudiantes de grado 9 del Gimnasio JosÚ JoaquÝn Casas, quienes presentaron pitches con ideas innovadoras y fortalecieron mentalidad emprendedora y trabajo en equipo.
+

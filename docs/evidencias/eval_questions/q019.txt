@@ -1,0 +1,59 @@
+﻿ID: q019
+Tema: publicos
+Pregunta: ¿Qué es la pobreza oculta?
+SecciÃ³n esperada: A quién acompañamos
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8132.46it/s]
+
+Pregunta: ┐QuÚ es la pobreza oculta?
+
+================================================================================
+#1 | score=0.5036
+TÝtulo: A quiÚnes acompa±a Colombia Comparte
+Secci¾n: A quiÚn acompa±amos
+PaÝs: co
+Fuente: 
+
+Colombia Comparte impulsa el progreso humano y productivo dentro y fuera de la empresa. Acompa±a a personas y familias en procesos de reconstrucci¾n econ¾mica, emprendedores que quieren crear o fortalecer su negocio y empresas comprometidas con su gente. Su foco estß en la llamada pobreza oculta o pobreza vergonzante: hogares donde una quiebra, despido, enfermedad u otro cambio inesperado desordena la vida, la autoestima y la estabilidad econ¾mica. La organizaci¾n busca ofrecer una oportunidad real para recuperar productividad y reconstruir futuro desde el emprendimiento.
+
+================================================================================
+#2 | score=0.4680
+TÝtulo: Historia de Colombia Comparte
+Secci¾n: Nuestra historia
+PaÝs: co
+Fuente: 
+
+Colombia Comparte naci¾ de una historia real de pÚrdida, fe y reconstrucci¾n. Sus cofundadores, Carolina Ruiz Herrera y Eduardo Del Castillo, vivieron una crisis econ¾mica profunda y descubrieron que cuando una persona vuelve a sentirse productiva, vuelve a vivir. Guiados por la fe y el deseo de servir, crearon una organizaci¾n para acompa±ar a familias que enfrentan pobreza oculta o pobreza vergonzante. La historia p·blica reportada por Portafolio se±ala que la fundaci¾n naci¾ en 2015 con un enfoque ocupacional y no asistencialista, buscando que las personas sean productivas y tengan oportunidades de trabajo.
+
+================================================================================
+#3 | score=0.3867
+TÝtulo: QuiÚnes fundaron Colombia Comparte
+Secci¾n: Nuestra historia
+PaÝs: co
+Fuente: 
+
+Quienes fundaron Colombia Comparte fueron Carolina Ruiz Herrera y Eduardo Del Castillo. Ellos cofundaron la organizaci¾n a partir de una historia real de pÚrdida, fe y reconstrucci¾n, con el prop¾sito de acompa±ar a familias que enfrentan pobreza oculta o pobreza vergonzante. Su historia p·blica se asocia con un enfoque ocupacional y no asistencialista, orientado a recuperar productividad y oportunidades.
+
+================================================================================
+#4 | score=0.3588
+TÝtulo: QuÚ es Colombia Comparte
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte es una organizaci¾n y comunidad de prop¾sito que acompa±a a personas, familias, emprendedores y empresas en procesos de transformaci¾n humana y productiva. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, reconstrucci¾n econ¾mica, bienestar empresarial, cultura organizacional y liderazgo humano. Dentro del ecosistema actual de LatinoamÚrica Comparte, Colombia Comparte es la expresi¾n nacional que articula acompa±amiento, formaci¾n, alianzas y oportunidades de vinculaci¾n.
+
+================================================================================
+#5 | score=0.3578
+TÝtulo: Mensajes principales para la portada de Colombia Comparte
+Secci¾n: Portada institucional
+PaÝs: co
+Fuente: 
+
+La portada de Colombia Comparte debe alinearse con la evoluci¾n del ecosistema LatinoamÚrica Comparte. Su comunicaci¾n puede destacar tres mensajes centrales: primero, el emprendimiento y la formaci¾n como camino para recuperar productividad y construir futuro, articulados desde Comparte Academia; segundo, el fortalecimiento de liderazgo, desarrollo humano, cultura organizacional y transformaci¾n empresarial desde Comparte Liderazgo; tercero, las conferencias, experiencias y eventos corporativos de Comparte Talento. Esta narrativa debe conservar el prop¾sito de acompa±ar a personas, familias y empresas en procesos de transformaci¾n sostenible.
+

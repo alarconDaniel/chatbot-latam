@@ -1,0 +1,59 @@
+﻿ID: q004
+Tema: comparte_liderazgo
+Pregunta: ¿Qué es Comparte Liderazgo?
+SecciÃ³n esperada: Líneas del ecosistema
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8665.47it/s]
+
+Pregunta: ┐QuÚ es Comparte Liderazgo?
+
+================================================================================
+#1 | score=0.7756
+TÝtulo: Comparte Liderazgo: desarrollo humano y transformaci¾n empresarial
+Secci¾n: LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Comparte Liderazgo es la lÝnea enfocada en liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes. Su prop¾sito es llevar pensamiento emprendedor a los lÝderes de las empresas y fortalecer procesos de cambio humano y organizacional. El chatbot debe presentar esta lÝnea como la referencia vigente para hablar de liderazgo dentro de la nueva arquitectura institucional.
+
+================================================================================
+#2 | score=0.5395
+TÝtulo: Empresas comprometidas con su gente: Academia, Liderazgo y Talento
+Secci¾n: Empresas y lÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Para empresas comprometidas con su gente, la oferta debe presentarse alineada con las tres lÝneas del ecosistema LatinoamÚrica Comparte. Comparte Academia articula formaci¾n y emprendimiento, incluyendo programas como DESCUBRE y ESTRUCTURA. Comparte Liderazgo se enfoca en liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes. Comparte Talento re·ne conferencias, speakers, artistas, experiencias y eventos corporativos; esta lÝnea antes se conocÝa como TOP SPEAKERS.
+
+================================================================================
+#3 | score=0.4806
+TÝtulo: Arquitectura actual de LatinoamÚrica Comparte
+Secci¾n: Ecosistema institucional
+PaÝs: latam
+Fuente: 
+
+La narrativa institucional vigente debe presentar a LatinoamÚrica Comparte como el ecosistema general. Bajo esta arquitectura existen tres grandes lÝneas: Comparte Academia, enfocada en formaci¾n y emprendimiento; Comparte Liderazgo, orientada a liderazgo, desarrollo humano, cultura organizacional y transformaci¾n para empresas y lÝderes; y Comparte Talento, dedicada a conferencias, speakers, artistas, experiencias y eventos corporativos. Las respuestas del chatbot deben priorizar esta estructura como referencia institucional vigente.
+
+================================================================================
+#4 | score=0.4790
+TÝtulo: Comunidad de mentores y coaches
+Secci¾n: Mentores y coaches
+PaÝs: co
+Fuente: 
+
+Colombia Comparte cuenta con una comunidad de mentores, coaches, conferencistas y aliados que aportan conocimiento y tiempo para acompa±ar a emprendedores, familias y empresas. En el aula p·blica aparecen mentores y coaches orientados a modelo de negocio, crecimiento personal, comunicaci¾n, contabilidad, liderazgo, finanzas, estrategia comercial, marketing, marca, experiencia de cliente y cultura organizacional. El rol de esta comunidad es transformar ideas en decisiones, sue±os en acci¾n y personas en protagonistas de su propia historia.
+
+================================================================================
+#5 | score=0.4354
+TÝtulo: QuiÚnes somos: comunidad de prop¾sito, empatÝa y servicio
+Secci¾n: Sobre nosotros
+PaÝs: co
+Fuente: 
+
+Colombia Comparte se define como una comunidad de mentores, coaches, conferencistas y aliados que creen en el poder del prop¾sito, la empatÝa y el servicio. Cada miembro del equipo aporta conocimiento y tiempo para acompa±ar a emprendedores, familias y empresas en procesos de transformaci¾n. Su orientaci¾n p·blica combina emprendimiento con prop¾sito, bienestar empresarial, cultura organizacional, liderazgo humano y productividad sostenible, en coherencia con la evoluci¾n del ecosistema LatinoamÚrica Comparte.
+

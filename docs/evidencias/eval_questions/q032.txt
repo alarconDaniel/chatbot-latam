@@ -1,0 +1,59 @@
+﻿ID: q032
+Tema: aula_colombia
+Pregunta: ¿Cómo ingreso al aula virtual de Colombia Comparte?
+SecciÃ³n esperada: Aula virtual
+Top-K: 5
+
+===== RESULTADO DE RECUPERACION =====
+
+System.Management.Automation.RemoteException
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 8575.90it/s]
+
+Pregunta: ┐C¾mo ingreso al aula virtual de Colombia Comparte?
+
+================================================================================
+#1 | score=0.8415
+TÝtulo: Aula virtual de Colombia Comparte
+Secci¾n: Aula virtual
+PaÝs: co
+Fuente: 
+
+Para ingresar al aula virtual de Colombia Comparte, el enlace p·blico es https://aula.colombiacomparte.com/. El chatbot puede compartir esta ruta cuando una persona pregunte d¾nde iniciar sesi¾n o entrar al aula virtual de Colombia Comparte. No debe solicitar credenciales, contrase±as ni intentar gestionar accesos desde el chat.
+
+================================================================================
+#2 | score=0.7396
+TÝtulo: Aula virtual de LatinoamÚrica Comparte
+Secci¾n: Aula virtual
+PaÝs: latam
+Fuente: 
+
+Para ingresar al aula virtual de LatinoamÚrica Comparte, el enlace p·blico es https://www.latinoamericacomparte.com/aulavirtual/. El chatbot puede compartir esta ruta cuando una persona pregunte d¾nde entrar al aula o a la plataforma educativa de LatinoamÚrica Comparte. No debe solicitar credenciales, contrase±as ni intentar gestionar accesos desde el chat.
+
+================================================================================
+#3 | score=0.5827
+TÝtulo: D¾nde ver shows y conferencias de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial / LÝneas del ecosistema
+PaÝs: co
+Fuente: 
+
+Los shows, conferencias y experiencias corporativas de Colombia Comparte se relacionan con la lÝnea Comparte Talento. Para ver esta oferta, el enlace oficial es la pßgina de shows y conferencias de Colombia Comparte. El chatbot puede compartir esa ruta cuando el usuario pregunte d¾nde consultar conferencias, speakers, experiencias o eventos corporativos.
+
+================================================================================
+#4 | score=0.5763
+TÝtulo: Enlaces oficiales de navegaci¾n de Colombia Comparte
+Secci¾n: Navegaci¾n web oficial
+PaÝs: co
+Fuente: 
+
+Si el usuario pregunta ô┐QuÚ enlaces oficiales tiene Colombia Comparte para conocer su informaci¾n institucional?ö, el chatbot puede compartir estas pßginas p·blicas principales: inicio https://colombiacomparte.com/; sobre nosotros https://colombiacomparte.com/sobre-nosotros/; nuestra misi¾n en acci¾n https://colombiacomparte.com/nuestra-mision-en-accion/; shows y conferencias https://colombiacomparte.com/shows-y-conferencias/; noticias https://colombiacomparte.com/noticias/; y contacto https://colombiacomparte.com/contacto/. Estos enlaces ayudan a navegar hacia informaci¾n institucional, actualidad, oferta de conferencias y contacto.
+
+================================================================================
+#5 | score=0.5598
+TÝtulo: Acciones recientes y proyectos relevantes de Colombia Comparte
+Secci¾n: Noticias / acciones
+PaÝs: co
+Fuente: 
+
+Entre las acciones recientes y proyectos relevantes de Colombia Comparte se mencionan la expansi¾n a LatinoamÚrica, el acompa±amiento en Ecuador con Ecuasal en procesos de transici¾n familiar a travÚs del emprendimiento, la formaci¾n en mentalidad emprendedora en j¾venes de colegios como el Gimnasio JosÚ JoaquÝn Casas, y talleres, conferencias y procesos de bienestar y liderazgo con empresas aliadas. El LinkedIn p·blico de Colombia Comparte tambiÚn reporta trabajo con estudiantes de grado 9 del Gimnasio JosÚ JoaquÝn Casas, quienes presentaron pitches con ideas innovadoras y fortalecieron mentalidad emprendedora y trabajo en equipo.
+
