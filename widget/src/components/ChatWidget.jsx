@@ -8,11 +8,11 @@ const assistantProfileImage = "data:image/webp;base64,UklGRoD/DQBXRUJQVlA4THT/DQ
 
 const frequentQuestions = [
   "¿Qué es Latinoamérica Comparte?",
-  "¿Qué es Colombia Comparte?",
-  "¿Qué es EDIFICA?",
-  "¿Cómo funciona EDIFICA?",
-  "¿Qué es NODUS?",
-  "¿Cómo puedo apoyar?",
+  "¿Qué líneas tiene Latinoamérica Comparte?",
+  "¿Qué es Comparte Academia?",
+  "¿Qué es DESCUBRE?",
+  "¿Qué es ESTRUCTURA?",
+  "¿En qué se diferencian DESCUBRE y ESTRUCTURA?",
 ];
 
 function formatTime() {
@@ -536,6 +536,12 @@ function buildStyles({ isDark, isLargeText, country }) {
           width: 126px !important;
           height: 126px !important;
         }
+        .lc-widget-shell {
+          right: 16px !important;
+          bottom: max(16px, env(safe-area-inset-bottom)) !important;
+          width: calc(100vw - 32px) !important;
+          height: min(640px, calc(100vh - 32px)) !important;
+        }
       }
       .lc-input::placeholder {
         color: ${isDark ? "rgba(225,239,251,0.62)" : "rgba(105,124,141,0.78)"};
@@ -552,6 +558,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       justifyContent: "flex-end",
       gap: "14px",
       pointerEvents: "none",
+      transform: "scale(0.75)",
+      transformOrigin: "bottom right",
       fontFamily:
         "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     },
@@ -703,10 +711,10 @@ function buildStyles({ isDark, isLargeText, country }) {
     },
 
     widget: {
-      width: "100%",
-      maxWidth: "450px",
-      height: "min(720px, 100vh)",
-      borderRadius: "34px",
+      width: "min(390px, calc(100vw - 48px))",
+      maxWidth: "390px",
+      height: "min(640px, calc(100vh - 48px))",
+      borderRadius: "30px",
       overflow: "hidden",
       display: "flex",
       flexDirection: "column",
@@ -714,7 +722,10 @@ function buildStyles({ isDark, isLargeText, country }) {
       color: colors.text,
       border: `1px solid ${colors.border}`,
       boxShadow: colors.shadow,
-      position: "relative",
+      position: "fixed",
+      right: "24px",
+      bottom: "max(24px, env(safe-area-inset-bottom))",
+      zIndex: 9999,
       isolation: "isolate",
       fontFamily:
         "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -767,7 +778,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     headerAvatarWrap: {
       width: "48px",
       height: "48px",
-      borderRadius: "18px",
+      borderRadius: "999px",
       overflow: "hidden",
       background: "rgba(255,255,255,0.22)",
       boxShadow: "0 14px 28px rgba(5, 45, 82, 0.2)",
@@ -781,7 +792,9 @@ function buildStyles({ isDark, isLargeText, country }) {
       width: "100%",
       height: "100%",
       objectFit: "cover",
+      objectPosition: "center center",
       display: "block",
+      borderRadius: "999px",
     },
 
     headerInfo: {
@@ -1485,7 +1498,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     settingsAvatarWrap: {
       width: "72px",
       height: "72px",
-      borderRadius: "24px",
+      borderRadius: "999px",
       overflow: "hidden",
       background: colors.cardSoft,
       border: `1px solid ${colors.border}`,
@@ -1655,9 +1668,9 @@ function buildStyles({ isDark, isLargeText, country }) {
     },
 
     introAvatarWrap: {
-      width: "50px",
-      height: "50px",
-      borderRadius: "18px",
+      width: "52px",
+      height: "52px",
+      borderRadius: "999px",
       overflow: "hidden",
       flexShrink: 0,
       background: colors.cardSoft,
@@ -1712,13 +1725,15 @@ function buildStyles({ isDark, isLargeText, country }) {
     },
 
     smallAvatarWrap: {
-      width: "32px",
-      height: "32px",
-      borderRadius: "14px",
+      width: "36px",
+      height: "36px",
+      borderRadius: "999px",
       overflow: "hidden",
       background: colors.cardSoft,
       border: `1px solid ${colors.border}`,
-      boxShadow: isDark ? "0 8px 16px rgba(4,18,34,0.18)" : "0 8px 16px rgba(24,68,97,0.11)",
+      boxShadow: isDark
+        ? "0 10px 18px rgba(4,18,34,0.22)"
+        : "0 10px 18px rgba(24,68,97,0.14)",
       flexShrink: 0,
     },
 
@@ -1978,6 +1993,7 @@ export default function ChatWidget({
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [showLauncherHint, setShowLauncherHint] = useState(true);
   const [screen, setScreen] = useState("home");
   const [theme, setTheme] = useState(() => getStoredValue("latamChatTheme", "light"));
   const [textSize, setTextSize] = useState(() => getStoredValue("latamChatTextSize", "normal"));
@@ -2035,6 +2051,16 @@ export default function ChatWidget({
       focusInput();
     }
   }, [screen]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const launcherHintTimer = window.setTimeout(() => {
+      setShowLauncherHint(false);
+    }, 5000);
+
+    return () => window.clearTimeout(launcherHintTimer);
+  }, []);
 
   useEffect(() => {
     if (!listRef.current) return;
@@ -2219,11 +2245,13 @@ export default function ChatWidget({
           style={styles.launcherShell}
           aria-label="Abrir el asistente virtual Coco"
         >
-          <div className="lc-launcher-hint" style={styles.launcherHint} aria-hidden="true">
-            <span style={styles.launcherHintEyebrow}>Asistente virtual</span>
-            <strong style={styles.launcherHintTitle}>Habla con Coco</strong>
-            <span style={styles.launcherHintText}>Haz clic para abrir el chat</span>
-          </div>
+          {showLauncherHint ? (
+            <div className="lc-launcher-hint" style={styles.launcherHint} aria-hidden="true">
+              <span style={styles.launcherHintEyebrow}>Asistente virtual</span>
+              <strong style={styles.launcherHintTitle}>Habla con Coco</strong>
+              <span style={styles.launcherHintText}>Haz clic para abrir el chat</span>
+            </div>
+          ) : null}
 
           <button
             type="button"
@@ -2259,7 +2287,7 @@ export default function ChatWidget({
   }
 
   return (
-    <section style={styles.widget}>
+    <section className="lc-widget-shell" style={styles.widget}>
       <style>{styles.globalStyle}</style>
       {screen !== "home" ? renderHeader() : null}
       {screen !== "home" && isCountrySpecificTheme ? (
@@ -2445,8 +2473,7 @@ export default function ChatWidget({
                   </span>
                 ) : null}
                 <p style={styles.introText}>
-                  Pregúntale a Coco sobre Latinoamérica Comparte, Colombia Comparte, EDIFICA, NODUS, iniciativas o formas de apoyo.
-                </p>
+                  Pregúntale a Coco sobre Latinoamérica Comparte, sus líneas de trabajo y programas como DESCUBRE y ESTRUCTURA.                </p>
               </div>
             </section>
 
