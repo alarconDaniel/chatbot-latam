@@ -380,6 +380,69 @@ function getCountryTheme(country) {
   return COUNTRY_VISUAL_THEMES[themeKey];
 }
 
+function normalizeCountryCode(country) {
+  const normalizedCountry = String(country || "latam").trim().toLowerCase();
+  return COUNTRY_THEME_ALIASES[normalizedCountry] || "latam";
+}
+
+function normalizeCountryDetectionText(text) {
+  return String(text || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function detectCountryFromMessage(message, fallbackCountry = "latam") {
+  const normalizedMessage = normalizeCountryDetectionText(message);
+  const normalizedFallback = normalizeCountryCode(fallbackCountry);
+
+  const countryPatterns = {
+    co: [
+      /\bcolombia\b/,
+      /\bcolombia comparte\b/,
+      /\bcolombiano(?:s|a|as)?\b/,
+    ],
+    cl: [
+      /\bchile\b/,
+      /\bchile comparte\b/,
+      /\bchileno(?:s|a|as)?\b/,
+    ],
+    ec: [
+      /\becuador\b/,
+      /\becuador comparte\b/,
+      /\becuatoriano(?:s|a|as)?\b/,
+    ],
+    ar: [
+      /\bargentina\b/,
+      /\bargentina comparte\b/,
+      /\bargentino(?:s|a|as)?\b/,
+    ],
+  };
+
+  const matchedCountries = Object.entries(countryPatterns)
+    .filter(([, patterns]) => patterns.some((pattern) => pattern.test(normalizedMessage)))
+    .map(([countryCode]) => countryCode);
+
+  const explicitlyMentionsLatam =
+    /\b(latam|latinoamerica|latinoamerica comparte|latinoamericano(?:s|a|as)?)\b/.test(
+      normalizedMessage
+    );
+
+  if (matchedCountries.length === 1) {
+    return matchedCountries[0];
+  }
+
+  if (matchedCountries.length > 1) {
+    return "latam";
+  }
+
+  if (explicitlyMentionsLatam) {
+    return "latam";
+  }
+
+  return normalizedFallback;
+}
+
 function buildStyles({ isDark, isLargeText, country }) {
   const colors = isDark
     ? {
@@ -2000,6 +2063,9 @@ export default function ChatWidget({
   const [showSuggestions, setShowSuggestions] = useState(
     () => getStoredValue("latamChatShowSuggestions", "true") !== "false"
   );
+  const [activeVisualCountry, setActiveVisualCountry] = useState(
+    () => normalizeCountryCode(country)
+  );
 
   const listRef = useRef(null);
   const inputRef = useRef(null);
@@ -2008,13 +2074,13 @@ export default function ChatWidget({
   const isLargeText = textSize === "large";
 
   const styles = useMemo(
-    () => buildStyles({ isDark, isLargeText, country }),
-    [isDark, isLargeText, country]
+    () => buildStyles({ isDark, isLargeText, country: activeVisualCountry }),
+    [isDark, isLargeText, activeVisualCountry]
   );
 
   const activeCountryTheme = useMemo(
-    () => getCountryTheme(country),
-    [country]
+    () => getCountryTheme(activeVisualCountry),
+    [activeVisualCountry]
   );
 
   const isCountrySpecificTheme = activeCountryTheme.label !== "Latinoamérica";
@@ -2045,6 +2111,10 @@ export default function ChatWidget({
   useEffect(() => {
     saveStoredValue("latamChatShowSuggestions", showSuggestions ? "true" : "false");
   }, [showSuggestions]);
+
+  useEffect(() => {
+    setActiveVisualCountry(normalizeCountryCode(country));
+  }, [country]);
 
   useEffect(() => {
     if (screen === "chat") {
@@ -2097,6 +2167,9 @@ export default function ChatWidget({
     const trimmedMessage = (messageToSend ?? input).trim();
     if (!trimmedMessage || loading) return;
 
+    const detectedCountry = detectCountryFromMessage(trimmedMessage, country);
+    setActiveVisualCountry(detectedCountry);
+
     const userMessage = {
       id: `user-${Date.now()}`,
       role: "user",
@@ -2112,7 +2185,7 @@ export default function ChatWidget({
     try {
       const result = await askChatbot({
         message: trimmedMessage,
-        country,
+        country: detectedCountry,
         sessionId: resolvedSessionId,
         apiBaseUrl,
       });
