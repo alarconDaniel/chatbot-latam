@@ -496,6 +496,14 @@ function buildStyles({ isDark, isLargeText, country }) {
 
   const countryTheme = getCountryTheme(country);
   const countryStyle = countryTheme[isDark ? "dark" : "light"];
+  const countryThemeAnimation =
+    {
+      latam: "lcThemeShiftLatam",
+      co: "lcThemeShiftCo",
+      cl: "lcThemeShiftCl",
+      ar: "lcThemeShiftAr",
+      ec: "lcThemeShiftEc",
+    }[normalizeCountryCode(country)] || "lcThemeShiftLatam";
 
   const chatFontSize = isLargeText ? "15.5px" : "14px";
   const textBase = isLargeText ? "14.5px" : "13.5px";
@@ -583,6 +591,106 @@ function buildStyles({ isDark, isLargeText, country }) {
       @keyframes lcLauncherHint {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-3px); }
+      }
+
+      @keyframes lcThemeShiftLatam {
+        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
+        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
+        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+      }
+      @keyframes lcThemeShiftCo {
+        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
+        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
+        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+      }
+      @keyframes lcThemeShiftCl {
+        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
+        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
+        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+      }
+      @keyframes lcThemeShiftAr {
+        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
+        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
+        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+      }
+      @keyframes lcThemeShiftEc {
+        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
+        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
+        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+      }
+
+      @keyframes lcUserMessageEnter {
+        0% {
+          opacity: 0;
+          transform: translate3d(18px, 8px, 0) scale(0.985);
+          filter: blur(1.2px);
+        }
+        58% {
+          opacity: 1;
+          transform: translate3d(-1px, -1px, 0) scale(1.006);
+          filter: blur(0);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes lcBotMessageEnter {
+        0% {
+          opacity: 0;
+          transform: translate3d(-18px, 8px, 0) scale(0.985);
+          filter: blur(1.2px);
+        }
+        58% {
+          opacity: 1;
+          transform: translate3d(1px, -1px, 0) scale(1.006);
+          filter: blur(0);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes lcMessageBubbleSettle {
+        0% {
+          box-shadow: 0 4px 10px rgba(24, 68, 97, 0.04);
+        }
+        62% {
+          box-shadow: 0 18px 34px rgba(24, 68, 97, 0.12);
+        }
+        100% {
+          box-shadow: inherit;
+        }
+      }
+
+      @keyframes lcTypingBubbleEnter {
+        0% {
+          opacity: 0;
+          transform: translate3d(-12px, 6px, 0) scale(0.985);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+      }
+
+      @keyframes lcAvatarSoftPop {
+        0% {
+          opacity: 0.75;
+          transform: translateY(4px) scale(0.92);
+        }
+        68% {
+          opacity: 1;
+          transform: translateY(-1px) scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
       }
       @media (max-width: 560px) {
         .lc-launcher-shell {
@@ -792,6 +900,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       isolation: "isolate",
       fontFamily:
         "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      animation: `${countryThemeAnimation} 560ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background-color 520ms ease, border-color 520ms ease, box-shadow 520ms ease, color 420ms ease",
     },
 
     header: {
@@ -806,6 +916,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       overflow: "hidden",
       flexShrink: 0,
       boxSizing: "border-box",
+      transition: "background 540ms ease, box-shadow 540ms ease, filter 420ms ease",
+      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     countryRibbon: {
@@ -814,6 +926,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: countryStyle.ribbonBackground,
       boxShadow: isDark ? "0 8px 18px rgba(0,0,0,0.18)" : "0 8px 18px rgba(24,68,97,0.08)",
       flexShrink: 0,
+      transition: "background 540ms ease, box-shadow 540ms ease, opacity 420ms ease",
+      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     headerArcOne: {
@@ -907,6 +1021,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       textOverflow: "ellipsis",
       boxShadow: "0 8px 18px rgba(0,0,0,0.12)",
       backdropFilter: "blur(10px)",
+      transition: "background 540ms ease, border-color 540ms ease, color 420ms ease, box-shadow 540ms ease",
+      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     onlineDot: {
@@ -970,6 +1086,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       overflowY: "auto",
       overflowX: "hidden",
       boxSizing: "border-box",
+      transition: "background 540ms ease",
+      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     pageInner: {
@@ -993,6 +1111,8 @@ function buildStyles({ isDark, isLargeText, country }) {
           : "radial-gradient(circle at 18% 14%, rgba(83, 210, 235, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(239, 92, 169, 0.14) 0, transparent 22%), radial-gradient(circle at 80% 84%, rgba(126, 103, 246, 0.1) 0, transparent 30%), linear-gradient(160deg, #ffffff 0%, #f7fcff 48%, #edf8ff 100%)"),
       overflow: "hidden",
       boxSizing: "border-box",
+      transition: "background 540ms ease",
+      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     homeTexture: {
@@ -1705,6 +1825,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       flexDirection: "column",
       minHeight: 0,
       background: countryStyle.chatBackground || colors.chatBg,
+      transition: "background 540ms ease",
+      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     messages: {
@@ -1778,6 +1900,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       justifyContent: "flex-start",
       alignItems: "flex-end",
       gap: "8px",
+      animation: "lcBotMessageEnter 500ms cubic-bezier(0.22, 1, 0.36, 1) both",
     },
 
     userRow: {
@@ -1785,6 +1908,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       justifyContent: "flex-end",
       alignItems: "flex-end",
       gap: "8px",
+      animation: "lcUserMessageEnter 460ms cubic-bezier(0.22, 1, 0.36, 1) both",
     },
 
     smallAvatarWrap: {
@@ -1798,6 +1922,7 @@ function buildStyles({ isDark, isLargeText, country }) {
         ? "0 10px 18px rgba(4,18,34,0.22)"
         : "0 10px 18px rgba(24,68,97,0.14)",
       flexShrink: 0,
+      animation: "lcAvatarSoftPop 520ms cubic-bezier(0.22, 1, 0.36, 1) both",
     },
 
     bubbleWrap: {
@@ -1819,6 +1944,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: countryStyle.botBubbleBackground,
       border: `1px solid ${countryStyle.botBubbleBorder}`,
       boxShadow: isDark ? "0 12px 26px rgba(4,18,34,0.18)" : "0 12px 26px rgba(24,68,97,0.08)",
+      transition: "background 540ms ease, border-color 540ms ease, box-shadow 540ms ease, color 420ms ease",
+      animation: "lcMessageBubbleSettle 620ms ease-out both",
     },
 
     userBubble: {
@@ -1834,6 +1961,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: `1px solid ${countryStyle.userBubbleBorder || "rgba(255,255,255,0.18)"}`,
       boxShadow: countryStyle.userBubbleShadow || "0 14px 28px rgba(126,103,246,0.18)",
       textShadow: "0 1px 2px rgba(0, 0, 0, 0.28)",
+      transition: "background 540ms ease, border-color 540ms ease, box-shadow 540ms ease",
+      animation: "lcMessageBubbleSettle 620ms ease-out both",
     },
 
     errorBubble: {
@@ -1847,6 +1976,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: isDark ? "rgba(120,28,51,0.44)" : "#fff1f5",
       color: isDark ? "#ffd6e5" : "#9d174d",
       border: `1px solid ${isDark ? "rgba(255,146,187,0.18)" : "#fecdd3"}`,
+      animation: "lcMessageBubbleSettle 620ms ease-out both",
     },
 
     time: {
@@ -1916,6 +2046,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: countryStyle.botBubbleBackground,
       border: `1px solid ${countryStyle.botBubbleBorder}`,
       boxShadow: isDark ? "0 12px 26px rgba(4,18,34,0.18)" : "0 12px 26px rgba(24,68,97,0.08)",
+      transition: "background 540ms ease, border-color 540ms ease, box-shadow 540ms ease",
+      animation: "lcTypingBubbleEnter 420ms cubic-bezier(0.22, 1, 0.36, 1) both",
     },
 
     typingDot: {
@@ -1924,6 +2056,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       borderRadius: "999px",
       background: countryStyle.typingDot,
       display: "inline-block",
+      transition: "background-color 420ms ease",
     },
 
     footer: {
@@ -1935,6 +2068,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       gap: "9px",
       flexShrink: 0,
       boxSizing: "border-box",
+      transition: "background-color 520ms ease, border-color 520ms ease",
+      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     inputShell: {
@@ -1948,6 +2083,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: `1px solid ${countryStyle.inputShellBorder || colors.border}`,
       background: colors.inputBg,
       boxShadow: isDark ? "inset 0 1px 0 rgba(255,255,255,0.04)" : "inset 0 1px 0 rgba(255,255,255,0.9)",
+      transition: "border-color 520ms ease, background-color 520ms ease, box-shadow 520ms ease",
     },
 
     inputSpark: {
@@ -1990,6 +2126,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       flexShrink: 0,
       boxShadow: countryStyle.sendButtonShadow,
       textShadow: "0 1px 2px rgba(0, 0, 0, 0.22)",
+      transition: "background 540ms ease, color 420ms ease, box-shadow 540ms ease, transform 180ms ease",
     },
 
     disabledSendButton: {
@@ -2009,6 +2146,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       opacity: 0.48,
       boxShadow: "none",
       textShadow: "0 1px 2px rgba(0, 0, 0, 0.18)",
+      transition: "background 540ms ease, color 420ms ease, opacity 420ms ease",
     },
   };
 }
