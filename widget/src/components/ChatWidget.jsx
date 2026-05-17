@@ -594,29 +594,94 @@ function buildStyles({ isDark, isLargeText, country }) {
       }
 
       @keyframes lcThemeShiftLatam {
-        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
-        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
-        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+        0% {
+          opacity: 0.78;
+          transform: translate3d(0, 5px, 0) scale(0.994);
+        }
+        48% {
+          opacity: 0.96;
+          transform: translate3d(0, 1px, 0) scale(0.999);
+        }
+        78% {
+          opacity: 1;
+          transform: translate3d(0, -1px, 0) scale(1.001);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+        }
       }
       @keyframes lcThemeShiftCo {
-        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
-        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
-        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+        0% {
+          opacity: 0.78;
+          transform: translate3d(0, 5px, 0) scale(0.994);
+        }
+        48% {
+          opacity: 0.96;
+          transform: translate3d(0, 1px, 0) scale(0.999);
+        }
+        78% {
+          opacity: 1;
+          transform: translate3d(0, -1px, 0) scale(1.001);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+        }
       }
       @keyframes lcThemeShiftCl {
-        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
-        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
-        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+        0% {
+          opacity: 0.78;
+          transform: translate3d(0, 5px, 0) scale(0.994);
+        }
+        48% {
+          opacity: 0.96;
+          transform: translate3d(0, 1px, 0) scale(0.999);
+        }
+        78% {
+          opacity: 1;
+          transform: translate3d(0, -1px, 0) scale(1.001);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+        }
       }
       @keyframes lcThemeShiftAr {
-        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
-        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
-        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+        0% {
+          opacity: 0.78;
+          transform: translate3d(0, 5px, 0) scale(0.994);
+        }
+        48% {
+          opacity: 0.96;
+          transform: translate3d(0, 1px, 0) scale(0.999);
+        }
+        78% {
+          opacity: 1;
+          transform: translate3d(0, -1px, 0) scale(1.001);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+        }
       }
       @keyframes lcThemeShiftEc {
-        0% { opacity: 0.94; transform: translateY(2px) scale(0.998); filter: saturate(0.95) brightness(0.99); }
-        58% { opacity: 1; transform: translateY(0) scale(1.002); filter: saturate(1.06) brightness(1.015); }
-        100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1) brightness(1); }
+        0% {
+          opacity: 0.78;
+          transform: translate3d(0, 5px, 0) scale(0.994);
+        }
+        48% {
+          opacity: 0.96;
+          transform: translate3d(0, 1px, 0) scale(0.999);
+        }
+        78% {
+          opacity: 1;
+          transform: translate3d(0, -1px, 0) scale(1.001);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+        }
       }
 
       @keyframes lcUserMessageEnter {
@@ -756,7 +821,7 @@ function buildStyles({ isDark, isLargeText, country }) {
 
     launcherHintEyebrow: {
       color: colors.subtle,
-      fontSize: "10.5px",
+      fontSize: isLargeText ? "11.5px" : "10.5px",
       fontWeight: 950,
       letterSpacing: "0.08em",
       textTransform: "uppercase",
@@ -765,7 +830,7 @@ function buildStyles({ isDark, isLargeText, country }) {
 
     launcherHintTitle: {
       color: colors.text,
-      fontSize: "15px",
+      fontSize: isLargeText ? "16.5px" : "15px",
       fontWeight: 950,
       letterSpacing: "-0.02em",
       lineHeight: 1.2,
@@ -773,7 +838,7 @@ function buildStyles({ isDark, isLargeText, country }) {
 
     launcherHintText: {
       color: colors.muted,
-      fontSize: "12.5px",
+      fontSize: isLargeText ? "13.5px" : "12.5px",
       fontWeight: 750,
       lineHeight: 1.35,
     },
@@ -900,8 +965,9 @@ function buildStyles({ isDark, isLargeText, country }) {
       isolation: "isolate",
       fontFamily:
         "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-      animation: `${countryThemeAnimation} 560ms cubic-bezier(0.22, 1, 0.36, 1)`,
-      transition: "background-color 520ms ease, border-color 520ms ease, box-shadow 520ms ease, color 420ms ease",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background-color 680ms cubic-bezier(0.22, 1, 0.36, 1), border-color 680ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 680ms cubic-bezier(0.22, 1, 0.36, 1), color 520ms ease",
+      willChange: "opacity, transform",
     },
 
     header: {
@@ -916,8 +982,9 @@ function buildStyles({ isDark, isLargeText, country }) {
       overflow: "hidden",
       flexShrink: 0,
       boxSizing: "border-box",
-      transition: "background 540ms ease, box-shadow 540ms ease, filter 420ms ease",
-      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1)",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      willChange: "opacity, transform",
     },
 
     countryRibbon: {
@@ -926,8 +993,9 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: countryStyle.ribbonBackground,
       boxShadow: isDark ? "0 8px 18px rgba(0,0,0,0.18)" : "0 8px 18px rgba(24,68,97,0.08)",
       flexShrink: 0,
-      transition: "background 540ms ease, box-shadow 540ms ease, opacity 420ms ease",
-      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      willChange: "opacity, transform",
     },
 
     headerArcOne: {
@@ -939,6 +1007,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       top: "-98px",
       right: "-60px",
       pointerEvents: "none",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease, transform 560ms ease",
     },
 
     headerArcTwo: {
@@ -950,6 +1019,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       bottom: "-54px",
       left: "14px",
       pointerEvents: "none",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease, transform 560ms ease",
     },
 
     headerAvatarWrap: {
@@ -985,7 +1055,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     },
 
     headerTitle: {
-      fontSize: "15px",
+      fontSize: isLargeText ? "16.5px" : "15px",
       fontWeight: 950,
       letterSpacing: "-0.02em",
       whiteSpace: "nowrap",
@@ -997,7 +1067,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       display: "flex",
       alignItems: "center",
       gap: "7px",
-      fontSize: "12px",
+      fontSize: isLargeText ? "13px" : "12px",
       color: "rgba(255,255,255,0.88)",
       whiteSpace: "nowrap",
     },
@@ -1013,7 +1083,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: countryStyle.badgeBackground,
       border: `1px solid ${countryStyle.badgeBorder}`,
       color: countryStyle.badgeColor,
-      fontSize: "10.5px",
+      fontSize: isLargeText ? "11.5px" : "10.5px",
       fontWeight: 900,
       lineHeight: 1,
       whiteSpace: "nowrap",
@@ -1021,8 +1091,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       textOverflow: "ellipsis",
       boxShadow: "0 8px 18px rgba(0,0,0,0.12)",
       backdropFilter: "blur(10px)",
-      transition: "background 540ms ease, border-color 540ms ease, color 420ms ease, box-shadow 540ms ease",
-      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), border-color 720ms cubic-bezier(0.22, 1, 0.36, 1), color 560ms ease, box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1)",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     onlineDot: {
@@ -1086,8 +1156,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       overflowY: "auto",
       overflowX: "hidden",
       boxSizing: "border-box",
-      transition: "background 540ms ease",
-      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1)",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     pageInner: {
@@ -1111,8 +1181,8 @@ function buildStyles({ isDark, isLargeText, country }) {
           : "radial-gradient(circle at 18% 14%, rgba(83, 210, 235, 0.16) 0, transparent 25%), radial-gradient(circle at 86% 16%, rgba(239, 92, 169, 0.14) 0, transparent 22%), radial-gradient(circle at 80% 84%, rgba(126, 103, 246, 0.1) 0, transparent 30%), linear-gradient(160deg, #ffffff 0%, #f7fcff 48%, #edf8ff 100%)"),
       overflow: "hidden",
       boxSizing: "border-box",
-      transition: "background 540ms ease",
-      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1)",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     homeTexture: {
@@ -1124,6 +1194,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       backgroundSize: "34px 34px",
       maskImage: "radial-gradient(circle at 50% 34%, black 0%, transparent 78%)",
       pointerEvents: "none",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease, transform 560ms ease",
     },
 
     homeAuraTop: {
@@ -1139,6 +1210,7 @@ function buildStyles({ isDark, isLargeText, country }) {
         : "radial-gradient(circle, rgba(255,255,255,0.98) 0%, rgba(221,248,255,0.92) 40%, transparent 72%)",
       filter: "blur(3px)",
       pointerEvents: "none",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease, transform 560ms ease",
     },
 
     homeAuraBottom: {
@@ -1153,6 +1225,7 @@ function buildStyles({ isDark, isLargeText, country }) {
         ? "radial-gradient(circle, rgba(14,48,79,0.82) 0%, rgba(14,48,79,0.2) 46%, transparent 74%)"
         : "radial-gradient(circle, rgba(216,240,252,0.96) 0%, rgba(235,247,255,0.3) 48%, transparent 74%)",
       pointerEvents: "none",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease, transform 560ms ease",
     },
 
     homeCloseButton: {
@@ -1267,7 +1340,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: isDark ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.82)",
       border: `1px solid ${colors.border}`,
       color: colors.text,
-      fontSize: "12px",
+      fontSize: isLargeText ? "13px" : "12px",
       fontWeight: 950,
       boxShadow: colors.softShadow,
       backdropFilter: "blur(14px)",
@@ -1300,6 +1373,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       borderRadius: "999px",
       background: isDark ? "rgba(255,255,255,0.12)" : "rgba(42,190,215,0.1)",
       zIndex: 1,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease, transform 560ms ease",
     },
 
     homeSoftCircleRight: {
@@ -1311,6 +1385,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       borderRadius: "999px",
       background: isDark ? "rgba(255,255,255,0.2)" : "rgba(126,103,246,0.14)",
       zIndex: 1,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms ease, transform 560ms ease",
     },
 
     homeGlassCard: {
@@ -1340,7 +1415,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     homeName: {
       margin: 0,
       color: colors.text,
-      fontSize: "40px",
+      fontSize: isLargeText ? "44px" : "40px",
       lineHeight: 0.95,
       fontWeight: 950,
       letterSpacing: "-0.055em",
@@ -1369,7 +1444,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: isDark ? "rgba(255,255,255,0.09)" : "rgba(255,255,255,0.86)",
       border: `1px solid ${colors.border}`,
       color: colors.text,
-      fontSize: "12px",
+      fontSize: isLargeText ? "13px" : "12px",
       fontWeight: 900,
       position: "relative",
       zIndex: 2,
@@ -1392,7 +1467,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: "none",
       borderRadius: "999px",
       padding: "14px 16px",
-      fontSize: "14px",
+      fontSize: isLargeText ? "15px" : "14px",
       fontWeight: 950,
       cursor: "pointer",
       color: colors.white,
@@ -1409,7 +1484,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: `1px solid ${colors.border}`,
       borderRadius: "999px",
       padding: "14px 16px",
-      fontSize: "14px",
+      fontSize: isLargeText ? "15px" : "14px",
       fontWeight: 950,
       cursor: "pointer",
       color: colors.text,
@@ -1532,7 +1607,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     title: {
       margin: 0,
       color: colors.text,
-      fontSize: "32px",
+      fontSize: isLargeText ? "35px" : "32px",
       lineHeight: 1,
       fontWeight: 950,
       letterSpacing: "-0.045em",
@@ -1559,7 +1634,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: isDark ? "rgba(255,255,255,0.07)" : "rgba(244,251,255,0.96)",
       border: `1px solid ${colors.border}`,
       color: colors.text,
-      fontSize: "12px",
+      fontSize: isLargeText ? "13px" : "12px",
       fontWeight: 850,
       boxShadow: isDark ? "none" : "0 8px 18px rgba(24,68,97,0.07)",
     },
@@ -1602,7 +1677,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     infoTitle: {
       display: "block",
       color: colors.text,
-      fontSize: "13px",
+      fontSize: isLargeText ? "14px" : "13px",
       fontWeight: 950,
       marginBottom: "2px",
     },
@@ -1610,7 +1685,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     infoText: {
       margin: 0,
       color: colors.subtle,
-      fontSize: "11.8px",
+      fontSize: isLargeText ? "12.8px" : "11.8px",
       lineHeight: 1.38,
     },
 
@@ -1627,7 +1702,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: "none",
       borderRadius: "999px",
       padding: "14px 16px",
-      fontSize: "14px",
+      fontSize: isLargeText ? "15px" : "14px",
       fontWeight: 950,
       cursor: "pointer",
       color: colors.white,
@@ -1644,7 +1719,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: `1px solid ${colors.border}`,
       borderRadius: "999px",
       padding: "14px 16px",
-      fontSize: "14px",
+      fontSize: isLargeText ? "15px" : "14px",
       fontWeight: 900,
       cursor: "pointer",
       color: colors.text,
@@ -1692,7 +1767,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     settingsTitle: {
       margin: 0,
       color: colors.text,
-      fontSize: "23px",
+      fontSize: isLargeText ? "25px" : "23px",
       lineHeight: 1.05,
       fontWeight: 950,
       letterSpacing: "-0.04em",
@@ -1717,7 +1792,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: isDark ? "rgba(255,255,255,0.07)" : "rgba(246,251,255,0.94)",
       border: `1px solid ${colors.border}`,
       color: colors.text,
-      fontSize: "12px",
+      fontSize: isLargeText ? "13px" : "12px",
       fontWeight: 900,
       boxShadow: isDark ? "none" : "0 8px 18px rgba(24,68,97,0.06)",
     },
@@ -1739,7 +1814,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     sectionLabel: {
       margin: 0,
       color: colors.subtle,
-      fontSize: "11px",
+      fontSize: isLargeText ? "12px" : "11px",
       fontWeight: 900,
       textTransform: "uppercase",
       letterSpacing: "0.09em",
@@ -1788,13 +1863,13 @@ function buildStyles({ isDark, isLargeText, country }) {
 
     settingLabel: {
       color: colors.text,
-      fontSize: "13.8px",
+      fontSize: isLargeText ? "15px" : "13.8px",
       fontWeight: 950,
     },
 
     settingDescription: {
       color: colors.subtle,
-      fontSize: "11.8px",
+      fontSize: isLargeText ? "12.8px" : "11.8px",
       lineHeight: 1.38,
     },
 
@@ -1803,7 +1878,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: "none",
       borderRadius: "999px",
       padding: "10px 12px",
-      fontSize: "12px",
+      fontSize: isLargeText ? "13px" : "12px",
       fontWeight: 900,
       cursor: "pointer",
       color: colors.white,
@@ -1825,8 +1900,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       flexDirection: "column",
       minHeight: 0,
       background: countryStyle.chatBackground || colors.chatBg,
-      transition: "background 540ms ease",
-      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1)",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     messages: {
@@ -1866,7 +1941,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     introTitle: {
       margin: 0,
       color: colors.text,
-      fontSize: "13px",
+      fontSize: isLargeText ? "14px" : "13px",
       fontWeight: 950,
     },
 
@@ -1882,7 +1957,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: isDark ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.84)",
       border: `1px solid ${countryStyle.botBubbleBorder}`,
       color: colors.text,
-      fontSize: "10.5px",
+      fontSize: isLargeText ? "11.5px" : "10.5px",
       fontWeight: 900,
       lineHeight: 1,
       boxShadow: isDark ? "0 8px 18px rgba(0,0,0,0.16)" : "0 8px 18px rgba(24,68,97,0.08)",
@@ -1891,7 +1966,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     introText: {
       margin: "3px 0 0",
       color: colors.muted,
-      fontSize: "12px",
+      fontSize: isLargeText ? "13px" : "12px",
       lineHeight: 1.42,
     },
 
@@ -1944,7 +2019,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: countryStyle.botBubbleBackground,
       border: `1px solid ${countryStyle.botBubbleBorder}`,
       boxShadow: isDark ? "0 12px 26px rgba(4,18,34,0.18)" : "0 12px 26px rgba(24,68,97,0.08)",
-      transition: "background 540ms ease, border-color 540ms ease, box-shadow 540ms ease, color 420ms ease",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), border-color 720ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1), color 560ms ease",
       animation: "lcMessageBubbleSettle 620ms ease-out both",
     },
 
@@ -1961,7 +2036,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: `1px solid ${countryStyle.userBubbleBorder || "rgba(255,255,255,0.18)"}`,
       boxShadow: countryStyle.userBubbleShadow || "0 14px 28px rgba(126,103,246,0.18)",
       textShadow: "0 1px 2px rgba(0, 0, 0, 0.28)",
-      transition: "background 540ms ease, border-color 540ms ease, box-shadow 540ms ease",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), border-color 720ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1)",
       animation: "lcMessageBubbleSettle 620ms ease-out both",
     },
 
@@ -1980,7 +2055,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     },
 
     time: {
-      fontSize: "11px",
+      fontSize: isLargeText ? "12px" : "11px",
       color: colors.subtle,
       padding: "0 5px",
     },
@@ -1999,7 +2074,7 @@ function buildStyles({ isDark, isLargeText, country }) {
     faqTitle: {
       margin: 0,
       color: colors.subtle,
-      fontSize: "11px",
+      fontSize: isLargeText ? "12px" : "11px",
       fontWeight: 900,
       textTransform: "uppercase",
       letterSpacing: "0.08em",
@@ -2046,7 +2121,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       background: countryStyle.botBubbleBackground,
       border: `1px solid ${countryStyle.botBubbleBorder}`,
       boxShadow: isDark ? "0 12px 26px rgba(4,18,34,0.18)" : "0 12px 26px rgba(24,68,97,0.08)",
-      transition: "background 540ms ease, border-color 540ms ease, box-shadow 540ms ease",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), border-color 720ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1)",
       animation: "lcTypingBubbleEnter 420ms cubic-bezier(0.22, 1, 0.36, 1) both",
     },
 
@@ -2056,7 +2131,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       borderRadius: "999px",
       background: countryStyle.typingDot,
       display: "inline-block",
-      transition: "background-color 420ms ease",
+      transition: "background-color 520ms ease",
     },
 
     footer: {
@@ -2068,8 +2143,8 @@ function buildStyles({ isDark, isLargeText, country }) {
       gap: "9px",
       flexShrink: 0,
       boxSizing: "border-box",
-      transition: "background-color 520ms ease, border-color 520ms ease",
-      animation: `${countryThemeAnimation} 640ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      transition: "background-color 680ms cubic-bezier(0.22, 1, 0.36, 1), border-color 680ms cubic-bezier(0.22, 1, 0.36, 1)",
+      animation: `${countryThemeAnimation} 760ms cubic-bezier(0.22, 1, 0.36, 1)`,
     },
 
     inputShell: {
@@ -2083,7 +2158,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       border: `1px solid ${countryStyle.inputShellBorder || colors.border}`,
       background: colors.inputBg,
       boxShadow: isDark ? "inset 0 1px 0 rgba(255,255,255,0.04)" : "inset 0 1px 0 rgba(255,255,255,0.9)",
-      transition: "border-color 520ms ease, background-color 520ms ease, box-shadow 520ms ease",
+      transition: "border-color 680ms cubic-bezier(0.22, 1, 0.36, 1), background-color 680ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 680ms cubic-bezier(0.22, 1, 0.36, 1)",
     },
 
     inputSpark: {
@@ -2126,7 +2201,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       flexShrink: 0,
       boxShadow: countryStyle.sendButtonShadow,
       textShadow: "0 1px 2px rgba(0, 0, 0, 0.22)",
-      transition: "background 540ms ease, color 420ms ease, box-shadow 540ms ease, transform 180ms ease",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), color 560ms ease, box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1), transform 180ms ease",
     },
 
     disabledSendButton: {
@@ -2146,7 +2221,7 @@ function buildStyles({ isDark, isLargeText, country }) {
       opacity: 0.48,
       boxShadow: "none",
       textShadow: "0 1px 2px rgba(0, 0, 0, 0.18)",
-      transition: "background 540ms ease, color 420ms ease, opacity 420ms ease",
+      transition: "background 720ms cubic-bezier(0.22, 1, 0.36, 1), color 560ms ease, opacity 560ms ease",
     },
   };
 }
